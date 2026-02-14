@@ -67,6 +67,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://financecalc.app/blog</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://financecalc.app/about</loc>
     <lastmod>2026-02-14</lastmod>
     <changefreq>yearly</changefreq>

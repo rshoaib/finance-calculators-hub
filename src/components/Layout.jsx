@@ -16,6 +16,7 @@ export default function Layout() {
           <NavLink to="/mortgage-calculator">Mortgage</NavLink>
           <NavLink to="/compound-interest-calculator">Investing</NavLink>
           <NavLink to="/retirement-calculator">Retirement</NavLink>
+          <NavLink to="/blog">Blog</NavLink>
           <NavLink to="/about">About</NavLink>
         </nav>
       </header>
@@ -29,6 +30,7 @@ export default function Layout() {
           <Link to="/compound-interest-calculator">Compound Interest</Link>
           <Link to="/retirement-calculator">Retirement</Link>
           <Link to="/tax-bracket-calculator">Tax Calculator</Link>
+          <Link to="/blog">Blog</Link>
           <Link to="/about">About</Link>
           <Link to="/privacy-policy">Privacy Policy</Link>
         </div>

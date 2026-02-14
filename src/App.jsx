@@ -13,6 +13,8 @@ import DebtToIncomeCalculator from './pages/DebtToIncomeCalculator'
 import InvestmentReturnCalculator from './pages/InvestmentReturnCalculator'
 import About from './pages/About'
 import PrivacyPolicy from './pages/PrivacyPolicy'
+import BlogList from './pages/BlogList'
+import BlogPost from './pages/BlogPost'
 
 export default function App() {
   return (
@@ -31,6 +33,8 @@ export default function App() {
         <Route path="/investment-return-calculator" element={<InvestmentReturnCalculator />} />
         <Route path="/about" element={<About />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/blog" element={<BlogList />} />
+        <Route path="/blog/:slug" element={<BlogPost />} />
       </Route>
     </Routes>
   )
