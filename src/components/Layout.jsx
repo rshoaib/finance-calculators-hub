@@ -1,0 +1,42 @@
+import { Outlet, Link, NavLink, useLocation } from 'react-router-dom'
+import { Calculator, Home, TrendingUp, PiggyBank, Receipt } from 'lucide-react'
+
+export default function Layout() {
+  const location = useLocation()
+
+  return (
+    <div className="app-wrapper">
+      <header className="header">
+        <Link to="/" className="header-logo">
+          <span className="logo-icon">FC</span>
+          <span>FinanceCalc</span>
+        </Link>
+        <nav className="header-nav">
+          <NavLink to="/" end>Home</NavLink>
+          <NavLink to="/mortgage-calculator">Mortgage</NavLink>
+          <NavLink to="/compound-interest-calculator">Investing</NavLink>
+          <NavLink to="/retirement-calculator">Retirement</NavLink>
+          <NavLink to="/about">About</NavLink>
+        </nav>
+      </header>
+
+      <Outlet />
+
+      <footer className="footer">
+        <div className="footer-links">
+          <Link to="/">Home</Link>
+          <Link to="/mortgage-calculator">Mortgage Calculator</Link>
+          <Link to="/compound-interest-calculator">Compound Interest</Link>
+          <Link to="/retirement-calculator">Retirement</Link>
+          <Link to="/tax-bracket-calculator">Tax Calculator</Link>
+          <Link to="/about">About</Link>
+          <Link to="/privacy-policy">Privacy Policy</Link>
+        </div>
+        <p>&copy; {new Date().getFullYear()} FinanceCalc. Free financial calculators for smarter money decisions.</p>
+        <p style={{ marginTop: '0.5rem', fontSize: '0.75rem' }}>
+          Disclaimer: These calculators are for informational purposes only. Consult a financial advisor for personalized advice.
+        </p>
+      </footer>
+    </div>
+  )
+}
