@@ -51,9 +51,9 @@ export default function BlogList() {
     <main className="main-content">
       <SEO
         title="Financial Blog — Expert Tips & Guides"
-        description="Expert financial tips, guides, and strategies. Learn about mortgages, investing, tax planning, and personal finance from FinanceCalc."
+        description="Expert financial tips, guides, and strategies. Learn about mortgages, investing, tax planning, and personal finance from MyCalcFinance."
         canonical="/blog"
-        jsonLd={{ '@context': 'https://schema.org', '@type': 'Blog', name: 'FinanceCalc Blog', description: 'Financial tips and guides', url: 'https://mycalcfinance.com/blog' }}
+        jsonLd={{ '@context': 'https://schema.org', '@type': 'Blog', name: 'MyCalcFinance Blog', description: 'Financial tips and guides', url: 'https://mycalcfinance.com/blog' }}
       />
       <Breadcrumb items={[{ label: 'Blog' }]} />
 
@@ -96,7 +96,7 @@ export default function BlogList() {
                 </h2>
                 <p className="blog-card-excerpt">{post.excerpt}</p>
                 <div className="blog-card-meta">
-                  <span>{post.author || 'FinanceCalc Team'}</span>
+                  <span>{post.author || 'MyCalcFinance Team'}</span>
                   <span>{formatDate(post.published_at)}</span>
                 </div>
               </div>
@@ -116,28 +116,28 @@ const SAMPLE_POSTS = [
     id: '1', slug: 'mortgage-tips-first-time-buyers',
     title: '10 Mortgage Tips Every First-Time Buyer Needs to Know',
     excerpt: 'Navigating your first mortgage can be overwhelming. Here are the essential tips to save thousands on your home loan.',
-    category: 'Mortgage', image_url: '', author: 'FinanceCalc Team',
+    category: 'Mortgage', image_url: '', author: 'MyCalcFinance Team',
     published_at: '2026-02-10T00:00:00Z',
   },
   {
     id: '2', slug: 'compound-interest-power',
     title: 'The Power of Compound Interest: Why Starting Early Matters',
     excerpt: 'Einstein called compound interest the eighth wonder of the world. Learn how to harness it for your financial goals.',
-    category: 'Investing', image_url: '', author: 'FinanceCalc Team',
+    category: 'Investing', image_url: '', author: 'MyCalcFinance Team',
     published_at: '2026-02-08T00:00:00Z',
   },
   {
     id: '3', slug: 'tax-deductions-you-might-miss',
     title: '15 Tax Deductions You Might Be Missing',
     excerpt: 'Many taxpayers leave money on the table. Discover commonly overlooked deductions that could lower your tax bill.',
-    category: 'Tax', image_url: '', author: 'FinanceCalc Team',
+    category: 'Tax', image_url: '', author: 'MyCalcFinance Team',
     published_at: '2026-02-05T00:00:00Z',
   },
   {
     id: '4', slug: 'emergency-fund-guide',
     title: 'How to Build an Emergency Fund in 6 Months',
     excerpt: 'A step-by-step guide to building your financial safety net, even on a tight budget.',
-    category: 'Savings', image_url: '', author: 'FinanceCalc Team',
+    category: 'Savings', image_url: '', author: 'MyCalcFinance Team',
     published_at: '2026-02-01T00:00:00Z',
   },
 ]

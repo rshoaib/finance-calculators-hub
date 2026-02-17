@@ -10,7 +10,7 @@ export default function Layout() {
       <header className="header">
         <Link to="/" className="header-logo">
           <span className="logo-icon">FC</span>
-          <span>FinanceCalc</span>
+          <span>MyCalcFinance</span>
         </Link>
         <nav className="header-nav">
           <NavLink to="/" end>Home</NavLink>
@@ -42,7 +42,7 @@ export default function Layout() {
           <Link to="/about">About</Link>
           <Link to="/privacy-policy">Privacy Policy</Link>
         </div>
-        <p>&copy; {new Date().getFullYear()} FinanceCalc. Free financial calculators for smarter money decisions.</p>
+        <p>&copy; {new Date().getFullYear()} MyCalcFinance. Free financial calculators for smarter money decisions.</p>
         <p style={{ marginTop: '0.5rem', fontSize: '0.75rem' }}>
           Disclaimer: These calculators are for informational purposes only. Consult a financial advisor for personalized advice.
         </p>

@@ -2,7 +2,7 @@ import { Helmet } from 'react-helmet-async'
 
 export default function SEO({ title, description, canonical, type = 'website', jsonLd }) {
   const siteUrl = 'https://mycalcfinance.com'
-  const fullTitle = title ? `${title} | FinanceCalc` : 'FinanceCalc — Free Financial Calculators'
+  const fullTitle = title ? `${title} | MyCalcFinance` : 'MyCalcFinance — Free Financial Calculators'
   const fullCanonical = canonical ? `${siteUrl}${canonical}` : siteUrl
 
   return (
@@ -16,7 +16,7 @@ export default function SEO({ title, description, canonical, type = 'website', j
       <meta property="og:description" content={description} />
       <meta property="og:type" content={type} />
       <meta property="og:url" content={fullCanonical} />
-      <meta property="og:site_name" content="FinanceCalc" />
+      <meta property="og:site_name" content="MyCalcFinance" />
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />

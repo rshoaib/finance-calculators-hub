@@ -15,7 +15,7 @@ export default function HomePage() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'FinanceCalc',
+    name: 'MyCalcFinance',
     url: 'https://mycalcfinance.com',
     description: 'Free online financial calculators for mortgage, loans, compound interest, retirement, taxes, and more.',
     potentialAction: {

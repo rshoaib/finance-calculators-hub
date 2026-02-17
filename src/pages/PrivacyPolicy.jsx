@@ -5,7 +5,7 @@ export default function PrivacyPolicy() {
     <main className="main-content" style={{ maxWidth: 800 }}>
       <SEO
         title="Privacy Policy"
-        description="FinanceCalc privacy policy. We do not collect, store, or transmit your personal or financial data."
+        description="MyCalcFinance privacy policy. We do not collect, store, or transmit your personal or financial data."
         canonical="/privacy-policy"
       />
       <div className="calc-header">
@@ -15,7 +15,7 @@ export default function PrivacyPolicy() {
       <div className="seo-content" style={{ borderTop: 'none', paddingTop: 0 }}>
         <h3>Information We Collect</h3>
         <p>
-          FinanceCalc does not collect any personal information. All financial calculations are performed entirely
+          MyCalcFinance does not collect any personal information. All financial calculations are performed entirely
           within your web browser. No data is sent to our servers.
         </p>
 

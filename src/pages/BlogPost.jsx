@@ -70,7 +70,7 @@ export default function BlogPost() {
     <div className="page-with-sidebar">
       <div className="page-main">
         <SEO
-          title={`${post.title} — FinanceCalc Blog`}
+          title={`${post.title} — MyCalcFinance Blog`}
           description={post.excerpt || post.title}
           canonical={`/blog/${post.slug}`}
           jsonLd={{
@@ -78,9 +78,9 @@ export default function BlogPost() {
             '@type': 'Article',
             headline: post.title,
             description: post.excerpt,
-            author: { '@type': 'Person', name: post.author || 'FinanceCalc Team' },
+            author: { '@type': 'Person', name: post.author || 'MyCalcFinance Team' },
             datePublished: post.published_at,
-            publisher: { '@type': 'Organization', name: 'FinanceCalc' },
+            publisher: { '@type': 'Organization', name: 'MyCalcFinance' },
             ...(post.image_url ? { image: post.image_url } : {}),
           }}
         />
@@ -100,7 +100,7 @@ export default function BlogPost() {
             {post.category && <span className="blog-card-category">{post.category}</span>}
             <h1>{post.title}</h1>
             <div className="blog-article-meta">
-              <span className="blog-article-author">{post.author || 'FinanceCalc Team'}</span>
+              <span className="blog-article-author">{post.author || 'MyCalcFinance Team'}</span>
               <span className="blog-article-date">{formatDate(post.published_at)}</span>
             </div>
           </div>
@@ -135,7 +135,7 @@ const SAMPLE_POST = {
   slug: 'mortgage-tips-first-time-buyers',
   excerpt: 'Navigating your first mortgage can be overwhelming. Here are the essential tips to save thousands.',
   category: 'Mortgage',
-  author: 'FinanceCalc Team',
+  author: 'MyCalcFinance Team',
   published_at: '2026-02-10T00:00:00Z',
   image_url: '',
   content: `

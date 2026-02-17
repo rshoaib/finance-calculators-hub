@@ -5,16 +5,16 @@ export default function About() {
   return (
     <main className="main-content" style={{ maxWidth: 800 }}>
       <SEO
-        title="About FinanceCalc"
-        description="FinanceCalc provides free, privacy-first financial calculators. No signup, no data collection, no fees."
+        title="About MyCalcFinance"
+        description="MyCalcFinance provides free, privacy-first financial calculators. No signup, no data collection, no fees."
         canonical="/about"
       />
       <div className="calc-header">
-        <h1 style={{ background: 'none', WebkitTextFillColor: 'var(--text-primary)' }}>About FinanceCalc</h1>
+        <h1 style={{ background: 'none', WebkitTextFillColor: 'var(--text-primary)' }}>About MyCalcFinance</h1>
       </div>
       <div className="seo-content" style={{ borderTop: 'none', paddingTop: 0 }}>
         <p>
-          FinanceCalc is a free collection of financial calculators designed to help you make smarter money decisions.
+          MyCalcFinance is a free collection of financial calculators designed to help you make smarter money decisions.
           Whether you're buying a home, planning for retirement, or trying to pay off debt — we've got a calculator for that.
         </p>
         <h3>Our Mission</h3>
