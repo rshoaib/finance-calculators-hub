@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async'
 
 export default function SEO({ title, description, canonical, type = 'website', jsonLd }) {
-  const siteUrl = 'https://financecalc.app'
+  const siteUrl = 'https://mycalcfinance.com'
   const fullTitle = title ? `${title} | FinanceCalc` : 'FinanceCalc — Free Financial Calculators'
   const fullCanonical = canonical ? `${siteUrl}${canonical}` : siteUrl
 

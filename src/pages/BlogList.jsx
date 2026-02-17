@@ -53,7 +53,7 @@ export default function BlogList() {
         title="Financial Blog — Expert Tips & Guides"
         description="Expert financial tips, guides, and strategies. Learn about mortgages, investing, tax planning, and personal finance from FinanceCalc."
         canonical="/blog"
-        jsonLd={{ '@context': 'https://schema.org', '@type': 'Blog', name: 'FinanceCalc Blog', description: 'Financial tips and guides', url: 'https://financecalc.app/blog' }}
+        jsonLd={{ '@context': 'https://schema.org', '@type': 'Blog', name: 'FinanceCalc Blog', description: 'Financial tips and guides', url: 'https://mycalcfinance.com/blog' }}
       />
       <Breadcrumb items={[{ label: 'Blog' }]} />
 

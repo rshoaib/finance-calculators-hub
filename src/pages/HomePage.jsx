@@ -16,11 +16,11 @@ export default function HomePage() {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: 'FinanceCalc',
-    url: 'https://financecalc.app',
+    url: 'https://mycalcfinance.com',
     description: 'Free online financial calculators for mortgage, loans, compound interest, retirement, taxes, and more.',
     potentialAction: {
       '@type': 'SearchAction',
-      target: 'https://financecalc.app/?q={search_term_string}',
+      target: 'https://mycalcfinance.com/?q={search_term_string}',
       'query-input': 'required name=search_term_string',
     },
   }

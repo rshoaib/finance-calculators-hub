@@ -1,5 +1,6 @@
 import { Outlet, Link, NavLink, useLocation } from 'react-router-dom'
 import { Calculator, Home, TrendingUp, PiggyBank, Receipt } from 'lucide-react'
+import ThemeToggle from './ThemeToggle'
 
 export default function Layout() {
   const location = useLocation()
@@ -18,6 +19,7 @@ export default function Layout() {
           <NavLink to="/retirement-calculator">Retirement</NavLink>
           <NavLink to="/blog">Blog</NavLink>
           <NavLink to="/about">About</NavLink>
+          <ThemeToggle />
         </nav>
       </header>
 
@@ -30,6 +32,12 @@ export default function Layout() {
           <Link to="/compound-interest-calculator">Compound Interest</Link>
           <Link to="/retirement-calculator">Retirement</Link>
           <Link to="/tax-bracket-calculator">Tax Calculator</Link>
+          <Link to="/salary-calculator">Salary Calculator</Link>
+          <Link to="/capital-gains-tax-calculator">Capital Gains Tax</Link>
+          <Link to="/net-worth-calculator">Net Worth</Link>
+          <Link to="/budget-planner">Budget Planner</Link>
+          <Link to="/break-even-calculator">Break-Even</Link>
+          <Link to="/inflation-calculator">Inflation</Link>
           <Link to="/blog">Blog</Link>
           <Link to="/about">About</Link>
           <Link to="/privacy-policy">Privacy Policy</Link>

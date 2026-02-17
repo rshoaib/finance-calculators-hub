@@ -49,7 +49,7 @@ export default function LoanEMICalculator() {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
     name: 'Loan EMI Calculator',
-    url: 'https://financecalc.app/emi-calculator',
+    url: 'https://mycalcfinance.com/emi-calculator',
     description: 'Free EMI calculator for personal loans, car loans, and education loans.',
     applicationCategory: 'FinanceApplication',
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },

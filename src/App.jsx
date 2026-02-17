@@ -1,41 +1,58 @@
+import { lazy, Suspense } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Layout from './components/Layout'
-import HomePage from './pages/HomePage'
-import MortgageCalculator from './pages/MortgageCalculator'
-import LoanEMICalculator from './pages/LoanEMICalculator'
-import CompoundInterestCalculator from './pages/CompoundInterestCalculator'
-import RetirementCalculator from './pages/RetirementCalculator'
-import CreditCardPayoffCalculator from './pages/CreditCardPayoffCalculator'
-import TaxBracketCalculator from './pages/TaxBracketCalculator'
-import CarLoanCalculator from './pages/CarLoanCalculator'
-import SavingsGoalCalculator from './pages/SavingsGoalCalculator'
-import DebtToIncomeCalculator from './pages/DebtToIncomeCalculator'
-import InvestmentReturnCalculator from './pages/InvestmentReturnCalculator'
-import About from './pages/About'
-import PrivacyPolicy from './pages/PrivacyPolicy'
-import BlogList from './pages/BlogList'
-import BlogPost from './pages/BlogPost'
+import LoadingSpinner from './components/LoadingSpinner'
+
+const HomePage = lazy(() => import('./pages/HomePage'))
+const MortgageCalculator = lazy(() => import('./pages/MortgageCalculator'))
+const LoanEMICalculator = lazy(() => import('./pages/LoanEMICalculator'))
+const CompoundInterestCalculator = lazy(() => import('./pages/CompoundInterestCalculator'))
+const RetirementCalculator = lazy(() => import('./pages/RetirementCalculator'))
+const CreditCardPayoffCalculator = lazy(() => import('./pages/CreditCardPayoffCalculator'))
+const TaxBracketCalculator = lazy(() => import('./pages/TaxBracketCalculator'))
+const CarLoanCalculator = lazy(() => import('./pages/CarLoanCalculator'))
+const SavingsGoalCalculator = lazy(() => import('./pages/SavingsGoalCalculator'))
+const DebtToIncomeCalculator = lazy(() => import('./pages/DebtToIncomeCalculator'))
+const InvestmentReturnCalculator = lazy(() => import('./pages/InvestmentReturnCalculator'))
+const NetWorthCalculator = lazy(() => import('./pages/NetWorthCalculator'))
+const InflationCalculator = lazy(() => import('./pages/InflationCalculator'))
+const SalaryCalculator = lazy(() => import('./pages/SalaryCalculator'))
+const CapitalGainsTaxCalculator = lazy(() => import('./pages/CapitalGainsTaxCalculator'))
+const BudgetPlannerCalculator = lazy(() => import('./pages/BudgetPlannerCalculator'))
+const BreakEvenCalculator = lazy(() => import('./pages/BreakEvenCalculator'))
+const About = lazy(() => import('./pages/About'))
+const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'))
+const BlogList = lazy(() => import('./pages/BlogList'))
+const BlogPost = lazy(() => import('./pages/BlogPost'))
 
 export default function App() {
   return (
-    <Routes>
-      <Route element={<Layout />}>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/mortgage-calculator" element={<MortgageCalculator />} />
-        <Route path="/emi-calculator" element={<LoanEMICalculator />} />
-        <Route path="/compound-interest-calculator" element={<CompoundInterestCalculator />} />
-        <Route path="/retirement-calculator" element={<RetirementCalculator />} />
-        <Route path="/credit-card-payoff-calculator" element={<CreditCardPayoffCalculator />} />
-        <Route path="/tax-bracket-calculator" element={<TaxBracketCalculator />} />
-        <Route path="/car-loan-calculator" element={<CarLoanCalculator />} />
-        <Route path="/savings-goal-calculator" element={<SavingsGoalCalculator />} />
-        <Route path="/debt-to-income-calculator" element={<DebtToIncomeCalculator />} />
-        <Route path="/investment-return-calculator" element={<InvestmentReturnCalculator />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-        <Route path="/blog" element={<BlogList />} />
-        <Route path="/blog/:slug" element={<BlogPost />} />
-      </Route>
-    </Routes>
+    <Suspense fallback={<LoadingSpinner />}>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/mortgage-calculator" element={<MortgageCalculator />} />
+          <Route path="/emi-calculator" element={<LoanEMICalculator />} />
+          <Route path="/compound-interest-calculator" element={<CompoundInterestCalculator />} />
+          <Route path="/retirement-calculator" element={<RetirementCalculator />} />
+          <Route path="/credit-card-payoff-calculator" element={<CreditCardPayoffCalculator />} />
+          <Route path="/tax-bracket-calculator" element={<TaxBracketCalculator />} />
+          <Route path="/car-loan-calculator" element={<CarLoanCalculator />} />
+          <Route path="/savings-goal-calculator" element={<SavingsGoalCalculator />} />
+          <Route path="/debt-to-income-calculator" element={<DebtToIncomeCalculator />} />
+          <Route path="/investment-return-calculator" element={<InvestmentReturnCalculator />} />
+          <Route path="/net-worth-calculator" element={<NetWorthCalculator />} />
+          <Route path="/inflation-calculator" element={<InflationCalculator />} />
+          <Route path="/salary-calculator" element={<SalaryCalculator />} />
+          <Route path="/capital-gains-tax-calculator" element={<CapitalGainsTaxCalculator />} />
+          <Route path="/budget-planner" element={<BudgetPlannerCalculator />} />
+          <Route path="/break-even-calculator" element={<BreakEvenCalculator />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/blog" element={<BlogList />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
+        </Route>
+      </Routes>
+    </Suspense>
   )
 }

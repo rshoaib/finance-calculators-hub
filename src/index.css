@@ -1075,3 +1075,133 @@ a:hover {
     grid-template-columns: 1fr;
   }
 }
+
+/* --- Light Theme --- */
+[data-theme="light"] {
+  --bg-primary: #f8fafc;
+  --bg-secondary: #f1f5f9;
+  --bg-card: rgba(255, 255, 255, 0.9);
+  --bg-card-hover: rgba(241, 245, 249, 0.95);
+  --bg-glass: rgba(241, 245, 249, 0.6);
+  --bg-input: rgba(0, 0, 0, 0.04);
+
+  --border-color: rgba(0, 0, 0, 0.1);
+  --border-glow: rgba(16, 185, 129, 0.4);
+
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+
+  --gradient-card: linear-gradient(145deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.8) 100%);
+  --gradient-hero: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%);
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.1);
+  --shadow-glow: 0 0 20px rgba(16, 185, 129, 0.1);
+}
+
+[data-theme="light"] .header {
+  background: rgba(248, 250, 252, 0.9);
+}
+
+[data-theme="light"] .ad-slot {
+  background: rgba(0, 0, 0, 0.02);
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .form-select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23475569' d='M2 4l4 4 4-4'/%3E%3C/svg%3E");
+}
+
+/* --- Theme Toggle --- */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: var(--bg-input);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-full);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.theme-toggle:hover {
+  color: var(--accent-primary);
+  border-color: var(--accent-primary);
+  background: rgba(16, 185, 129, 0.08);
+}
+
+/* --- Share & Export Buttons --- */
+.share-results {
+  display: flex;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.btn-share {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  background: var(--bg-input);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  font-family: var(--font-family);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn-share:hover {
+  color: var(--accent-primary);
+  border-color: var(--accent-primary);
+  background: rgba(16, 185, 129, 0.08);
+}
+
+/* --- Spinner Animation --- */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* --- Print Styles --- */
+@media print {
+  .header, .footer, .ad-slot, .page-sidebar,
+  .btn-calculate, .btn-share, .share-results,
+  .theme-toggle, .breadcrumb, .seo-content,
+  .related-calcs, .category-filter, .hero {
+    display: none !important;
+  }
+
+  .page-with-sidebar {
+    display: block !important;
+  }
+
+  body {
+    background: white !important;
+    color: #111 !important;
+  }
+
+  .card, .result-card, .chart-container, .results-panel {
+    border: 1px solid #ddd !important;
+    background: white !important;
+    box-shadow: none !important;
+  }
+
+  .result-value, .result-label, .calc-header h1, .calc-header p {
+    -webkit-text-fill-color: initial !important;
+    background: none !important;
+    color: #111 !important;
+  }
+
+  .result-value.accent {
+    color: #10b981 !important;
+    -webkit-text-fill-color: initial !important;
+  }
+}

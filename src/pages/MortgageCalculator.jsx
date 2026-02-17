@@ -4,6 +4,8 @@ import SEO from '../components/SEO'
 import AdSlot from '../components/AdSlot'
 import Breadcrumb from '../components/Breadcrumb'
 import RelatedCalculators from '../components/RelatedCalculators'
+import ShareResults from '../components/ShareResults'
+import ExportPDF from '../components/ExportPDF'
 import { formatCurrency } from '../utils/formatters'
 
 const COLORS = ['#10b981', '#3b82f6', '#f59e0b']
@@ -74,7 +76,7 @@ export default function MortgageCalculator() {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
     name: 'Mortgage Calculator',
-    url: 'https://financecalc.app/mortgage-calculator',
+    url: 'https://mycalcfinance.com/mortgage-calculator',
     description: 'Free mortgage calculator — calculate monthly payments, total interest, and view amortization schedule.',
     applicationCategory: 'FinanceApplication',
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
@@ -157,6 +159,11 @@ export default function MortgageCalculator() {
                 <div className="result-label">Loan Amount</div>
                 <div className="result-value">{formatCurrency(results.principal)}</div>
               </div>
+            </div>
+
+            <div className="share-results">
+              <ShareResults title="Mortgage Calculator Results" resultsSummary={`Monthly Payment: ${formatCurrency(results.monthlyPayment)}\nTotal Interest: ${formatCurrency(results.totalInterest)}\nTotal Cost: ${formatCurrency(results.totalPaid + results.downPaymentAmount)}\nLoan Amount: ${formatCurrency(results.principal)}`} />
+              <ExportPDF />
             </div>
 
             {/* Pie Chart */}

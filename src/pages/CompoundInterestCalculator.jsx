@@ -60,7 +60,7 @@ export default function CompoundInterestCalculator() {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
     name: 'Compound Interest Calculator',
-    url: 'https://financecalc.app/compound-interest-calculator',
+    url: 'https://mycalcfinance.com/compound-interest-calculator',
     description: 'Free compound interest calculator with monthly contributions and growth projections.',
     applicationCategory: 'FinanceApplication',
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
