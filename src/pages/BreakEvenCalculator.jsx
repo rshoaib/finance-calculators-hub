@@ -46,16 +46,23 @@ export default function BreakEvenCalculator() {
   }
 
   const faqs = [
-    { question: 'What is break-even analysis?', answer: 'Break-even analysis determines the point where total revenue equals total costs, meaning you make neither a profit nor a loss. It helps you understand the minimum sales needed to cover costs.' },
-    { question: 'What is contribution margin?', answer: 'Contribution margin is the selling price per unit minus the variable cost per unit. It represents how much each unit sold contributes toward covering fixed costs and then generating profit.' },
-    { question: 'How can I lower my break-even point?', answer: 'You can lower your break-even by reducing fixed costs, lowering variable costs per unit, or increasing your selling price — or a combination of all three.' },
+    { question: 'What is break-even analysis?', answer: 'Break-even analysis determines the exact point where total revenue equals total costs, meaning you make neither a profit nor a loss. It is a critical planning tool for startups, new products, and pricing decisions. By knowing your break-even point, you can set realistic sales targets and assess whether a business idea is financially viable.' },
+    { question: 'What is contribution margin?', answer: 'Contribution margin is the selling price per unit minus the variable cost per unit. It represents how much each unit sold contributes toward covering fixed costs and generating profit. A higher contribution margin means you reach break-even faster. For example, if you sell a product for $50 with $25 in variable costs, your contribution margin is $25 per unit.' },
+    { question: 'How can I lower my break-even point?', answer: 'You can lower your break-even point by: (1) reducing fixed costs (negotiate rent, cut unnecessary subscriptions), (2) lowering variable costs per unit (find cheaper suppliers, improve efficiency), or (3) increasing your selling price. Combining all three strategies has the greatest impact.' },
+    { question: 'What is the margin of safety?', answer: 'The margin of safety is the difference between your actual (or expected) sales and your break-even point. It shows how much sales can drop before you start losing money. For example, if your break-even is 400 units and you sell 600, your margin of safety is 200 units (33%). A higher margin of safety indicates lower business risk.' },
+    { question: 'How do fixed and variable costs differ?', answer: 'Fixed costs remain the same regardless of how many units you produce (rent, salaries, insurance). Variable costs change proportionally with production volume (materials, shipping, commissions). Understanding this distinction is essential because it determines your contribution margin and break-even point.' },
+  ]
+
+  const jsonLd = [
+    { '@context': 'https://schema.org', '@type': 'WebApplication', name: 'Break-Even Calculator', applicationCategory: 'FinanceApplication', offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' } },
+    { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.question, acceptedAnswer: { '@type': 'Answer', text: f.answer } })) },
   ]
 
   return (
     <div className="page-with-sidebar">
       <div className="page-main">
-        <SEO title="Break-Even Calculator — Find Your Profit Point" description="Free break-even calculator. Find how many units you need to sell to cover costs and start making profit." canonical="/break-even-calculator"
-          jsonLd={{ '@context': 'https://schema.org', '@type': 'WebApplication', name: 'Break-Even Calculator', applicationCategory: 'FinanceApplication', offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' } }} faqs={faqs} />
+        <SEO title="Break-Even Calculator — Find Your Profit Point" description="Free break-even calculator. Find how many units you need to sell to cover costs and start making profit."
+          canonical="/break-even-calculator" jsonLd={jsonLd} />
         <Breadcrumb items={[{ label: 'Break-Even Calculator' }]} />
 
         <div className="calc-header">
@@ -135,15 +142,63 @@ export default function BreakEvenCalculator() {
 
         <section className="seo-content">
           <h2>Understanding Break-Even Analysis</h2>
-          <p>Break-even analysis is essential for any business — whether you're launching a product, setting prices, or evaluating a new venture. It tells you exactly how many units you need to sell before you start making profit.</p>
-          <h3>Key Formulas</h3>
+          <p>
+            Break-even analysis is one of the most essential tools in business finance. It tells you exactly how many
+            units you must sell — or how much revenue you need — to cover all your costs before you start making a
+            profit. Whether you're launching a new product, evaluating a side hustle, or setting prices for an existing
+            business, knowing your break-even point helps you make data-driven decisions and avoid costly mistakes.
+          </p>
+
+          <h3>Break-Even Formulas</h3>
           <ul>
-            <li><strong>Break-Even Units</strong> = Fixed Costs ÷ Contribution Margin per Unit</li>
-            <li><strong>Contribution Margin</strong> = Selling Price − Variable Cost per Unit</li>
+            <li><strong>Contribution Margin</strong> = Selling Price per Unit − Variable Cost per Unit</li>
+            <li><strong>Break-Even Units</strong> = Fixed Costs ÷ Contribution Margin</li>
             <li><strong>Break-Even Revenue</strong> = Break-Even Units × Selling Price</li>
+            <li><strong>Margin of Safety</strong> = (Actual Sales − Break-Even Sales) ÷ Actual Sales × 100</li>
           </ul>
-          <h3>Using Break-Even in Planning</h3>
-          <p>Pair this with your <a href="/investment-return-calculator">investment return analysis</a> and <a href="/savings-goal-calculator">savings goals</a> to build a complete financial picture for your business or side project.</p>
+
+          <h3>Worked Example</h3>
+          <p>
+            A small business has <strong>$10,000 in monthly fixed costs</strong> (rent, salaries, software).
+            Each unit costs <strong>$25 to produce</strong> and sells for <strong>$50</strong>:
+          </p>
+          <ul>
+            <li>Contribution margin: <strong>$25 per unit</strong> ($50 − $25)</li>
+            <li>Break-even units: <strong>400 units/month</strong> ($10,000 ÷ $25)</li>
+            <li>Break-even revenue: <strong>$20,000/month</strong></li>
+            <li>If they sell 600 units, margin of safety: <strong>33%</strong> — sales can drop by a third before losing money</li>
+          </ul>
+
+          <h3>Key Business Terms</h3>
+          <dl>
+            <dt><strong>Fixed Costs</strong></dt>
+            <dd>Expenses that remain constant regardless of production volume: rent, salaries, insurance, software subscriptions.</dd>
+            <dt><strong>Variable Costs</strong></dt>
+            <dd>Expenses that change proportionally with units produced: raw materials, packaging, shipping, sales commissions.</dd>
+            <dt><strong>Contribution Margin</strong></dt>
+            <dd>The amount each unit sold contributes toward covering fixed costs and generating profit.</dd>
+            <dt><strong>Margin of Safety</strong></dt>
+            <dd>How far sales can fall before reaching the break-even point. Higher is better — it means less business risk.</dd>
+            <dt><strong>Operating Leverage</strong></dt>
+            <dd>A company with high fixed costs and low variable costs has high operating leverage — profits grow quickly above break-even but losses mount quickly below it.</dd>
+          </dl>
+
+          <h3>Strategies to Improve Profitability</h3>
+          <ul>
+            <li><strong>Raise prices strategically:</strong> Even a 10% price increase dramatically lowers break-even if demand stays stable</li>
+            <li><strong>Negotiate fixed costs:</strong> Renegotiate rent, switch to cheaper software, or hire contractors instead of full-time employees</li>
+            <li><strong>Reduce variable costs:</strong> Buy materials in bulk, automate production steps, or find more efficient suppliers</li>
+            <li><strong>Increase volume:</strong> More units sold above break-even means more profit per unit due to fixed cost absorption</li>
+            <li><strong>Diversify revenue streams:</strong> Add complementary products to spread fixed costs across more revenue sources</li>
+          </ul>
+
+          <h3>Frequently Asked Questions</h3>
+          {faqs.map((faq, i) => (
+            <div key={i}>
+              <h4>{faq.question}</h4>
+              <p>{faq.answer}</p>
+            </div>
+          ))}
         </section>
       </div>
       <aside className="page-sidebar">

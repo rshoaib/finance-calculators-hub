@@ -31,16 +31,23 @@ export default function BudgetPlannerCalculator() {
   }
 
   const faqs = [
-    { question: 'What is the 50/30/20 budget rule?', answer: 'Allocate 50% of after-tax income to needs, 30% to wants, and 20% to savings and debt repayment.' },
-    { question: 'What counts as a need vs a want?', answer: 'Needs are essentials: housing, groceries, utilities, insurance. Wants are non-essentials: dining out, entertainment, subscriptions.' },
-    { question: 'What if I can\'t save 20%?', answer: 'Start with whatever you can. Even 5% is a great start. Increase gradually as income grows or expenses shrink.' },
+    { question: 'What is the 50/30/20 budget rule?', answer: 'The 50/30/20 rule, popularized by Senator Elizabeth Warren, allocates 50% of after-tax income to needs (housing, groceries, utilities, insurance), 30% to wants (entertainment, dining out, subscriptions), and 20% to savings and debt repayment. It provides a simple framework without requiring you to track every dollar.' },
+    { question: 'What counts as a need vs a want?', answer: 'Needs are essential expenses you cannot avoid: housing/rent, groceries, utilities, transportation to work, minimum debt payments, and health insurance. Wants are non-essential spending that improves quality of life: dining out, entertainment, subscriptions, travel, and hobbies. The distinction can be subjective — a basic phone plan is a need, but the latest smartphone upgrade is a want.' },
+    { question: 'What if I can\'t save 20%?', answer: 'Start with whatever percentage you can manage — even 5% is a powerful start. Automate your savings so they happen before you can spend the money. As income grows or expenses shrink, gradually increase your savings rate. The key is consistency over perfection. Many financial experts suggest increasing your savings rate by 1% every six months.' },
+    { question: 'What is zero-based budgeting?', answer: 'Zero-based budgeting assigns every dollar of income a specific job — spending, saving, or debt repayment — so your income minus all allocations equals exactly zero. Unlike the 50/30/20 rule, it requires detailed tracking but gives you maximum control over your money. Apps like YNAB (You Need A Budget) use this approach.' },
+    { question: 'How should I adjust the 50/30/20 rule for my situation?', answer: 'High-cost-of-living areas may require 60% or more for needs. If you have aggressive debt payoff goals, try 50/20/30 (bumping savings/debt to 30%). High earners might use 40/30/30 to accelerate wealth building. The percentages are guidelines — adjust them to fit your life stage, goals, and financial obligations.' },
+  ]
+
+  const jsonLd = [
+    { '@context': 'https://schema.org', '@type': 'WebApplication', name: 'Budget Planner', applicationCategory: 'FinanceApplication', offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' } },
+    { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.question, acceptedAnswer: { '@type': 'Answer', text: f.answer } })) },
   ]
 
   return (
     <div className="page-with-sidebar">
       <div className="page-main">
         <SEO title="Budget Planner — 50/30/20 Rule Calculator" description="Free budget planner using the 50/30/20 rule. Allocate your monthly income between needs, wants, and savings." canonical="/budget-planner"
-          jsonLd={{ '@context': 'https://schema.org', '@type': 'WebApplication', name: 'Budget Planner', applicationCategory: 'FinanceApplication', offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' } }} faqs={faqs} />
+          jsonLd={jsonLd} />
         <Breadcrumb items={[{ label: 'Budget Planner' }]} />
 
         <div className="calc-header">
@@ -112,16 +119,53 @@ export default function BudgetPlannerCalculator() {
 
         <section className="seo-content">
           <h2>The 50/30/20 Rule Explained</h2>
-          <p>Popularized by Senator Elizabeth Warren, this rule provides a simple framework without requiring you to track every dollar.</p>
-          <h3>How to Get Started</h3>
+          <p>
+            Popularized by Senator Elizabeth Warren in her book <em>All Your Worth</em>, the 50/30/20 rule is one of
+            the simplest and most effective budgeting frameworks. It divides your after-tax income into three
+            categories — needs, wants, and savings — giving you a clear financial roadmap without the burden of
+            tracking every single purchase. This calculator instantly shows you where your money should go each month.
+          </p>
+
+          <h3>Worked Example</h3>
+          <p>
+            With a <strong>$5,000 monthly take-home income</strong>:
+          </p>
           <ul>
-            <li>Calculate your <a href="/salary-calculator">after-tax income</a> first</li>
-            <li>List fixed bills (housing, utilities) as core needs</li>
-            <li>Automate 20% into a <a href="/savings-goal-calculator">savings account</a> or <a href="/retirement-calculator">retirement fund</a></li>
-            <li>Spend the remaining 30% guilt-free on wants</li>
+            <li><strong>Needs (50%):</strong> $2,500 — rent/mortgage, groceries, utilities, insurance, minimum debt payments</li>
+            <li><strong>Wants (30%):</strong> $1,500 — dining out, entertainment, subscriptions, shopping, travel</li>
+            <li><strong>Savings (20%):</strong> $1,000 — emergency fund, retirement contributions, investments, extra debt payoff</li>
           </ul>
-          <h3>When to Adjust</h3>
-          <p>High-cost area? Needs might take 60%. Aggressively paying down <a href="/credit-card-payoff-calculator">credit card debt</a>? Bump savings to 30%.</p>
+
+          <h3>Key Budgeting Terms</h3>
+          <dl>
+            <dt><strong>Needs (50%)</strong></dt>
+            <dd>Essential expenses you cannot avoid: housing, groceries, utilities, transportation, insurance, and minimum debt payments.</dd>
+            <dt><strong>Wants (30%)</strong></dt>
+            <dd>Non-essential spending: dining, entertainment, subscriptions, and hobbies. These improve quality of life but aren't required for survival.</dd>
+            <dt><strong>Savings (20%)</strong></dt>
+            <dd>Money set aside for future goals: emergency fund, retirement, investments, and extra debt payoff beyond minimums.</dd>
+            <dt><strong>Pay Yourself First</strong></dt>
+            <dd>Automatically transfer savings before spending on anything else. This ensures your financial goals are always funded.</dd>
+            <dt><strong>Sinking Fund</strong></dt>
+            <dd>Setting aside money monthly for a future planned expense (car maintenance, vacations, holiday gifts) so it doesn't blow your budget.</dd>
+          </dl>
+
+          <h3>Budget Optimization Tips</h3>
+          <ul>
+            <li><strong>Calculate your <a href="/salary-calculator">after-tax income</a> first:</strong> The 50/30/20 rule works on take-home pay, not gross salary</li>
+            <li><strong>Automate savings:</strong> Set up automatic transfers to a <a href="/savings-goal-calculator">savings account</a> on payday</li>
+            <li><strong>Track for one month:</strong> Before budgeting, track all spending to understand your current habits</li>
+            <li><strong>Review quarterly:</strong> Life changes — reassess your allocations every 3 months</li>
+            <li><strong>Adjust for debt:</strong> If paying down <a href="/credit-card-payoff-calculator">credit card debt</a>, consider a 50/20/30 split (30% to savings/debt)</li>
+          </ul>
+
+          <h3>Frequently Asked Questions</h3>
+          {faqs.map((faq, i) => (
+            <div key={i}>
+              <h4>{faq.question}</h4>
+              <p>{faq.answer}</p>
+            </div>
+          ))}
         </section>
       </div>
       <aside className="page-sidebar">

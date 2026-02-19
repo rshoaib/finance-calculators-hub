@@ -45,15 +45,30 @@ export default function LoanEMICalculator() {
     setInputs(prev => ({ ...prev, [field]: field === 'tenureType' ? value : (parseFloat(value) || 0) }))
   }
 
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'WebApplication',
-    name: 'Loan EMI Calculator',
-    url: 'https://mycalcfinance.com/emi-calculator',
-    description: 'Free EMI calculator for personal loans, car loans, and education loans.',
-    applicationCategory: 'FinanceApplication',
-    offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
-  }
+  const faqs = [
+    { question: 'What does EMI stand for?', answer: 'EMI stands for Equated Monthly Installment — a fixed payment amount that a borrower pays to a lender on a specified date each month. Each EMI payment includes both principal repayment and interest charges, structured so the loan is fully repaid by the end of the tenure.' },
+    { question: 'What is the difference between flat rate and reducing balance interest?', answer: 'Flat rate interest is calculated on the original loan amount for the entire tenure, making it more expensive. Reducing balance (diminishing balance) calculates interest only on the outstanding principal, which decreases with each payment. A 10% flat rate is roughly equivalent to a 17-18% reducing balance rate.' },
+    { question: 'Can I prepay my loan to reduce total interest?', answer: 'Yes, most lenders allow partial or full prepayment. Prepaying reduces your outstanding principal, which means less interest accrues in future months. Some lenders charge a prepayment penalty (typically 2-4% of the prepaid amount), so check your loan agreement before prepaying.' },
+    { question: 'How does loan tenure affect my EMI?', answer: 'A longer tenure reduces your monthly EMI but increases the total interest paid over the life of the loan. A shorter tenure means higher monthly payments but significantly less total interest. For example, a $50,000 loan at 8% costs $6,081 interest over 3 years vs. $16,480 over 7 years.' },
+    { question: 'What credit score do I need for the best loan rates?', answer: 'Generally, a credit score of 750 or above qualifies you for the best interest rates. Scores between 650-749 may still qualify but at higher rates. Below 650, you may face difficulty getting approved or receive rates 3-5% higher than prime borrowers.' },
+  ]
+
+  const jsonLd = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebApplication',
+      name: 'Loan EMI Calculator',
+      url: 'https://mycalcfinance.com/emi-calculator',
+      description: 'Free EMI calculator for personal loans, car loans, and education loans.',
+      applicationCategory: 'FinanceApplication',
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.question, acceptedAnswer: { '@type': 'Answer', text: f.answer } })),
+    },
+  ]
 
   return (
     <div className="page-with-sidebar">
@@ -142,24 +157,67 @@ export default function LoanEMICalculator() {
         )}
 
         <section className="seo-content">
-          <h2>What is EMI?</h2>
+          <h2>What Is an EMI (Equated Monthly Installment)?</h2>
           <p>
-            EMI stands for Equated Monthly Installment. It is the fixed payment amount a borrower pays to a lender
-            at a specified date each month. EMIs cover both interest and principal, structured so the loan is fully
-            repaid by the end of the tenure.
+            An EMI, or Equated Monthly Installment, is the fixed payment amount a borrower makes to a lender each month
+            until the loan is fully repaid. Each EMI consists of two components: a portion that goes toward repaying the
+            principal loan amount, and a portion that covers the interest charges. In the early months of a loan, a larger
+            share of the EMI goes toward interest. As the outstanding balance decreases over the loan tenure, more of each
+            payment is applied to the principal — this is known as the reducing balance method.
           </p>
-          <h3>EMI Formula</h3>
+
+          <h3>The EMI Formula</h3>
           <p>
-            The EMI is calculated using: <strong>EMI = P × r × (1 + r)ⁿ / ((1 + r)ⁿ – 1)</strong>, where P is the principal
-            loan amount, r is the monthly interest rate, and n is the number of monthly installments.
+            EMI is calculated using: <strong>EMI = P × r × (1 + r)<sup>n</sup> / [(1 + r)<sup>n</sup> – 1]</strong>, where:
           </p>
-          <h3>Tips to Reduce Your EMI</h3>
           <ul>
-            <li>Negotiate a lower interest rate with your lender</li>
-            <li>Opt for a longer loan tenure (increases total interest but lowers monthly payment)</li>
-            <li>Make a larger down payment to reduce the principal</li>
-            <li>Maintain a good credit score for better rates</li>
+            <li><strong>P</strong> = Principal loan amount</li>
+            <li><strong>r</strong> = Monthly interest rate (annual rate ÷ 12)</li>
+            <li><strong>n</strong> = Total number of monthly installments (tenure in months)</li>
           </ul>
+
+          <h3>Worked Example</h3>
+          <p>
+            For a <strong>$50,000 personal loan</strong> at <strong>8% annual interest</strong> for <strong>5 years</strong> (60 months):
+          </p>
+          <ul>
+            <li>Monthly interest rate: 0.08 ÷ 12 = <strong>0.00667</strong></li>
+            <li>EMI = 50,000 × 0.00667 × (1.00667)<sup>60</sup> / [(1.00667)<sup>60</sup> – 1]</li>
+            <li>Monthly EMI: <strong>$1,014</strong></li>
+            <li>Total payment over 5 years: <strong>$60,831</strong></li>
+            <li>Total interest paid: <strong>$10,831</strong></li>
+          </ul>
+
+          <h3>Key Terms</h3>
+          <dl>
+            <dt><strong>Reducing Balance Method</strong></dt>
+            <dd>Interest is calculated on the outstanding loan balance after each payment, resulting in lower total interest compared to flat-rate calculation.</dd>
+            <dt><strong>Flat Rate Interest</strong></dt>
+            <dd>Interest calculated on the original loan amount for the full tenure. More expensive than reducing balance — a 10% flat rate equals roughly 17-18% reducing balance.</dd>
+            <dt><strong>Prepayment / Foreclosure</strong></dt>
+            <dd>Paying off part or all of the remaining loan balance before the scheduled end date. May incur a prepayment penalty.</dd>
+            <dt><strong>Processing Fee</strong></dt>
+            <dd>A one-time fee charged by the lender to process your loan application, typically 1-3% of the loan amount.</dd>
+            <dt><strong>Loan Tenure</strong></dt>
+            <dd>The total duration of the loan, usually expressed in months or years. Longer tenure means lower EMI but higher total interest.</dd>
+          </dl>
+
+          <h3>Strategies to Reduce Your EMI Burden</h3>
+          <ul>
+            <li><strong>Negotiate a lower rate:</strong> Even a 0.5% reduction can save thousands over the loan tenure</li>
+            <li><strong>Increase your down payment:</strong> A larger down payment reduces the principal and thus the EMI</li>
+            <li><strong>Opt for a longer tenure:</strong> Extends payments but lowers monthly outflow (increases total interest)</li>
+            <li><strong>Maintain a high credit score:</strong> Scores above 750 typically qualify for the best rates</li>
+            <li><strong>Make partial prepayments:</strong> Periodic lump-sum payments reduce outstanding principal and total interest</li>
+          </ul>
+
+          <h3>Frequently Asked Questions</h3>
+          {faqs.map((faq, i) => (
+            <div key={i}>
+              <h4>{faq.question}</h4>
+              <p>{faq.answer}</p>
+            </div>
+          ))}
         </section>
       </div>
 

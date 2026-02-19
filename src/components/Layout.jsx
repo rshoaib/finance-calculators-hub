@@ -46,6 +46,16 @@ export default function Layout() {
         <p style={{ marginTop: '0.5rem', fontSize: '0.75rem' }}>
           Disclaimer: These calculators are for informational purposes only. Consult a financial advisor for personalized advice.
         </p>
+        <div style={{ marginTop: '1rem', paddingTop: '1rem', borderTop: '1px solid var(--border, #e5e7eb)' }}>
+          <p style={{ fontSize: '0.7rem', color: '#9ca3af', marginBottom: '0.5rem' }}>Our Other Free Tools</p>
+          <div className="footer-links" style={{ fontSize: '0.75rem' }}>
+            <a href="https://dailysmartcalc.com" target="_blank" rel="noopener noreferrer">Smart Calculators</a>
+            <a href="https://onlineimageshrinker.com" target="_blank" rel="noopener noreferrer">Image Compressor</a>
+            <a href="https://legalpolicygen.com" target="_blank" rel="noopener noreferrer">Legal Policy Generator</a>
+            <a href="https://imrizwan.com" target="_blank" rel="noopener noreferrer">Developer Blog</a>
+            <a href="https://orderviachat.com" target="_blank" rel="noopener noreferrer">OrderViaChat</a>
+          </div>
+        </div>
       </footer>
     </div>
   )

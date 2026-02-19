@@ -46,6 +46,19 @@ export default function DebtToIncomeCalculator() {
     setInputs(prev => ({ ...prev, [field]: parseFloat(value) || 0 }))
   }
 
+  const faqs = [
+    { question: 'What is a good debt-to-income ratio?', answer: 'A DTI below 20% is considered excellent by most lenders and qualifies you for the best interest rates. A DTI between 20-36% is good and acceptable for most conventional loans. A DTI of 36-43% is fair — you may still qualify for FHA loans. Above 43% is considered high risk, and most lenders will deny conventional mortgage applications.' },
+    { question: 'What debts are included in DTI?', answer: 'DTI includes all recurring monthly debt payments: mortgage/rent, car loans, student loans, credit card minimum payments, personal loans, child support, and alimony. It does NOT include utilities, groceries, insurance premiums, phone bills, or other living expenses that are not debt obligations.' },
+    { question: 'What is the difference between front-end and back-end DTI?', answer: 'Front-end DTI (also called housing ratio) includes only housing-related costs — mortgage payment, property taxes, homeowners insurance, and HOA fees. Lenders typically want this below 28%. Back-end DTI includes ALL monthly debts and is the ratio this calculator computes. Lenders usually cap this at 36-43%.' },
+    { question: 'How can I lower my DTI ratio?', answer: 'You can lower your DTI by: (1) paying down existing debt (focus on highest payments first), (2) avoiding new debt, (3) increasing your income through raises, side jobs, or freelancing, (4) refinancing loans at lower rates to reduce monthly payments, and (5) extending loan terms (though this increases total interest paid).' },
+    { question: 'Does DTI affect my credit score?', answer: 'DTI itself is not a factor in your credit score — credit bureaus do not know your income. However, the factors that create a high DTI (high credit utilization, many accounts with balances) DO affect your credit score. Lenders evaluate both your credit score AND DTI ratio when making lending decisions.' },
+  ]
+
+  const jsonLd = [
+    { '@context': 'https://schema.org', '@type': 'WebApplication', name: 'Debt-to-Income Calculator', applicationCategory: 'FinanceApplication', offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' } },
+    { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.question, acceptedAnswer: { '@type': 'Answer', text: f.answer } })) },
+  ]
+
   return (
     <div className="page-with-sidebar">
       <div className="page-main">
@@ -53,7 +66,7 @@ export default function DebtToIncomeCalculator() {
           title="Debt-to-Income Ratio Calculator — DTI Check"
           description="Free DTI calculator. Calculate your debt-to-income ratio, see your rating, and understand what lenders look for in mortgage and loan applications."
           canonical="/debt-to-income-calculator"
-          jsonLd={{ '@context': 'https://schema.org', '@type': 'WebApplication', name: 'Debt-to-Income Calculator', applicationCategory: 'FinanceApplication', offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' } }}
+          jsonLd={jsonLd}
         />
         <Breadcrumb items={[{ label: 'Debt-to-Income Calculator' }]} />
 
@@ -171,15 +184,72 @@ export default function DebtToIncomeCalculator() {
         )}
 
         <section className="seo-content">
-          <h2>What is Debt-to-Income Ratio?</h2>
-          <p>Your DTI ratio compares your monthly debt payments to your gross monthly income. Lenders use this to evaluate your ability to manage monthly payments and repay debts.</p>
-          <h3>DTI Thresholds for Loans</h3>
+          <h2>What Is Debt-to-Income Ratio (DTI)?</h2>
+          <p>
+            Your debt-to-income ratio is one of the most important numbers in personal finance. It compares your
+            total monthly debt payments to your gross monthly income, expressed as a percentage. Lenders use DTI
+            to evaluate your ability to manage monthly payments and determine whether you can afford to take on
+            additional debt, such as a mortgage, car loan, or personal loan.
+          </p>
+
+          <h3>DTI Formula</h3>
           <ul>
-            <li>Below 20% — Excellent. Best rates and loan options available</li>
-            <li>20-36% — Good. Qualifies for most conventional mortgages</li>
-            <li>36-43% — Fair. Maximum for most FHA loans</li>
-            <li>43%+ — Difficult to qualify for most loans</li>
+            <li><strong>DTI Ratio</strong> = (Total Monthly Debt Payments ÷ Gross Monthly Income) × 100</li>
           </ul>
+
+          <h3>Worked Example</h3>
+          <p>
+            With a <strong>$6,000 gross monthly income</strong> and monthly debts of:
+          </p>
+          <ul>
+            <li>Mortgage: $1,400</li>
+            <li>Car payment: $350</li>
+            <li>Student loans: $250</li>
+            <li>Credit cards: $150</li>
+            <li>Total monthly debt: <strong>$2,150</strong></li>
+            <li>DTI ratio: <strong>35.8%</strong> ($2,150 ÷ $6,000 × 100)</li>
+            <li>Rating: <strong>Good</strong> — qualifies for most conventional mortgages</li>
+          </ul>
+
+          <h3>DTI Thresholds by Lender Type</h3>
+          <ul>
+            <li><strong>Below 20%:</strong> Excellent — best rates, most loan options, strong financial health</li>
+            <li><strong>20-36%:</strong> Good — qualifies for most conventional <a href="/mortgage-calculator">mortgages</a> and loans</li>
+            <li><strong>36-43%:</strong> Fair — may qualify for FHA loans; consider reducing debt</li>
+            <li><strong>43-50%:</strong> High risk — limited options; VA and some FHA loans may still be available</li>
+            <li><strong>50%+:</strong> Very high — unlikely to qualify; focus on aggressive debt reduction</li>
+          </ul>
+
+          <h3>Key DTI Terms</h3>
+          <dl>
+            <dt><strong>Front-End DTI (Housing Ratio)</strong></dt>
+            <dd>Only includes housing costs: mortgage, property taxes, insurance, HOA. Lenders typically want this below 28%.</dd>
+            <dt><strong>Back-End DTI (Total DTI)</strong></dt>
+            <dd>Includes all monthly debt obligations — this is the ratio most commonly referenced and what this calculator computes.</dd>
+            <dt><strong>Debt Consolidation</strong></dt>
+            <dd>Combining multiple debts into a single loan with a lower interest rate, potentially lowering your monthly payments and DTI.</dd>
+            <dt><strong>Debt Snowball Method</strong></dt>
+            <dd>Paying off debts smallest-to-largest for psychological wins. Doesn't minimize interest but builds momentum.</dd>
+            <dt><strong>Debt Avalanche Method</strong></dt>
+            <dd>Paying off debts by highest interest rate first. Mathematically optimal for saving the most on interest.</dd>
+          </dl>
+
+          <h3>Strategies to Lower Your DTI</h3>
+          <ul>
+            <li><strong>Pay down <a href="/credit-card-payoff-calculator">credit card balances</a>:</strong> They usually have the highest minimum payments relative to balance</li>
+            <li><strong>Refinance high-rate loans:</strong> A lower rate reduces monthly payments, improving your DTI immediately</li>
+            <li><strong>Increase your income:</strong> Even a side job adding $500/month can significantly improve your ratio</li>
+            <li><strong>Avoid taking on new debt:</strong> Each new account adds to your monthly obligations</li>
+            <li><strong>Use the <a href="/budget-planner">50/30/20 budget</a>:</strong> Allocate 20%+ to aggressive debt payoff to steadily improve DTI</li>
+          </ul>
+
+          <h3>Frequently Asked Questions</h3>
+          {faqs.map((faq, i) => (
+            <div key={i}>
+              <h4>{faq.question}</h4>
+              <p>{faq.answer}</p>
+            </div>
+          ))}
         </section>
       </div>
 

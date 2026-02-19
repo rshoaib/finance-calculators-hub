@@ -24,3 +24,5 @@ npm-debug.log*
 
 # build artifacts
 build_output.txt
+.vercel
+.env*.local

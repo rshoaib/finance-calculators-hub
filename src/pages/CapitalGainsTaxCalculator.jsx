@@ -89,9 +89,16 @@ export default function CapitalGainsTaxCalculator() {
   }
 
   const faqs = [
-    { question: 'What is the difference between short-term and long-term capital gains?', answer: 'Short-term capital gains (assets held less than 1 year) are taxed as ordinary income at your marginal tax rate. Long-term capital gains (held over 1 year) receive preferential rates of 0%, 15%, or 20% depending on your income.' },
-    { question: 'Can I offset capital gains with losses?', answer: 'Yes, capital losses can offset capital gains dollar-for-dollar. If losses exceed gains, you can deduct up to $3,000 of net losses against ordinary income per year, carrying forward any remaining losses.' },
-    { question: 'Do I pay capital gains tax on my primary home?', answer: 'If you\'ve lived in your home for at least 2 of the last 5 years, you can exclude up to $250,000 in gains ($500,000 if married filing jointly) from capital gains tax.' },
+    { question: 'What is the difference between short-term and long-term capital gains?', answer: 'Short-term capital gains apply to assets held less than 1 year and are taxed as ordinary income at your marginal tax rate (up to 37%). Long-term capital gains apply to assets held over 1 year and receive preferential rates of 0%, 15%, or 20% depending on your taxable income. This distinction can mean a 20%+ difference in tax rate.' },
+    { question: 'Can I offset capital gains with losses?', answer: 'Yes, capital losses offset capital gains dollar-for-dollar through a process called tax-loss harvesting. Short-term losses first offset short-term gains, then long-term gains. If net losses exceed gains, you can deduct up to $3,000 ($1,500 if married filing separately) against ordinary income per year, carrying forward any remaining losses indefinitely.' },
+    { question: 'Do I pay capital gains tax on my primary home?', answer: 'If you have lived in your home as your primary residence for at least 2 of the last 5 years, you can exclude up to $250,000 in gains ($500,000 if married filing jointly) from capital gains tax under the Section 121 exclusion. This is one of the most valuable tax breaks available to homeowners.' },
+    { question: 'What is the Net Investment Income Tax (NIIT)?', answer: 'The NIIT is an additional 3.8% tax on investment income (capital gains, dividends, rental income) for individuals with modified AGI above $200,000 ($250,000 for married couples). This means top earners effectively pay 23.8% on long-term capital gains (20% + 3.8% NIIT).' },
+    { question: 'What is cost basis and why does it matter?', answer: 'Cost basis is the original value of an asset for tax purposes — typically what you paid for it, plus any commissions or fees. Your capital gain (or loss) is calculated as: Sale Price − Cost Basis. Using the correct cost basis method (specific identification, FIFO, average cost) can significantly affect your tax liability.' },
+  ]
+
+  const jsonLd = [
+    { '@context': 'https://schema.org', '@type': 'WebApplication', name: 'Capital Gains Tax Calculator', applicationCategory: 'FinanceApplication', offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' } },
+    { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.question, acceptedAnswer: { '@type': 'Answer', text: f.answer } })) },
   ]
 
   return (
@@ -101,14 +108,7 @@ export default function CapitalGainsTaxCalculator() {
           title="Capital Gains Tax Calculator — Short-Term vs Long-Term"
           description="Free capital gains tax calculator. Compare short-term vs long-term capital gains tax rates and see how much you'll owe on investment profits."
           canonical="/capital-gains-tax-calculator"
-          jsonLd={{
-            '@context': 'https://schema.org',
-            '@type': 'WebApplication',
-            name: 'Capital Gains Tax Calculator',
-            applicationCategory: 'FinanceApplication',
-            offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
-          }}
-          faqs={faqs}
+          jsonLd={jsonLd}
         />
         <Breadcrumb items={[{ label: 'Capital Gains Tax Calculator' }]} />
 
@@ -210,20 +210,63 @@ export default function CapitalGainsTaxCalculator() {
 
         <section className="seo-content">
           <h2>Understanding Capital Gains Tax</h2>
-          <p>Capital gains tax applies when you sell an asset for more than you paid for it. The tax rate depends on how long you held the asset and your total income.</p>
+          <p>
+            Capital gains tax applies when you sell an asset — such as stocks, bonds, real estate, or cryptocurrency — for
+            more than you paid for it. The amount of tax you owe depends on two key factors: how long you held the asset
+            (short-term vs long-term) and your total taxable income. Understanding these rules can save you thousands
+            by timing your sales strategically and using available tax-saving strategies.
+          </p>
+
           <h3>2024 Long-Term Capital Gains Rates</h3>
           <ul>
-            <li><strong>0%</strong> — Single filers with taxable income up to $47,025</li>
-            <li><strong>15%</strong> — Single filers between $47,025 and $518,900</li>
-            <li><strong>20%</strong> — Single filers above $518,900</li>
+            <li><strong>0%:</strong> Single filers with taxable income up to $47,025 ($94,050 married)</li>
+            <li><strong>15%:</strong> Single filers $47,025 – $518,900 ($94,050 – $583,750 married)</li>
+            <li><strong>20%:</strong> Single filers above $518,900 ($583,750 married)</li>
+            <li><strong>Short-term gains:</strong> Taxed as ordinary income at your marginal <a href="/tax-bracket-calculator">tax bracket</a> rate</li>
           </ul>
+
+          <h3>Worked Example</h3>
+          <p>
+            You bought stock for <strong>$50,000</strong> and sold it for <strong>$85,000</strong> with
+            <strong>$85,000</strong> in other taxable income:
+          </p>
+          <ul>
+            <li>Capital gain: <strong>$35,000</strong></li>
+            <li>Short-term tax (22% bracket): <strong>$7,700</strong></li>
+            <li>Long-term tax (15%): <strong>$5,250</strong></li>
+            <li>Savings by holding over 1 year: <strong>$2,450</strong></li>
+          </ul>
+
+          <h3>Key Capital Gains Terms</h3>
+          <dl>
+            <dt><strong>Cost Basis</strong></dt>
+            <dd>The original price you paid for an asset, including commissions and fees. Your gain is Sale Price − Cost Basis.</dd>
+            <dt><strong>Tax-Loss Harvesting</strong></dt>
+            <dd>Selling losing investments to offset gains. You can deduct up to $3,000 in net losses against ordinary income per year.</dd>
+            <dt><strong>1031 Exchange</strong></dt>
+            <dd>A tax-deferral strategy for real estate that allows you to roll capital gains into a "like-kind" property without paying tax.</dd>
+            <dt><strong>Net Investment Income Tax (NIIT)</strong></dt>
+            <dd>An additional 3.8% tax on investment income for high earners (AGI above $200,000 single / $250,000 married).</dd>
+            <dt><strong>Wash Sale Rule</strong></dt>
+            <dd>You cannot deduct a loss if you buy a "substantially identical" security within 30 days before or after the sale.</dd>
+          </dl>
+
           <h3>Tax-Saving Strategies</h3>
           <ul>
-            <li>Hold investments for over 1 year to qualify for lower long-term rates</li>
-            <li>Use tax-loss harvesting to offset gains with losses</li>
-            <li>Consider your total <a href="/tax-bracket-calculator">tax bracket</a> before selling</li>
-            <li>Track your cost basis for accurate <a href="/investment-return-calculator">investment return</a> calculations</li>
+            <li><strong>Hold over 1 year:</strong> Long-term rates (0/15/20%) are dramatically lower than short-term (up to 37%)</li>
+            <li><strong>Harvest losses:</strong> Sell losing positions to offset gains, then reinvest in similar (not identical) assets</li>
+            <li><strong>Use tax-advantaged accounts:</strong> Gains in Roth IRAs, 401(k)s, and HSAs are tax-free or tax-deferred</li>
+            <li><strong>Gift appreciated assets:</strong> Gifting stock to family members in lower brackets can reduce the family's total tax</li>
+            <li><strong>Track your cost basis:</strong> Calculate <a href="/investment-return-calculator">investment returns</a> accurately to avoid overpaying</li>
           </ul>
+
+          <h3>Frequently Asked Questions</h3>
+          {faqs.map((faq, i) => (
+            <div key={i}>
+              <h4>{faq.question}</h4>
+              <p>{faq.answer}</p>
+            </div>
+          ))}
         </section>
       </div>
 
@@ -234,3 +277,4 @@ export default function CapitalGainsTaxCalculator() {
     </div>
   )
 }
+

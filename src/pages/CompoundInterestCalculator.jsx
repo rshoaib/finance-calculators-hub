@@ -56,15 +56,30 @@ export default function CompoundInterestCalculator() {
     setInputs(prev => ({ ...prev, [field]: parseFloat(value) || 0 }))
   }
 
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'WebApplication',
-    name: 'Compound Interest Calculator',
-    url: 'https://mycalcfinance.com/compound-interest-calculator',
-    description: 'Free compound interest calculator with monthly contributions and growth projections.',
-    applicationCategory: 'FinanceApplication',
-    offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
-  }
+  const faqs = [
+    { question: 'What is compound interest?', answer: 'Compound interest is interest calculated on both the initial principal and the accumulated interest from previous periods. Unlike simple interest, which is only calculated on the principal, compound interest grows exponentially over time because you earn "interest on your interest."' },
+    { question: 'How does compounding frequency affect returns?', answer: 'The more frequently interest compounds (daily vs. monthly vs. annually), the more total interest you earn. Daily compounding yields slightly more than annual compounding because interest is calculated and added to the principal more often, giving you a marginally higher effective annual rate (EAR).' },
+    { question: 'What is the Rule of 72?', answer: 'The Rule of 72 is a quick mental math shortcut to estimate how long it takes to double your investment. Divide 72 by your annual interest rate. For example, at 8% returns, your money doubles in approximately 9 years (72 ÷ 8 = 9). This rule works best for rates between 4% and 12%.' },
+    { question: 'What is the difference between APR and APY?', answer: 'APR (Annual Percentage Rate) is the stated annual rate without accounting for compounding. APY (Annual Percentage Yield) includes the effect of compounding and represents the actual return you earn in a year. A 6% APR compounded monthly has an APY of about 6.17%.' },
+    { question: 'How much should I invest monthly to reach $1 million?', answer: 'At a 7% average annual return, investing approximately $850 per month will grow to about $1 million in 30 years. Starting earlier dramatically reduces the required monthly amount — at age 25, you need less than half what a 35-year-old needs.' },
+  ]
+
+  const jsonLd = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebApplication',
+      name: 'Compound Interest Calculator',
+      url: 'https://mycalcfinance.com/compound-interest-calculator',
+      description: 'Free compound interest calculator with monthly contributions and growth projections.',
+      applicationCategory: 'FinanceApplication',
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.question, acceptedAnswer: { '@type': 'Answer', text: f.answer } })),
+    },
+  ]
 
   return (
     <div className="page-with-sidebar">
@@ -165,23 +180,75 @@ export default function CompoundInterestCalculator() {
         )}
 
         <section className="seo-content">
-          <h2>Understanding Compound Interest</h2>
+          <h2>What Is Compound Interest?</h2>
           <p>
-            Compound interest is when you earn interest on both your initial investment and on previously earned interest.
-            Albert Einstein reportedly called it the "eighth wonder of the world." Over time, compounding creates exponential growth
-            in your investments.
+            Compound interest is the process of earning interest on both your initial principal and on the accumulated interest
+            from previous periods. Unlike simple interest, which calculates interest only on the original deposit, compound
+            interest creates exponential growth — often called the "eighth wonder of the world." The concept of the
+            time value of money is built on compounding: a dollar today is worth more than a dollar tomorrow because it can
+            earn interest immediately.
           </p>
+
           <h3>The Compound Interest Formula</h3>
           <p>
-            <strong>FV = P(1 + r/n)^(nt)</strong> — where P is the principal, r is the annual rate, n is compounding frequency,
-            and t is time in years. More frequent compounding (daily vs annual) yields slightly higher returns.
+            The standard compound interest formula is: <strong>FV = P × (1 + r/n)<sup>nt</sup></strong>, where:
           </p>
-          <h3>Why Start Investing Early?</h3>
           <ul>
-            <li>10 extra years of compounding can double your final value</li>
-            <li>Even small monthly contributions grow significantly over 20+ years</li>
-            <li>The "Rule of 72" — divide 72 by your interest rate to estimate doubling time</li>
+            <li><strong>P</strong> = Principal (initial investment amount)</li>
+            <li><strong>r</strong> = Annual interest rate (as a decimal)</li>
+            <li><strong>n</strong> = Compounding frequency (e.g., 12 for monthly, 365 for daily)</li>
+            <li><strong>t</strong> = Time period in years</li>
+            <li><strong>FV</strong> = Future value (maturity value)</li>
           </ul>
+          <p>
+            For investments with regular monthly contributions, the future value of the annuity is added:
+            <strong> FV<sub>annuity</sub> = C × [(1 + r/12)<sup>12t</sup> – 1] / (r/12)</strong>, where C is the monthly
+            contribution amount.
+          </p>
+
+          <h3>Worked Example</h3>
+          <p>
+            Suppose you invest <strong>$10,000</strong> at <strong>7% annual return</strong>, compounded monthly, with
+            <strong> $500 monthly contributions</strong> for <strong>20 years</strong>:
+          </p>
+          <ul>
+            <li>Future value of principal: $10,000 × (1 + 0.07/12)<sup>240</sup> = <strong>$40,387</strong></li>
+            <li>Future value of contributions: $500 × [(1.00583)<sup>240</sup> – 1] / 0.00583 = <strong>$260,464</strong></li>
+            <li>Total future value: <strong>$300,851</strong></li>
+            <li>Total contributions: $10,000 + ($500 × 240) = <strong>$130,000</strong></li>
+            <li>Interest earned: <strong>$170,851</strong> — more than your total contributions!</li>
+          </ul>
+
+          <h3>Key Terms</h3>
+          <dl>
+            <dt><strong>Principal</strong></dt>
+            <dd>The initial amount of money invested or deposited before earning interest.</dd>
+            <dt><strong>Compounding Frequency</strong></dt>
+            <dd>How often interest is calculated and added to the balance — annually, quarterly, monthly, or daily.</dd>
+            <dt><strong>APR vs APY</strong></dt>
+            <dd>APR is the stated annual rate; APY (Annual Percentage Yield) reflects the actual return after accounting for compounding. A 6% APR compounded monthly equals a 6.17% APY.</dd>
+            <dt><strong>Rule of 72</strong></dt>
+            <dd>A quick estimate for doubling time: divide 72 by your annual interest rate. At 8%, money doubles in about 9 years.</dd>
+            <dt><strong>CAGR</strong></dt>
+            <dd>Compound Annual Growth Rate — the smoothed annual return that accounts for compounding over multiple years.</dd>
+          </dl>
+
+          <h3>Compounding Strategies to Grow Your Wealth</h3>
+          <ul>
+            <li><strong>Start early:</strong> 10 extra years of compounding can more than double your final portfolio value</li>
+            <li><strong>Increase contributions gradually:</strong> Boosting your monthly deposit by just 1% each year accelerates growth significantly</li>
+            <li><strong>Reinvest dividends:</strong> Automatically reinvesting dividends compounds your returns faster than taking them as cash</li>
+            <li><strong>Choose higher compounding frequency:</strong> Daily compounding earns slightly more than annual compounding on the same rate</li>
+            <li><strong>Minimize fees:</strong> A 1% annual fee can reduce your final balance by 25% or more over 30 years</li>
+          </ul>
+
+          <h3>Frequently Asked Questions</h3>
+          {faqs.map((faq, i) => (
+            <div key={i}>
+              <h4>{faq.question}</h4>
+              <p>{faq.answer}</p>
+            </div>
+          ))}
         </section>
       </div>
 

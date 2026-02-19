@@ -61,6 +61,19 @@ export default function RetirementCalculator() {
     setInputs(prev => ({ ...prev, [field]: parseFloat(value) || 0 }))
   }
 
+  const faqs = [
+    { question: 'What is the 4% rule for retirement?', answer: 'The 4% rule suggests that retirees can withdraw 4% of their total retirement savings in the first year, then adjust for inflation annually. Based on the Trinity Study, this approach has historically sustained a portfolio for at least 30 years. For example, a $1 million portfolio would provide $40,000 per year ($3,333/month) in retirement income.' },
+    { question: 'How much do I need to save for retirement?', answer: 'A common target is 25 times your desired annual retirement income (the inverse of the 4% rule). If you want $60,000/year in retirement, aim for $1.5 million. Fidelity recommends having 1x your salary saved by 30, 3x by 40, 6x by 50, 8x by 60, and 10x by 67.' },
+    { question: 'What is the difference between a 401(k) and an IRA?', answer: 'A 401(k) is employer-sponsored with higher contribution limits ($23,500 in 2025) and possible employer matching. An IRA is individually opened with lower limits ($7,000 in 2025). Both offer Traditional (tax-deductible contributions, taxed withdrawals) and Roth (after-tax contributions, tax-free withdrawals) options.' },
+    { question: 'Should I choose a Roth or Traditional retirement account?', answer: 'Choose Roth if you expect to be in a higher tax bracket in retirement — contributions are after-tax but withdrawals are tax-free. Choose Traditional if you are in a high tax bracket now and expect to be in a lower one later — contributions are tax-deductible but withdrawals are taxed. Many advisors recommend having both for tax diversification.' },
+    { question: 'What is sequence of returns risk?', answer: 'Sequence of returns risk is the danger that poor market performance in the early years of retirement can permanently damage your portfolio, even if long-term average returns are normal. A market crash in year 1-3 of retirement is much more devastating than one in year 10-15 because early withdrawals deplete your portfolio before it can recover.' },
+  ]
+
+  const jsonLd = [
+    { '@context': 'https://schema.org', '@type': 'WebApplication', name: 'Retirement Calculator', applicationCategory: 'FinanceApplication', offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' } },
+    { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.question, acceptedAnswer: { '@type': 'Answer', text: f.answer } })) },
+  ]
+
   return (
     <div className="page-with-sidebar">
       <div className="page-main">
@@ -68,7 +81,7 @@ export default function RetirementCalculator() {
           title="Retirement Calculator — Savings & Income Planner"
           description="Free retirement calculator. Plan your retirement savings, estimate your corpus, and calculate monthly retirement income using the 4% rule."
           canonical="/retirement-calculator"
-          jsonLd={{ '@context': 'https://schema.org', '@type': 'WebApplication', name: 'Retirement Calculator', applicationCategory: 'FinanceApplication', offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' } }}
+          jsonLd={jsonLd}
         />
         <Breadcrumb items={[{ label: 'Retirement Calculator' }]} />
 
@@ -160,17 +173,69 @@ export default function RetirementCalculator() {
         )}
 
         <section className="seo-content">
-          <h2>Planning for Retirement</h2>
-          <p>Retirement planning is one of the most important financial steps you can take. The earlier you start, the more time compound interest has to grow your wealth.</p>
-          <h3>The 4% Rule</h3>
-          <p>The 4% rule suggests withdrawing 4% of your retirement savings annually. This rate has historically allowed retirees to sustain their savings for 30+ years without running out of money.</p>
-          <h3>Retirement Savings Tips</h3>
+          <h2>How to Plan for Retirement</h2>
+          <p>
+            Retirement planning is the process of determining your future income needs and building a savings strategy
+            to meet them. The earlier you begin, the more time compound interest has to multiply your wealth. A solid
+            retirement plan considers your current age, target retirement age, expected investment returns, inflation,
+            and the safe withdrawal rate you'll use to draw income from your retirement corpus without depleting it.
+          </p>
+
+          <h3>The Retirement Corpus Formula</h3>
+          <p>
+            Your total retirement savings are built from two components:
+          </p>
           <ul>
-            <li>Start saving as early as possible — even small amounts compound significantly</li>
-            <li>Maximize employer 401(k) matching contributions (it's free money)</li>
-            <li>Consider Roth IRA for tax-free growth and withdrawals</li>
-            <li>Increase contributions by 1% each year as your income grows</li>
+            <li><strong>Future value of current savings:</strong> FV = PV × (1 + r/12)<sup>n</sup></li>
+            <li><strong>Future value of monthly contributions:</strong> FV = C × [(1 + r/12)<sup>n</sup> – 1] / (r/12)</li>
           </ul>
+          <p>
+            Where PV is your current savings, C is monthly contribution, r is expected annual return, and n is months until retirement.
+          </p>
+
+          <h3>Worked Example</h3>
+          <p>
+            A <strong>30-year-old</strong> with <strong>$25,000 saved</strong>, contributing <strong>$1,000/month</strong>,
+            expecting <strong>7% annual return</strong>, retiring at <strong>65</strong>:
+          </p>
+          <ul>
+            <li>Current savings grow to: <strong>$266,863</strong></li>
+            <li>Monthly contributions grow to: <strong>$1,714,063</strong></li>
+            <li>Total retirement corpus: <strong>$1,980,926</strong></li>
+            <li>Monthly income (4% rule): <strong>$6,603</strong></li>
+            <li>Inflation-adjusted value (3% inflation): <strong>$704,616</strong> in today's dollars</li>
+          </ul>
+
+          <h3>Key Retirement Terms</h3>
+          <dl>
+            <dt><strong>The 4% Rule (Safe Withdrawal Rate)</strong></dt>
+            <dd>Withdraw 4% of your portfolio in year one, then adjust for inflation. Historically sustains a portfolio for 30+ years.</dd>
+            <dt><strong>401(k)</strong></dt>
+            <dd>An employer-sponsored retirement plan with tax advantages and potential employer matching contributions. 2025 limit: $23,500.</dd>
+            <dt><strong>Roth IRA</strong></dt>
+            <dd>A retirement account where contributions are after-tax but withdrawals in retirement are completely tax-free. 2025 limit: $7,000.</dd>
+            <dt><strong>Sequence of Returns Risk</strong></dt>
+            <dd>The risk that poor market returns in early retirement will permanently damage your portfolio, even if average returns are normal.</dd>
+            <dt><strong>Asset Allocation</strong></dt>
+            <dd>How you divide investments among stocks, bonds, and cash. A common rule of thumb: subtract your age from 110 for your stock percentage.</dd>
+          </dl>
+
+          <h3>Retirement Savings Strategies</h3>
+          <ul>
+            <li><strong>Start as early as possible:</strong> A 25-year-old investing $500/month reaches $1M by 60; a 35-year-old needs $1,000/month</li>
+            <li><strong>Maximize employer matching:</strong> Not contributing enough to get the full match is leaving free money on the table</li>
+            <li><strong>Increase contributions with raises:</strong> Bump contributions 1-2% annually — you won't notice the difference</li>
+            <li><strong>Diversify tax exposure:</strong> Split between Traditional and Roth accounts for flexibility in retirement</li>
+            <li><strong>Account for healthcare costs:</strong> The average couple needs about $315,000 for healthcare in retirement</li>
+          </ul>
+
+          <h3>Frequently Asked Questions</h3>
+          {faqs.map((faq, i) => (
+            <div key={i}>
+              <h4>{faq.question}</h4>
+              <p>{faq.answer}</p>
+            </div>
+          ))}
         </section>
       </div>
 

@@ -43,9 +43,26 @@ export default function InflationCalculator() {
   }
 
   const faqs = [
-    { question: 'What is inflation?', answer: 'Inflation is the rate at which the general level of prices for goods and services rises over time, reducing the purchasing power of your money.' },
-    { question: 'What is a good inflation rate?', answer: 'Most central banks target an inflation rate of around 2% per year, which is considered healthy for economic growth without eroding purchasing power too quickly.' },
-    { question: 'How does inflation affect my savings?', answer: 'If your savings earn less interest than the inflation rate, your money loses real purchasing power over time. This is why investing is important to outpace inflation.' },
+    { question: 'What is inflation?', answer: 'Inflation is the rate at which the general level of prices for goods and services rises over time, reducing the purchasing power of your money. It is measured by tracking the Consumer Price Index (CPI), which monitors the average price change of a basket of consumer goods and services.' },
+    { question: 'What is a good inflation rate?', answer: 'Most central banks, including the Federal Reserve, target an annual inflation rate of about 2%. This level is considered healthy for economic growth — enough to encourage spending and investment without rapidly eroding purchasing power. Sustained rates above 4-5% are generally considered problematic.' },
+    { question: 'How does inflation affect my savings?', answer: 'If your savings earn less interest than the inflation rate, your money loses real purchasing power over time. For example, $100,000 in a 1% savings account loses about 2% of its buying power annually when inflation is 3%. This is why investing in assets that outpace inflation is essential for long-term wealth preservation.' },
+    { question: 'What is the difference between real and nominal returns?', answer: 'Nominal return is the raw percentage gain on your investment. Real return adjusts for inflation: Real Return ≈ Nominal Return − Inflation Rate. A 10% nominal return with 3% inflation gives only about 6.8% real return. Always evaluate investments using real returns for accurate purchasing power comparisons.' },
+    { question: 'How can I protect my money from inflation?', answer: 'Key strategies include: investing in stocks (historically 7-10% annual returns), real estate, Treasury Inflation-Protected Securities (TIPS), I Bonds, and commodities. Avoid holding too much cash or low-yield savings accounts. Diversification across inflation-resistant asset classes is the most effective protection.' },
+  ]
+
+  const jsonLd = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebApplication',
+      name: 'Inflation Calculator',
+      applicationCategory: 'FinanceApplication',
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.question, acceptedAnswer: { '@type': 'Answer', text: f.answer } })),
+    },
   ]
 
   return (
@@ -55,14 +72,7 @@ export default function InflationCalculator() {
           title="Inflation Calculator — Purchasing Power Over Time"
           description="Free inflation calculator. See how inflation erodes your purchasing power over time and what your money will really be worth in the future."
           canonical="/inflation-calculator"
-          jsonLd={{
-            '@context': 'https://schema.org',
-            '@type': 'WebApplication',
-            name: 'Inflation Calculator',
-            applicationCategory: 'FinanceApplication',
-            offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
-          }}
-          faqs={faqs}
+          jsonLd={jsonLd}
         />
         <Breadcrumb items={[{ label: 'Inflation Calculator' }]} />
 
@@ -134,17 +144,69 @@ export default function InflationCalculator() {
         )}
 
         <section className="seo-content">
-          <h2>How Inflation Affects Your Money</h2>
-          <p>Inflation is often called the "silent tax" because it quietly reduces what your money can buy. Even at a modest 3% annual rate, prices double roughly every 24 years.</p>
-          <h3>Beating Inflation</h3>
+          <h2>What Is Inflation and Why Does It Matter?</h2>
+          <p>
+            Inflation is the sustained increase in the general price level of goods and services in an economy over time.
+            As prices rise, each unit of currency buys fewer items — this decline in purchasing power is often called the
+            "silent tax" because it erodes your wealth without a visible deduction. The Consumer Price Index (CPI),
+            published monthly by the Bureau of Labor Statistics, is the most widely used measure of inflation in the United States.
+          </p>
+
+          <h3>The Inflation Formula</h3>
+          <p>
+            To calculate the future cost of goods: <strong>Future Price = Current Price × (1 + r)<sup>t</sup></strong>,
+            where r is the annual inflation rate and t is the number of years. Conversely, to find today's purchasing
+            power: <strong>Real Value = Amount / (1 + r)<sup>t</sup></strong>.
+          </p>
+
+          <h3>Worked Example</h3>
+          <p>
+            With <strong>$100,000 today</strong> and an average inflation rate of <strong>3.5%</strong> over <strong>20 years</strong>:
+          </p>
           <ul>
-            <li>Invest in assets that historically outpace inflation (stocks, real estate)</li>
-            <li>Use a <a href="/compound-interest-calculator">compound interest strategy</a> to grow your wealth faster than prices rise</li>
-            <li>Consider Treasury Inflation-Protected Securities (TIPS) for safe, inflation-adjusted returns</li>
-            <li>Review your <a href="/investment-return-calculator">investment returns</a> against the inflation rate annually</li>
+            <li>Your $100,000 will only buy what <strong>$50,257</strong> buys today — losing nearly half its purchasing power</li>
+            <li>To maintain the same buying power, you'd need <strong>$198,979</strong> in 20 years</li>
+            <li>Purchasing power lost: <strong>$49,743</strong> (49.7% erosion)</li>
+            <li>At 2% inflation, you'd retain <strong>$67,297</strong> in purchasing power instead — a massive difference</li>
           </ul>
+
+          <h3>Key Inflation Terms</h3>
+          <dl>
+            <dt><strong>CPI (Consumer Price Index)</strong></dt>
+            <dd>A measure tracking the average price change of a basket of consumer goods and services. The primary U.S. inflation indicator.</dd>
+            <dt><strong>Purchasing Power</strong></dt>
+            <dd>The quantity of goods and services a unit of currency can buy. Inflation reduces purchasing power over time.</dd>
+            <dt><strong>Real vs Nominal Value</strong></dt>
+            <dd>Nominal value is the face amount; real value adjusts for inflation. A salary of $50K in 2005 is nominally less than $60K in 2025, but may have equal or greater real value.</dd>
+            <dt><strong>Stagflation</strong></dt>
+            <dd>A dangerous combination of high inflation, slow economic growth, and rising unemployment. Occurred notably in the 1970s.</dd>
+            <dt><strong>Hyperinflation</strong></dt>
+            <dd>Extremely rapid inflation (50%+ per month), causing currency to become nearly worthless. Historical examples include Zimbabwe (2008) and Venezuela (2018).</dd>
+          </dl>
+
+          <h3>Strategies to Beat Inflation</h3>
+          <ul>
+            <li><strong>Invest in equities:</strong> Stocks have historically returned 7-10% annually, significantly outpacing inflation</li>
+            <li><strong>Consider TIPS:</strong> Treasury Inflation-Protected Securities adjust principal with CPI changes</li>
+            <li><strong>Buy I Bonds:</strong> U.S. savings bonds with interest rates that adjust with inflation, up to $10,000/year</li>
+            <li><strong>Invest in real estate:</strong> Property values and rental income tend to rise with inflation</li>
+            <li><strong>Review investments annually:</strong> Ensure your portfolio's <a href="/investment-return-calculator">real returns</a> exceed inflation</li>
+          </ul>
+
           <h3>Historical Inflation Rates</h3>
-          <p>The U.S. average inflation rate has been about 3.3% since 1913. Recent years (2021–2023) saw rates above 6%, making inflation planning more important than ever for <a href="/retirement-calculator">retirement savers</a>.</p>
+          <p>
+            The U.S. average annual inflation rate has been about 3.3% since 1913. Recent years (2021–2023) saw rates
+            above 6%, making inflation planning more critical than ever for <a href="/retirement-calculator">retirement savers</a>
+            and long-term investors.
+          </p>
+
+          <h3>Frequently Asked Questions</h3>
+          {faqs.map((faq, i) => (
+            <div key={i}>
+              <h4>{faq.question}</h4>
+              <p>{faq.answer}</p>
+            </div>
+          ))}
         </section>
       </div>
 
@@ -155,3 +217,4 @@ export default function InflationCalculator() {
     </div>
   )
 }
+

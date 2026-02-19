@@ -89,9 +89,16 @@ export default function SalaryCalculator() {
   }
 
   const faqs = [
-    { question: 'How is FICA calculated?', answer: 'FICA consists of Social Security tax (6.2% of income up to $168,600 in 2024) and Medicare tax (1.45% of all income). Your employer matches these amounts.' },
-    { question: 'Should I contribute to a 401(k)?', answer: 'Yes, contributing to a 401(k) reduces your taxable income and grows tax-deferred. If your employer offers matching, contribute at least enough to get the full match — it\'s essentially free money.' },
-    { question: 'What is gross vs net salary?', answer: 'Gross salary is your total pay before any deductions. Net salary (take-home pay) is what you actually receive after taxes, retirement contributions, and insurance premiums are deducted.' },
+    { question: 'How is FICA calculated?', answer: 'FICA consists of two parts: Social Security tax (6.2% on income up to $168,600 in 2024) and Medicare tax (1.45% on all income, plus an additional 0.9% on income above $200,000). Your employer matches the base FICA amounts, meaning the total FICA contribution is 15.3%. Self-employed individuals pay both halves (15.3% total) through self-employment tax.' },
+    { question: 'Should I contribute to a 401(k)?', answer: 'Absolutely — especially if your employer offers matching. Contributing to a 401(k) reduces your taxable income dollar-for-dollar and grows tax-deferred. If your employer matches 50% up to 6% of salary, contribute at least 6% to capture the full match — it is literally a 50% instant return on your money. The 2024 contribution limit is $23,000 ($30,500 if over 50).' },
+    { question: 'What is gross vs net salary?', answer: 'Gross salary is your total compensation before any deductions — the number in your job offer. Net salary (take-home pay) is what actually hits your bank account after federal tax, state tax, FICA, retirement contributions, and insurance premiums. Net pay is typically 25-35% less than gross pay, depending on your tax bracket and benefits elections.' },
+    { question: 'What is a W-4 form and why does it matter?', answer: 'Form W-4 tells your employer how much federal income tax to withhold from each paycheck. If you claim too few allowances, too much tax is withheld (you get a large refund but smaller paychecks). If you claim too many, too little is withheld (larger paychecks but you may owe at tax time). Review your W-4 after major life changes like marriage, a new child, or buying a home.' },
+    { question: 'How do pre-tax benefits reduce my taxable income?', answer: 'Pre-tax benefits — such as 401(k) contributions, HSA contributions, FSA contributions, and employer-sponsored health insurance — are deducted from your gross pay BEFORE income tax is calculated. This means every $1 contributed to these benefits saves you $0.22–$0.37 in taxes (depending on your bracket), effectively giving you a discount on these expenses.' },
+  ]
+
+  const jsonLd = [
+    { '@context': 'https://schema.org', '@type': 'WebApplication', name: 'Salary Calculator', applicationCategory: 'FinanceApplication', offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' } },
+    { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.question, acceptedAnswer: { '@type': 'Answer', text: f.answer } })) },
   ]
 
   const freq = FREQUENCIES[inputs.payFrequency].label
@@ -103,14 +110,7 @@ export default function SalaryCalculator() {
           title="Salary & Paycheck Calculator — Take-Home Pay Estimator"
           description="Free salary calculator. Estimate your take-home pay after federal tax, state tax, FICA, 401(k), and insurance deductions for any pay frequency."
           canonical="/salary-calculator"
-          jsonLd={{
-            '@context': 'https://schema.org',
-            '@type': 'WebApplication',
-            name: 'Salary Calculator',
-            applicationCategory: 'FinanceApplication',
-            offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
-          }}
-          faqs={faqs}
+          jsonLd={jsonLd}
         />
         <Breadcrumb items={[{ label: 'Salary Calculator' }]} />
 
@@ -234,20 +234,57 @@ export default function SalaryCalculator() {
 
         <section className="seo-content">
           <h2>Understanding Your Paycheck</h2>
-          <p>Your paycheck includes several mandatory deductions before you receive your take-home pay. Understanding each deduction helps you plan your <a href="/budget-planner">budget</a> more effectively.</p>
-          <h3>Key Paycheck Deductions</h3>
+          <p>
+            Your paycheck undergoes several mandatory deductions before you receive your take-home pay. On average,
+            Americans keep only 65-75% of their gross salary after federal taxes, state taxes, FICA, retirement
+            contributions, and insurance premiums. Understanding each deduction empowers you to optimize your finances
+            and plan your <a href="/budget-planner">monthly budget</a> accurately.
+          </p>
+
+          <h3>Worked Example</h3>
+          <p>
+            <strong>$75,000 annual gross salary</strong>, single filer in Texas (0% state tax), 6% 401(k) contribution, $200/month insurance:
+          </p>
           <ul>
-            <li><strong>Federal Income Tax</strong> — based on progressive <a href="/tax-bracket-calculator">tax brackets</a> after the standard deduction</li>
-            <li><strong>State Income Tax</strong> — varies by state (0% in FL, TX, NV; up to 13.3% in CA)</li>
-            <li><strong>FICA</strong> — Social Security (6.2%) + Medicare (1.45%), matched by your employer</li>
-            <li><strong>401(k)</strong> — pre-tax retirement savings that reduce your taxable income</li>
+            <li>Gross pay (biweekly): <strong>$2,884.62</strong></li>
+            <li>Federal tax: −$338.85</li>
+            <li>FICA: −$220.67 (Social Security + Medicare)</li>
+            <li>401(k): −$173.08 (6% pre-tax)</li>
+            <li>Health insurance: −$92.31</li>
+            <li>Biweekly take-home: <strong>$2,059.71</strong></li>
+            <li>Annual net pay: <strong>$53,552</strong> (71.4% of gross)</li>
           </ul>
+
+          <h3>Key Paycheck Terms</h3>
+          <dl>
+            <dt><strong>Federal Income Tax</strong></dt>
+            <dd>Based on progressive <a href="/tax-bracket-calculator">tax brackets</a> after the standard deduction ($14,600 for single filers in 2024).</dd>
+            <dt><strong>State Income Tax</strong></dt>
+            <dd>Varies by state: 0% in FL, TX, NV, WA, WY, TN, SD, NH, AK; up to 13.3% in CA. This can mean thousands of dollars difference in take-home pay.</dd>
+            <dt><strong>FICA (Social Security + Medicare)</strong></dt>
+            <dd>Social Security (6.2% up to $168,600) and Medicare (1.45% on all income). Your employer matches these amounts.</dd>
+            <dt><strong>Pre-Tax Retirement (401k)</strong></dt>
+            <dd>Contributions are deducted before income tax, reducing your taxable income. 2024 limit: $23,000 ($30,500 if 50+).</dd>
+            <dt><strong>W-4 Withholding</strong></dt>
+            <dd>Determines how much federal tax your employer withholds. Incorrect withholding leads to large refunds (too much) or tax bills (too little).</dd>
+          </dl>
+
           <h3>Tips to Maximize Take-Home Pay</h3>
           <ul>
-            <li>Contribute enough to 401(k) to get your employer's full match</li>
-            <li>Use an HSA if you have a high-deductible health plan</li>
-            <li>Review your <a href="/tax-bracket-calculator">tax bracket</a> and adjust W-4 withholdings annually</li>
+            <li><strong>Capture the full employer match:</strong> Contributing enough to your 401(k) to get the full match is an instant 50-100% return on that money</li>
+            <li><strong>Use an HSA:</strong> If you have a high-deductible health plan, HSA contributions are triple tax-advantaged (deductible, grow tax-free, withdraw tax-free for medical)</li>
+            <li><strong>Optimize your W-4:</strong> Review withholdings annually and after life changes — aim for a small refund, not a large one</li>
+            <li><strong>Consider state taxes:</strong> If relocating, states with no income tax can boost take-home pay by 5-13%</li>
+            <li><strong>Use a dependent care FSA:</strong> Up to $5,000 in pre-tax dollars for childcare expenses, saving you hundreds in taxes</li>
           </ul>
+
+          <h3>Frequently Asked Questions</h3>
+          {faqs.map((faq, i) => (
+            <div key={i}>
+              <h4>{faq.question}</h4>
+              <p>{faq.answer}</p>
+            </div>
+          ))}
         </section>
       </div>
 

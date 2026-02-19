@@ -51,6 +51,19 @@ export default function SavingsGoalCalculator() {
     setInputs(prev => ({ ...prev, [field]: parseFloat(value) || 0 }))
   }
 
+  const faqs = [
+    { question: 'How much should I have in my emergency fund?', answer: 'Financial experts recommend 3-6 months of essential living expenses. If your monthly expenses are $3,000, aim for $9,000-$18,000. Those with variable income (freelancers, contractors) should target 6-12 months. Keep your emergency fund in a high-yield savings account for quick access.' },
+    { question: 'What is a high-yield savings account (HYSA)?', answer: 'A HYSA is a savings account that offers an interest rate significantly higher than traditional savings accounts — typically 4-5% APY versus 0.01-0.5% at big banks. They are FDIC-insured, have no fees, and let your money grow faster. Popular options include online banks like Marcus, Ally, and Capital One 360.' },
+    { question: 'What is the 50/30/20 budgeting rule?', answer: 'The 50/30/20 rule divides your after-tax income into three categories: 50% for needs (rent, food, insurance), 30% for wants (entertainment, dining out), and 20% for savings and debt repayment. For a $5,000/month income, this means $1,000 goes toward savings goals.' },
+    { question: 'How do I save for multiple goals at once?', answer: 'Use the "sinking fund" approach: create separate sub-accounts (or mental buckets) for each goal and allocate a portion of your monthly savings to each. For example, $500/month might split into $200 for emergency fund, $200 for vacation, and $100 for a new car. Many online banks support multiple savings buckets.' },
+    { question: 'Should I pay off debt or save first?', answer: 'Build a small emergency fund ($1,000-$2,000) first, then aggressively tackle high-interest debt (credit cards at 15%+). Once high-interest debt is paid off, split extra money between building your full emergency fund and saving/investing. Low-interest debt (mortgage, student loans at 4-5%) can be paid alongside saving.' },
+  ]
+
+  const jsonLd = [
+    { '@context': 'https://schema.org', '@type': 'WebApplication', name: 'Savings Goal Calculator', applicationCategory: 'FinanceApplication', offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' } },
+    { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.question, acceptedAnswer: { '@type': 'Answer', text: f.answer } })) },
+  ]
+
   return (
     <div className="page-with-sidebar">
       <div className="page-main">
@@ -58,7 +71,7 @@ export default function SavingsGoalCalculator() {
           title="Savings Goal Calculator — How Long to Save"
           description="Free savings goal calculator. Find out how long it will take to reach your savings target with regular monthly deposits and interest."
           canonical="/savings-goal-calculator"
-          jsonLd={{ '@context': 'https://schema.org', '@type': 'WebApplication', name: 'Savings Goal Calculator', applicationCategory: 'FinanceApplication', offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' } }}
+          jsonLd={jsonLd}
         />
         <Breadcrumb items={[{ label: 'Savings Goal Calculator' }]} />
 
@@ -134,15 +147,65 @@ export default function SavingsGoalCalculator() {
         )}
 
         <section className="seo-content">
-          <h2>How to Reach Your Savings Goal Faster</h2>
-          <p>Whether you're saving for a vacation, emergency fund, or a major purchase, consistent monthly contributions and compound interest are your best tools.</p>
-          <h3>Smart Savings Strategies</h3>
+          <h2>How to Set and Reach a Savings Goal</h2>
+          <p>
+            A savings goal is a specific financial target you want to reach within a defined timeframe — whether it's
+            an emergency fund, a down payment on a home, a vacation, or a new car. Setting a concrete goal with a
+            dollar amount and deadline makes you significantly more likely to achieve it. Consistent monthly
+            contributions combined with compound interest in a high-yield savings account (HYSA) accelerate your
+            progress beyond what cash-only saving can accomplish.
+          </p>
+
+          <h3>How This Calculator Works</h3>
+          <p>
+            The calculator iterates month by month, adding your monthly contribution and earned interest to your
+            current balance until it reaches the goal. Interest compounds monthly using:
+            <strong> Balance<sub>n+1</sub> = Balance<sub>n</sub> × (1 + r/12) + Contribution</strong>,
+            where r is the annual interest rate.
+          </p>
+
+          <h3>Worked Example</h3>
+          <p>
+            Saving for a <strong>$50,000</strong> goal with <strong>$5,000 already saved</strong>,
+            contributing <strong>$500/month</strong> at <strong>4% annual interest</strong>:
+          </p>
           <ul>
-            <li>Set up automatic transfers to a high-yield savings account</li>
-            <li>Use the 50/30/20 budgeting rule — allocate 20% to savings</li>
-            <li>Cut unnecessary subscriptions and redirect the money to savings</li>
-            <li>Consider a money market account for higher interest rates</li>
+            <li>Time to reach goal: <strong>7 years, 5 months</strong> (89 months)</li>
+            <li>Total contributed: <strong>$49,500</strong> ($5,000 + $500 × 89)</li>
+            <li>Interest earned: <strong>$7,846</strong> — nearly 2 months of "free" savings</li>
+            <li>Without interest (0% rate), it would take <strong>90 months</strong> and earn $0 — interest saves you 1 month</li>
           </ul>
+
+          <h3>Key Savings Terms</h3>
+          <dl>
+            <dt><strong>High-Yield Savings Account (HYSA)</strong></dt>
+            <dd>A savings account offering 4-5% APY vs. 0.01% at traditional banks. FDIC-insured and ideal for savings goals.</dd>
+            <dt><strong>Emergency Fund</strong></dt>
+            <dd>3-6 months of essential expenses set aside for unexpected costs like job loss, medical bills, or car repairs.</dd>
+            <dt><strong>Sinking Fund</strong></dt>
+            <dd>A savings strategy where you set aside money each month for a specific planned expense (vacation, car, holiday gifts).</dd>
+            <dt><strong>Opportunity Cost</strong></dt>
+            <dd>The potential returns you miss by keeping money in savings instead of investing. Important for long-term goals (5+ years).</dd>
+            <dt><strong>The 50/30/20 Rule</strong></dt>
+            <dd>A budgeting guideline: 50% needs, 30% wants, 20% savings. For a $5,000/month income, $1,000 goes to savings goals.</dd>
+          </dl>
+
+          <h3>Accelerate Your Savings</h3>
+          <ul>
+            <li><strong>Automate transfers:</strong> Set up recurring deposits on payday so you "pay yourself first"</li>
+            <li><strong>Use a HYSA:</strong> Earn 4-5% APY instead of 0.01% at traditional banks</li>
+            <li><strong>Round up purchases:</strong> Apps that round up spending and save the difference add up over time</li>
+            <li><strong>Direct windfalls to savings:</strong> Tax refunds, bonuses, and gifts can accelerate your timeline by months</li>
+            <li><strong>Review and cut subscriptions:</strong> Redirect $50-$100/month from unused services to savings</li>
+          </ul>
+
+          <h3>Frequently Asked Questions</h3>
+          {faqs.map((faq, i) => (
+            <div key={i}>
+              <h4>{faq.question}</h4>
+              <p>{faq.answer}</p>
+            </div>
+          ))}
         </section>
       </div>
 
@@ -153,3 +216,4 @@ export default function SavingsGoalCalculator() {
     </div>
   )
 }
+

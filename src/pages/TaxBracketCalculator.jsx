@@ -79,6 +79,19 @@ export default function TaxBracketCalculator() {
     }
   }
 
+  const faqs = [
+    { question: 'What is a tax bracket?', answer: 'A tax bracket defines the rate at which a specific portion of your income is taxed under the progressive federal income tax system. The U.S. has 7 brackets (10%, 12%, 22%, 24%, 32%, 35%, 37%). Only the income within each bracket is taxed at that rate — not your entire income. This is a common misconception.' },
+    { question: 'What is the difference between marginal and effective tax rate?', answer: 'Your marginal rate is the rate on your last (highest) dollar of income — the bracket you fall into. Your effective rate is the average rate across all your income (total tax ÷ total income). The effective rate is always lower because your first dollars are taxed at lower rates. For example, someone in the 22% bracket might have an effective rate of only 14%.' },
+    { question: 'Should I take the standard deduction or itemize?', answer: 'Take whichever is larger. The 2024 standard deduction is $14,600 (single) or $29,200 (married filing jointly). Itemize only if your qualifying deductions (mortgage interest, state/local taxes up to $10,000, charitable donations, medical expenses above 7.5% of AGI) exceed the standard deduction. About 90% of taxpayers now use the standard deduction.' },
+    { question: 'How can I lower my tax bill legally?', answer: 'Key strategies: (1) Maximize pre-tax retirement contributions ($23,000 401k limit for 2024), (2) use HSA contributions ($4,150 single/$8,300 family), (3) contribute to traditional IRA ($7,000 limit), (4) harvest investment losses to offset gains, (5) donate to charity for itemized deductions, and (6) use dependent care FSA for childcare costs.' },
+    { question: 'What is AGI (Adjusted Gross Income)?', answer: 'AGI is your total gross income minus specific "above-the-line" deductions such as retirement contributions, student loan interest ($2,500 max), educator expenses, and HSA contributions. Your AGI determines eligibility for many tax credits and deductions. Your taxable income is AGI minus your standard or itemized deduction.' },
+  ]
+
+  const jsonLd = [
+    { '@context': 'https://schema.org', '@type': 'WebApplication', name: 'Tax Bracket Calculator', applicationCategory: 'FinanceApplication', offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' } },
+    { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.question, acceptedAnswer: { '@type': 'Answer', text: f.answer } })) },
+  ]
+
   return (
     <div className="page-with-sidebar">
       <div className="page-main">
@@ -86,7 +99,7 @@ export default function TaxBracketCalculator() {
           title="Tax Bracket Calculator — Federal Income Tax 2024"
           description="Free federal income tax calculator. See your tax bracket, effective rate, marginal rate, and take-home pay. Updated for 2024 tax brackets."
           canonical="/tax-bracket-calculator"
-          jsonLd={{ '@context': 'https://schema.org', '@type': 'WebApplication', name: 'Tax Bracket Calculator', applicationCategory: 'FinanceApplication', offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' } }}
+          jsonLd={jsonLd}
         />
         <Breadcrumb items={[{ label: 'Tax Bracket Calculator' }]} />
 
@@ -204,17 +217,69 @@ export default function TaxBracketCalculator() {
         )}
 
         <section className="seo-content">
-          <h2>Understanding Federal Tax Brackets</h2>
-          <p>The U.S. uses a progressive tax system, meaning higher income is taxed at higher rates. However, only the income within each bracket is taxed at that bracket's rate — not your entire income.</p>
-          <h3>Effective vs Marginal Tax Rate</h3>
-          <p>Your <strong>marginal rate</strong> is the rate on your last dollar of income. Your <strong>effective rate</strong> is the average rate across all your income. The effective rate is always lower than the marginal rate.</p>
-          <h3>Ways to Reduce Your Tax Bill</h3>
+          <h2>Understanding Federal Tax Brackets (2024)</h2>
+          <p>
+            The U.S. uses a progressive tax system with 7 federal income tax brackets ranging from 10% to 37%.
+            A common misconception is that moving into a higher bracket means all your income is taxed at that rate.
+            In reality, only the income within each bracket is taxed at that bracket's rate — your first dollars are
+            always taxed at 10%, regardless of how much you earn. This calculator breaks down exactly how much tax
+            falls into each bracket and shows your true effective rate.
+          </p>
+
+          <h3>2024 Tax Brackets — Single Filers</h3>
           <ul>
-            <li>Maximize pre-tax retirement contributions (401k, Traditional IRA)</li>
-            <li>Use Health Savings Accounts (HSA) for triple tax benefits</li>
-            <li>Itemize deductions if they exceed the standard deduction</li>
-            <li>Consider tax-loss harvesting on investment losses</li>
+            <li><strong>10%:</strong> $0 – $11,600</li>
+            <li><strong>12%:</strong> $11,600 – $47,150</li>
+            <li><strong>22%:</strong> $47,150 – $100,525</li>
+            <li><strong>24%:</strong> $100,525 – $191,950</li>
+            <li><strong>32%:</strong> $191,950 – $243,725</li>
+            <li><strong>35%:</strong> $243,725 – $609,350</li>
+            <li><strong>37%:</strong> Over $609,350</li>
           </ul>
+
+          <h3>Worked Example</h3>
+          <p>
+            <strong>$85,000 gross income</strong>, single filer, standard deduction ($14,600):
+          </p>
+          <ul>
+            <li>Taxable income: <strong>$70,400</strong></li>
+            <li>10% bracket: $1,160 tax on first $11,600</li>
+            <li>12% bracket: $4,266 tax on next $35,550</li>
+            <li>22% bracket: $5,115 tax on remaining $23,250</li>
+            <li>Total federal tax: <strong>$10,541</strong></li>
+            <li>Effective rate: <strong>12.4%</strong> (much lower than the 22% marginal rate)</li>
+          </ul>
+
+          <h3>Key Tax Terms</h3>
+          <dl>
+            <dt><strong>Marginal Tax Rate</strong></dt>
+            <dd>The rate applied to your last dollar of income — the highest bracket you fall into.</dd>
+            <dt><strong>Effective Tax Rate</strong></dt>
+            <dd>Your average tax rate across all income (total tax ÷ gross income). Always lower than your marginal rate.</dd>
+            <dt><strong>Standard Deduction</strong></dt>
+            <dd>A flat amount subtracted from income before calculating tax: $14,600 (single) or $29,200 (married) in 2024.</dd>
+            <dt><strong>AGI (Adjusted Gross Income)</strong></dt>
+            <dd>Gross income minus above-the-line deductions (401k, HSA, student loan interest). Determines credit eligibility.</dd>
+            <dt><strong>Tax Credits vs Deductions</strong></dt>
+            <dd>Deductions reduce taxable income; credits reduce your tax bill dollar-for-dollar. A $1,000 credit saves more than a $1,000 deduction.</dd>
+          </dl>
+
+          <h3>Strategies to Reduce Your Tax Bill</h3>
+          <ul>
+            <li><strong>Maximize 401(k):</strong> Up to $23,000 in pre-tax contributions ($30,500 if over 50) directly reduces taxable income</li>
+            <li><strong>Use HSA:</strong> Triple tax advantage — deductible contributions, tax-free growth, tax-free withdrawals for medical</li>
+            <li><strong>Harvest losses:</strong> Sell losing investments to offset <a href="/capital-gains-tax-calculator">capital gains</a> and up to $3,000 of ordinary income</li>
+            <li><strong>Itemize when beneficial:</strong> Compare your deductions (mortgage interest, state taxes, charity) against the standard deduction</li>
+            <li><strong>Claim all credits:</strong> Child Tax Credit, Earned Income Credit, education credits, and energy credits can significantly reduce your bill</li>
+          </ul>
+
+          <h3>Frequently Asked Questions</h3>
+          {faqs.map((faq, i) => (
+            <div key={i}>
+              <h4>{faq.question}</h4>
+              <p>{faq.answer}</p>
+            </div>
+          ))}
         </section>
       </div>
 
@@ -225,3 +290,4 @@ export default function TaxBracketCalculator() {
     </div>
   )
 }
+

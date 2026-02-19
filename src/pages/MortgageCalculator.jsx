@@ -72,15 +72,30 @@ export default function MortgageCalculator() {
     setInputs(prev => ({ ...prev, [field]: parseFloat(value) || 0 }))
   }
 
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'WebApplication',
-    name: 'Mortgage Calculator',
-    url: 'https://mycalcfinance.com/mortgage-calculator',
-    description: 'Free mortgage calculator — calculate monthly payments, total interest, and view amortization schedule.',
-    applicationCategory: 'FinanceApplication',
-    offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
-  }
+  const faqs = [
+    { question: 'How is a mortgage payment calculated?', answer: 'Your monthly mortgage payment is calculated using the amortization formula: M = P[r(1+r)ⁿ]/[(1+r)ⁿ – 1], where P is the loan principal, r is the monthly interest rate, and n is the total number of payments. This formula ensures each payment covers both principal and interest so the loan is fully repaid by the end of the term.' },
+    { question: 'What is PMI and when can I remove it?', answer: 'Private Mortgage Insurance (PMI) is required when your down payment is less than 20% of the home price. PMI typically costs 0.5% to 1% of the loan amount annually. You can request PMI removal once your loan-to-value (LTV) ratio reaches 80%, and it is automatically cancelled at 78% LTV.' },
+    { question: 'Should I choose a 15-year or 30-year mortgage?', answer: 'A 15-year mortgage has higher monthly payments but saves significantly on total interest — often 50% or more compared to a 30-year term. A 30-year mortgage offers lower monthly payments and more cash flow flexibility. Choose based on your monthly budget and long-term financial goals.' },
+    { question: 'What is the difference between fixed-rate and adjustable-rate mortgages?', answer: 'A fixed-rate mortgage keeps the same interest rate for the entire loan term, providing predictable payments. An adjustable-rate mortgage (ARM) starts with a lower introductory rate that adjusts periodically based on market conditions. ARMs can save money short-term but carry the risk of rising payments.' },
+    { question: 'How much house can I afford?', answer: 'A common guideline is the 28/36 rule: spend no more than 28% of your gross monthly income on housing costs (mortgage, taxes, insurance) and no more than 36% on total debt. For example, with a $6,000 monthly income, aim for a maximum mortgage payment of about $1,680.' },
+  ]
+
+  const jsonLd = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebApplication',
+      name: 'Mortgage Calculator',
+      url: 'https://mycalcfinance.com/mortgage-calculator',
+      description: 'Free mortgage calculator — calculate monthly payments, total interest, and view amortization schedule.',
+      applicationCategory: 'FinanceApplication',
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.question, acceptedAnswer: { '@type': 'Answer', text: f.answer } })),
+    },
+  ]
 
   return (
     <div className="page-with-sidebar">
@@ -203,24 +218,73 @@ export default function MortgageCalculator() {
 
         {/* SEO content */}
         <section className="seo-content">
-          <h2>How Our Mortgage Calculator Works</h2>
+          <h2>How a Mortgage Works</h2>
           <p>
-            Our free mortgage calculator uses the standard amortization formula to compute your monthly payment:
-            <strong> M = P[r(1+r)ⁿ]/[(1+r)ⁿ – 1]</strong>, where P is the loan principal, r is the monthly interest rate,
-            and n is the total number of payments.
+            A mortgage is a secured loan used to purchase real estate, where the property itself serves as collateral.
+            Your monthly payment is divided between principal repayment and interest charges. In the early years of an
+            amortization schedule, the majority of each payment goes toward interest. As the loan matures, more of each
+            payment reduces the outstanding principal balance. Understanding this amortization structure helps homebuyers
+            plan for the true cost of homeownership.
           </p>
-          <h3>Understanding Your Mortgage Payment</h3>
+
+          <h3>The Mortgage Payment Formula</h3>
           <p>
-            Your monthly mortgage payment consists of principal and interest. In the early years, a larger portion goes toward interest.
-            As the loan matures, more of your payment goes toward reducing the principal balance.
+            The standard amortization formula is: <strong>M = P × [r(1+r)<sup>n</sup>] / [(1+r)<sup>n</sup> – 1]</strong>, where:
           </p>
-          <h3>Tips to Lower Your Mortgage Payment</h3>
           <ul>
-            <li>Increase your down payment to reduce the loan amount</li>
-            <li>Shop for lower interest rates from multiple lenders</li>
-            <li>Consider a 15-year term for lower total interest (higher monthly payment)</li>
-            <li>Make extra payments toward principal to pay off faster</li>
+            <li><strong>P</strong> = Loan principal (home price minus down payment)</li>
+            <li><strong>r</strong> = Monthly interest rate (annual rate ÷ 12)</li>
+            <li><strong>n</strong> = Total number of monthly payments (years × 12)</li>
+            <li><strong>M</strong> = Monthly mortgage payment (principal + interest only)</li>
           </ul>
+          <p>
+            Note: Your total monthly housing payment also typically includes property taxes, homeowners insurance,
+            and possibly private mortgage insurance (PMI) — collectively known as <strong>PITI</strong> (Principal, Interest, Taxes, Insurance).
+            Many lenders collect these through an escrow account.
+          </p>
+
+          <h3>Worked Example</h3>
+          <p>
+            For a <strong>$350,000 home</strong> with <strong>20% down payment</strong> ($70,000), a <strong>$280,000 loan</strong>
+            at <strong>6.5% interest</strong> for <strong>30 years</strong>:
+          </p>
+          <ul>
+            <li>Monthly payment (P&I): <strong>$1,770</strong></li>
+            <li>Total interest over 30 years: <strong>$357,127</strong></li>
+            <li>Total cost of the home: <strong>$707,127</strong> (including down payment)</li>
+            <li>Same loan at 15 years: <strong>$2,440/month</strong> but only <strong>$159,234 total interest</strong> — saving almost $200K!</li>
+          </ul>
+
+          <h3>Key Mortgage Terms</h3>
+          <dl>
+            <dt><strong>Amortization</strong></dt>
+            <dd>The process of spreading loan payments over time so each installment covers both interest and a portion of principal.</dd>
+            <dt><strong>Loan-to-Value Ratio (LTV)</strong></dt>
+            <dd>The ratio of your mortgage amount to the home's appraised value. An LTV above 80% typically requires PMI.</dd>
+            <dt><strong>Escrow</strong></dt>
+            <dd>An account managed by your lender to collect and pay property taxes and insurance on your behalf.</dd>
+            <dt><strong>Pre-Approval</strong></dt>
+            <dd>A lender's conditional commitment to loan you a specific amount, based on your credit, income, and assets.</dd>
+            <dt><strong>ARM vs Fixed-Rate</strong></dt>
+            <dd>ARM (Adjustable-Rate Mortgage) offers a lower initial rate that adjusts over time. Fixed-rate keeps the same rate for the entire loan term.</dd>
+          </dl>
+
+          <h3>Strategies to Lower Your Mortgage Cost</h3>
+          <ul>
+            <li><strong>Make a 20% down payment</strong> to avoid PMI, which can add $100-$300/month to your costs</li>
+            <li><strong>Shop multiple lenders:</strong> Rates can vary 0.5-1% between lenders, potentially saving tens of thousands</li>
+            <li><strong>Consider a 15-year term</strong> if you can afford the higher payment — you'll save 50%+ on total interest</li>
+            <li><strong>Make one extra payment per year:</strong> This can shave 4-5 years off a 30-year mortgage</li>
+            <li><strong>Refinance when rates drop:</strong> A 1% rate reduction on a $300K mortgage saves about $175/month</li>
+          </ul>
+
+          <h3>Frequently Asked Questions</h3>
+          {faqs.map((faq, i) => (
+            <div key={i}>
+              <h4>{faq.question}</h4>
+              <p>{faq.answer}</p>
+            </div>
+          ))}
         </section>
       </div>
 

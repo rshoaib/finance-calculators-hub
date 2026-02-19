@@ -81,6 +81,19 @@ export default function CreditCardPayoffCalculator() {
     setInputs(prev => ({ ...prev, [field]: parseFloat(value) || 0 }))
   }
 
+  const faqs = [
+    { question: 'How is credit card interest calculated?', answer: 'Credit card interest is calculated daily using your APR divided by 365 (the daily periodic rate). Each day, the daily rate is applied to your current balance. For a $5,000 balance at 19.99% APR: daily rate = 0.0548%, which means about $2.74 in interest per day or roughly $83.29 per month. This is why even small increases in APR significantly impact your total cost.' },
+    { question: 'What is the debt avalanche method?', answer: 'The debt avalanche method prioritizes paying off debts with the highest interest rates first while making minimum payments on all other debts. Once the highest-rate debt is paid off, you redirect those payments to the next-highest. This method saves the most money in total interest compared to other strategies.' },
+    { question: 'What is a balance transfer and is it worth it?', answer: 'A balance transfer moves your high-interest credit card debt to a card offering 0% introductory APR (typically 12-21 months). Most charge a 3-5% transfer fee. It is worth it if: the savings from 0% interest exceed the transfer fee, and you can pay off the full balance before the promo period ends. Remaining balances after the intro period often jump to 20%+ APR.' },
+    { question: 'Why is paying only the minimum so expensive?', answer: 'Minimum payments (typically 2% of balance or $25) barely cover interest charges, meaning most of your payment goes to interest rather than reducing principal. A $5,000 balance at 19.99% APR with minimum payments takes over 30 years to pay off and costs over $9,000 in interest — nearly doubling the original debt.' },
+    { question: 'How does credit card debt affect my credit score?', answer: 'Credit utilization (balance ÷ credit limit) is the second most important factor in your credit score, accounting for 30%. Keeping utilization below 30% is recommended, but under 10% is ideal. A $3,000 balance on a $10,000 limit gives 30% utilization. Paying down balances is one of the fastest ways to improve your score.' },
+  ]
+
+  const jsonLd = [
+    { '@context': 'https://schema.org', '@type': 'WebApplication', name: 'Credit Card Payoff Calculator', applicationCategory: 'FinanceApplication', offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' } },
+    { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.question, acceptedAnswer: { '@type': 'Answer', text: f.answer } })) },
+  ]
+
   return (
     <div className="page-with-sidebar">
       <div className="page-main">
@@ -88,7 +101,7 @@ export default function CreditCardPayoffCalculator() {
           title="Credit Card Payoff Calculator — Pay Off Debt Faster"
           description="Free credit card payoff calculator. See how long it takes to pay off your balance, compare payment strategies, and discover how much interest you can save."
           canonical="/credit-card-payoff-calculator"
-          jsonLd={{ '@context': 'https://schema.org', '@type': 'WebApplication', name: 'Credit Card Payoff Calculator', applicationCategory: 'FinanceApplication', offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' } }}
+          jsonLd={jsonLd}
         />
         <Breadcrumb items={[{ label: 'Credit Card Payoff Calculator' }]} />
 
@@ -170,15 +183,64 @@ export default function CreditCardPayoffCalculator() {
         )}
 
         <section className="seo-content">
-          <h2>How to Pay Off Credit Card Debt Faster</h2>
-          <p>Credit card debt is one of the most expensive forms of debt, with average APRs of 20% or more. Paying more than the minimum can save you thousands in interest and years of payments.</p>
-          <h3>Strategies to Eliminate Credit Card Debt</h3>
+          <h2>How Credit Card Interest Works</h2>
+          <p>
+            Credit card debt is one of the most expensive forms of consumer debt, with average APRs exceeding 20%.
+            Unlike installment loans with fixed payment schedules, credit cards use revolving credit — interest
+            compounds daily on your outstanding balance, and minimum payments are designed to keep you in debt as long
+            as possible. Understanding how credit card interest compounds and the true cost of minimum payments is the
+            first step toward becoming debt-free. Even a small increase in your monthly payment above the minimum can
+            save thousands of dollars and years of payments.
+          </p>
+
+          <h3>Credit Card Interest Formula</h3>
+          <p>
+            Daily interest charge: <strong>Balance × (APR / 365)</strong>. Your monthly interest is approximately
+            <strong>Balance × APR / 12</strong>. For a $5,000 balance at 19.99% APR, monthly interest is about
+            <strong>$83.29</strong> — meaning most of a $100 minimum payment goes to interest.
+          </p>
+
+          <h3>Worked Example</h3>
+          <p>
+            <strong>$5,000 balance</strong> at <strong>19.99% APR</strong>:
+          </p>
           <ul>
-            <li>Pay more than the minimum — even an extra $50/month makes a huge difference</li>
-            <li>Consider balance transfer cards with 0% intro APR</li>
-            <li>Use the debt avalanche method — pay highest-interest cards first</li>
-            <li>Set up automatic payments to avoid late fees and interest rate hikes</li>
+            <li>Minimum payments only (2% or $25): <strong>30+ years to pay off</strong>, <strong>$9,117 total interest</strong></li>
+            <li>Paying $200/month: <strong>2 years, 7 months</strong>, <strong>$1,377 total interest</strong></li>
+            <li>Interest saved by paying $200 vs minimum: <strong>$7,740</strong></li>
+            <li>Time saved: <strong>27+ years</strong> of payments eliminated</li>
           </ul>
+
+          <h3>Key Credit Card Terms</h3>
+          <dl>
+            <dt><strong>APR (Annual Percentage Rate)</strong></dt>
+            <dd>The yearly interest rate on your balance. Credit cards typically range from 15% to 29% APR.</dd>
+            <dt><strong>Minimum Payment</strong></dt>
+            <dd>Usually 2% of your balance or $25 (whichever is greater). Designed to keep you paying for decades.</dd>
+            <dt><strong>Debt Avalanche Method</strong></dt>
+            <dd>Pay off highest-interest debt first while making minimums on everything else. Saves the most money.</dd>
+            <dt><strong>Debt Snowball Method</strong></dt>
+            <dd>Pay off smallest balances first for psychological wins. Less optimal mathematically but more motivating for some people.</dd>
+            <dt><strong>Credit Utilization Ratio</strong></dt>
+            <dd>Your balance divided by your credit limit. Keep below 30% (ideally under 10%) for a healthy credit score.</dd>
+          </dl>
+
+          <h3>Debt Payoff Strategies</h3>
+          <ul>
+            <li><strong>Pay more than the minimum:</strong> Even an extra $50/month can save thousands and cut years off your payoff</li>
+            <li><strong>Try a balance transfer:</strong> Move debt to a 0% intro APR card and pay it off before the promo ends</li>
+            <li><strong>Use the avalanche method:</strong> Target highest-APR cards first for maximum interest savings</li>
+            <li><strong>Automate payments:</strong> Avoid late fees ($35+) and penalty APR increases (29.99%)</li>
+            <li><strong>Stop adding new charges:</strong> Use cash or debit while paying down existing balances</li>
+          </ul>
+
+          <h3>Frequently Asked Questions</h3>
+          {faqs.map((faq, i) => (
+            <div key={i}>
+              <h4>{faq.question}</h4>
+              <p>{faq.answer}</p>
+            </div>
+          ))}
         </section>
       </div>
 
@@ -189,3 +251,4 @@ export default function CreditCardPayoffCalculator() {
     </div>
   )
 }
+
