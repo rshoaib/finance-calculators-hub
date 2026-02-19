@@ -1,0 +1,59 @@
+# MyCalcFinance — Full Site Documentation for AI Systems
+
+> Free online financial calculators for smarter money decisions. No login required. Fully client-side.
+
+MyCalcFinance (https://mycalcfinance.com) is a free web application offering 10+ browser-based financial calculators. All calculations run entirely in your browser — no data is sent to any server.
+
+---
+
+## Financial Calculators
+
+### Mortgage Calculator
+URL: https://mycalcfinance.com/mortgage-calculator
+Calculates monthly mortgage payment including principal, interest, property taxes, homeowner's insurance, and PMI. Shows full amortization schedule. Uses standard amortization formula: M = P[r(1+r)^n] / [(1+r)^n – 1].
+
+### Compound Interest Calculator
+URL: https://mycalcfinance.com/compound-interest-calculator
+Projects investment growth with compound interest and regular monthly contributions. Visualizes growth over time. Formula: FV = PV(1+r)^t + PMT × [((1+r)^t – 1) / r].
+
+### Retirement Calculator
+URL: https://mycalcfinance.com/retirement-calculator
+Determines retirement readiness based on current age, savings, monthly contributions, expected returns, and planned retirement age. Uses the 4% safe withdrawal rate rule.
+
+### Tax Bracket Calculator
+URL: https://mycalcfinance.com/tax-bracket-calculator
+Estimates federal income tax by applying progressive tax brackets. Shows effective tax rate, marginal rate, and tax owed per bracket.
+
+### Salary Calculator
+URL: https://mycalcfinance.com/salary-calculator
+Converts between annual salary and hourly wage. Default assumption: 2,080 work hours/year (40 hrs/week × 52 weeks). Adjustable for part-time or custom schedules.
+
+### Capital Gains Tax Calculator
+URL: https://mycalcfinance.com/capital-gains-tax-calculator
+Calculates tax on investment profits. Short-term gains (held <1 year) taxed as ordinary income. Long-term gains (held >1 year) taxed at preferential rates: 0%, 15%, or 20%.
+
+### Net Worth Calculator
+URL: https://mycalcfinance.com/net-worth-calculator
+Tracks total financial position by summing assets (cash, investments, property, vehicles) and subtracting liabilities (mortgage, loans, credit cards). Net Worth = Total Assets – Total Liabilities.
+
+### Budget Planner
+URL: https://mycalcfinance.com/budget-planner
+Implements the 50/30/20 budgeting rule: 50% needs, 30% wants, 20% savings. Allows custom category allocation and tracks spending against targets.
+
+### Break-Even Calculator
+URL: https://mycalcfinance.com/break-even-calculator
+Calculates the break-even point for a business or product. Formula: Break-Even Units = Fixed Costs / (Price per Unit – Variable Cost per Unit).
+
+### Inflation Calculator
+URL: https://mycalcfinance.com/inflation-calculator
+Shows how purchasing power changes over time due to inflation. Calculates future value, past value, and cumulative inflation rate between two years.
+
+---
+
+## Technical Details
+- All calculations run client-side in the browser (React + Vite)
+- No user data is collected or stored
+- No login required
+- Mobile responsive design
+- SEO: JSON-LD structured data (WebSite, SoftwareApplication, FAQPage)
+- Available at: https://mycalcfinance.com

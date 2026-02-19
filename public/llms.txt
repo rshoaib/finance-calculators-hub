@@ -1,0 +1,25 @@
+# MyCalcFinance
+
+> Free online financial calculators for smarter money decisions.
+
+MyCalcFinance (https://mycalcfinance.com) provides 10+ free browser-based financial calculators. No login, no data collection, fully client-side.
+
+## Financial Calculators
+- Mortgage Calculator: Monthly payment with amortization schedule, PMI, taxes, and insurance.
+- Compound Interest Calculator: Investment growth projections with regular contributions.
+- Retirement Calculator: How much you need to retire based on savings rate and expenses.
+- Tax Bracket Calculator: Federal tax estimation with bracket breakdown.
+- Salary Calculator: Annual-to-hourly and hourly-to-annual wage conversion.
+- Capital Gains Tax Calculator: Short-term and long-term capital gains tax estimation.
+- Net Worth Calculator: Track assets minus liabilities for total net worth.
+- Budget Planner: 50/30/20 budgeting rule with category breakdowns.
+- Break-Even Calculator: Revenue needed to cover fixed and variable costs.
+- Inflation Calculator: How purchasing power changes over time.
+
+## Blog
+Personal finance guides including mortgage tips, compound interest strategies, retirement planning, tax optimization, and budgeting advice.
+
+## Contact
+- Website: https://mycalcfinance.com
+- About: https://mycalcfinance.com/about
+- Privacy Policy: https://mycalcfinance.com/privacy-policy
