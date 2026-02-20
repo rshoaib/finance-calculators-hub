@@ -143,6 +143,24 @@ export const calculators = [
     color: 'cyan',
     cpc: '$3–$10',
   },
+  {
+    title: '401(k) Calculator',
+    slug: '401k-calculator',
+    description: 'Estimate your 401(k) balance at retirement with employer match and compound growth.',
+    icon: '🏦',
+    category: 'Retirement',
+    color: 'emerald',
+    cpc: '$15–$30',
+  },
+  {
+    title: 'Home Affordability Calculator',
+    slug: 'home-affordability-calculator',
+    description: 'Find out how much house you can afford based on income, debts, and down payment.',
+    icon: '🏡',
+    category: 'Loans',
+    color: 'gold',
+    cpc: '$20–$40',
+  },
 ]
 
-export const categories = ['All', 'Loans', 'Savings', 'Investment', 'Tax']
+export const categories = ['All', 'Loans', 'Savings', 'Investment', 'Tax', 'Retirement']

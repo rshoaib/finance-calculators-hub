@@ -2,6 +2,7 @@ import { lazy, Suspense } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Layout from './components/Layout'
 import LoadingSpinner from './components/LoadingSpinner'
+import { salaryPages, hourlyPages, mortgagePages, savingsPages } from './data/seoPages'
 
 const HomePage = lazy(() => import('./pages/HomePage'))
 const MortgageCalculator = lazy(() => import('./pages/MortgageCalculator'))
@@ -24,6 +25,9 @@ const About = lazy(() => import('./pages/About'))
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'))
 const BlogList = lazy(() => import('./pages/BlogList'))
 const BlogPost = lazy(() => import('./pages/BlogPost'))
+const SeoCalcPage = lazy(() => import('./pages/SeoCalcPage'))
+const FourOhOneKCalculator = lazy(() => import('./pages/FourOhOneKCalculator'))
+const HomeAffordabilityCalculator = lazy(() => import('./pages/HomeAffordabilityCalculator'))
 
 export default function App() {
   return (
@@ -47,10 +51,26 @@ export default function App() {
           <Route path="/capital-gains-tax-calculator" element={<CapitalGainsTaxCalculator />} />
           <Route path="/budget-planner" element={<BudgetPlannerCalculator />} />
           <Route path="/break-even-calculator" element={<BreakEvenCalculator />} />
+          <Route path="/401k-calculator" element={<FourOhOneKCalculator />} />
+          <Route path="/home-affordability-calculator" element={<HomeAffordabilityCalculator />} />
           <Route path="/about" element={<About />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/blog" element={<BlogList />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
+
+          {/* PROGRAMMATIC SEO PAGES */}
+          {salaryPages.map(p => (
+            <Route key={p.slug} path={`/${p.slug}`} element={<SeoCalcPage page={p} relatedPages={salaryPages.filter(r => r.slug !== p.slug).slice(0, 6)} />} />
+          ))}
+          {hourlyPages.map(p => (
+            <Route key={p.slug} path={`/${p.slug}`} element={<SeoCalcPage page={p} relatedPages={hourlyPages.filter(r => r.slug !== p.slug).slice(0, 6)} />} />
+          ))}
+          {mortgagePages.map(p => (
+            <Route key={p.slug} path={`/${p.slug}`} element={<SeoCalcPage page={p} relatedPages={mortgagePages.filter(r => r.slug !== p.slug).slice(0, 6)} />} />
+          ))}
+          {savingsPages.map(p => (
+            <Route key={p.slug} path={`/${p.slug}`} element={<SeoCalcPage page={p} relatedPages={savingsPages.filter(r => r.slug !== p.slug).slice(0, 6)} />} />
+          ))}
         </Route>
       </Routes>
     </Suspense>

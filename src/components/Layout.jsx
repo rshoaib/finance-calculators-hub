@@ -53,7 +53,6 @@ export default function Layout() {
             <a href="https://onlineimageshrinker.com" target="_blank" rel="noopener noreferrer">Image Compressor</a>
             <a href="https://legalpolicygen.com" target="_blank" rel="noopener noreferrer">Legal Policy Generator</a>
             <a href="https://imrizwan.com" target="_blank" rel="noopener noreferrer">Developer Blog</a>
-            <a href="https://orderviachat.com" target="_blank" rel="noopener noreferrer">OrderViaChat</a>
           </div>
         </div>
       </footer>
