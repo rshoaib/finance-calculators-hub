@@ -161,6 +161,15 @@ export const calculators = [
     color: 'gold',
     cpc: '$20–$40',
   },
+  {
+    title: 'Debt Payoff Calculator',
+    slug: 'debt-payoff-calculator',
+    description: 'Compare snowball vs avalanche strategies, see payoff timelines, and discover how much interest you can save.',
+    icon: '💸',
+    category: 'Loans',
+    color: 'red',
+    cpc: '$8–$20',
+  },
 ]
 
 export const categories = ['All', 'Loans', 'Savings', 'Investment', 'Tax', 'Retirement']
