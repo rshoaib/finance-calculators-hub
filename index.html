@@ -55,6 +55,18 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="MyCalcFinance — Free Financial Calculators" />
     <meta name="twitter:description" content="Free online financial calculators for mortgage, loans, compound interest, retirement, and taxes." />
+
+    <!-- Prevent FOUC: apply saved theme instantly before first paint -->
+    <script>
+      (function() {
+        var theme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
+    <style>
+      /* Hide SEO fallback content to prevent flash before React mounts */
+      #root > h1, #root > h2, #root > p { display: none; }
+    </style>
   </head>
   <body>
     <div id="root">
