@@ -170,6 +170,15 @@ export const calculators = [
     color: 'red',
     cpc: '$8–$20',
   },
+  {
+    title: 'CD Calculator',
+    slug: 'cd-calculator',
+    description: 'Calculate CD maturity value, compare terms, and see how compounding frequency affects your returns.',
+    icon: '💿',
+    category: 'Savings',
+    color: 'cyan',
+    cpc: '$5–$15',
+  },
 ]
 
 export const categories = ['All', 'Loans', 'Savings', 'Investment', 'Tax', 'Retirement']

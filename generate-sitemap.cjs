@@ -7,7 +7,7 @@ const existingPages = [
   '/car-loan-calculator', '/savings-goal-calculator', '/debt-to-income-calculator',
   '/investment-return-calculator', '/net-worth-calculator', '/inflation-calculator',
   '/salary-calculator', '/capital-gains-tax-calculator', '/budget-planner',
-  '/break-even-calculator', '/401k-calculator', '/home-affordability-calculator', '/debt-payoff-calculator',
+  '/break-even-calculator', '/401k-calculator', '/home-affordability-calculator', '/debt-payoff-calculator', '/cd-calculator',
   '/about', '/privacy-policy', '/blog',
 ];
 

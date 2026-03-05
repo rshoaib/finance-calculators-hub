@@ -1167,7 +1167,9 @@ a:hover {
 
 /* --- Spinner Animation --- */
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* --- Debt Payoff Calculator --- */
@@ -1347,12 +1349,79 @@ a:hover {
   color: var(--text-muted);
 }
 
+/* --- Results Table (CD Calculator, etc.) --- */
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--font-size-sm);
+}
+
+.results-table th {
+  text-align: left;
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--border-color);
+  white-space: nowrap;
+}
+
+.results-table td {
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.results-table tbody tr {
+  transition: background var(--transition-fast);
+}
+
+.results-table tbody tr:hover {
+  background: rgba(16, 185, 129, 0.04);
+}
+
+.results-table .highlight-row {
+  background: rgba(16, 185, 129, 0.08);
+  font-weight: 600;
+}
+
+.results-table .highlight-row td:first-child {
+  position: relative;
+  padding-left: calc(var(--space-4) + 4px);
+}
+
+.results-table .highlight-row td:first-child::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 25%;
+  height: 50%;
+  width: 3px;
+  background: var(--accent-primary);
+  border-radius: 2px;
+}
+
+[data-theme="light"] .results-table td {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
 /* --- Print Styles --- */
 @media print {
-  .header, .footer, .ad-slot, .page-sidebar,
-  .btn-calculate, .btn-share, .share-results,
-  .theme-toggle, .breadcrumb, .seo-content,
-  .related-calcs, .category-filter, .hero {
+
+  .header,
+  .footer,
+  .ad-slot,
+  .page-sidebar,
+  .btn-calculate,
+  .btn-share,
+  .share-results,
+  .theme-toggle,
+  .breadcrumb,
+  .seo-content,
+  .related-calcs,
+  .category-filter,
+  .hero {
     display: none !important;
   }
 
@@ -1365,13 +1434,19 @@ a:hover {
     color: #111 !important;
   }
 
-  .card, .result-card, .chart-container, .results-panel {
+  .card,
+  .result-card,
+  .chart-container,
+  .results-panel {
     border: 1px solid #ddd !important;
     background: white !important;
     box-shadow: none !important;
   }
 
-  .result-value, .result-label, .calc-header h1, .calc-header p {
+  .result-value,
+  .result-label,
+  .calc-header h1,
+  .calc-header p {
     -webkit-text-fill-color: initial !important;
     background: none !important;
     color: #111 !important;

@@ -29,6 +29,7 @@ const SeoCalcPage = lazy(() => import('./pages/SeoCalcPage'))
 const FourOhOneKCalculator = lazy(() => import('./pages/FourOhOneKCalculator'))
 const HomeAffordabilityCalculator = lazy(() => import('./pages/HomeAffordabilityCalculator'))
 const DebtPayoffCalculator = lazy(() => import('./pages/DebtPayoffCalculator'))
+const CDCalculator = lazy(() => import('./pages/CDCalculator'))
 
 export default function App() {
   return (
@@ -55,6 +56,7 @@ export default function App() {
           <Route path="/401k-calculator" element={<FourOhOneKCalculator />} />
           <Route path="/home-affordability-calculator" element={<HomeAffordabilityCalculator />} />
           <Route path="/debt-payoff-calculator" element={<DebtPayoffCalculator />} />
+          <Route path="/cd-calculator" element={<CDCalculator />} />
           <Route path="/about" element={<About />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/blog" element={<BlogList />} />

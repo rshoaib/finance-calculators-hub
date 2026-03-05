@@ -38,6 +38,7 @@ export default function Layout() {
           <Link to="/budget-planner">Budget Planner</Link>
           <Link to="/break-even-calculator">Break-Even</Link>
           <Link to="/inflation-calculator">Inflation</Link>
+          <Link to="/cd-calculator">CD Calculator</Link>
           <Link to="/blog">Blog</Link>
           <Link to="/about">About</Link>
           <Link to="/privacy-policy">Privacy Policy</Link>
