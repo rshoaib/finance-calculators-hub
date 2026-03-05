@@ -501,7 +501,7 @@ a:hover {
   width: 100%;
   max-width: 728px;
   height: 90px;
-  margin: var(--space-6) auto;
+  margin: var(--space-8) auto;
 }
 
 .ad-slot-rectangle {

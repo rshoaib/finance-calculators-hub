@@ -28,9 +28,16 @@ export default function PrivacyPolicy() {
 
         <h3>Third-Party Advertising</h3>
         <p>
-          We use Google AdSense to display advertisements. Google may use cookies to serve ads based on your prior
-          visits to our website or other websites. You can opt out of personalized advertising by visiting
-          <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer"> Google's Ads Settings</a>.
+          We use Google AdSense to display advertisements. Google and other third-party vendors use cookies —
+          including the DoubleClick DART cookie — to serve ads based on your prior visits to this website or other
+          websites on the internet.
+        </p>
+        <p>
+          Google's use of advertising cookies enables it and its partners to serve ads based on your visit to this
+          site and/or other sites. You may opt out of personalized advertising by visiting{' '}
+          <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer">Google's Ads Settings</a>.
+          You may also opt out of third-party vendor cookies for personalized advertising by visiting{' '}
+          <a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener noreferrer">www.aboutads.info/choices</a>.
         </p>
 
         <h3>Data Security</h3>
@@ -47,7 +54,8 @@ export default function PrivacyPolicy() {
 
         <h3>Contact</h3>
         <p>
-          If you have any questions about this privacy policy, please contact us through our website.
+          If you have any questions about this privacy policy or our practices, please email us
+          at <a href="mailto:contact@mycalcfinance.com">contact@mycalcfinance.com</a>.
         </p>
       </div>
     </main>

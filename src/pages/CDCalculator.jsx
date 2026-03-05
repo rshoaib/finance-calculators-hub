@@ -239,7 +239,7 @@ export default function CDCalculator() {
             term (the <strong>maturity date</strong>), you receive your original deposit plus all accumulated interest.
           </p>
           <p>
-            CDs are popular among conservative investors because they offer <strong>guaranteed, predictable returns</strong> with
+            CDs are popular among conservative investors because they offer <strong>FDIC-insured, predictable returns</strong> with
             zero market risk. In a high-interest-rate environment, CDs become especially attractive compared to volatile stock
             investments. They're FDIC-insured up to $250,000 per depositor, per bank, making them one of the safest places to
             park your money.
