@@ -12,18 +12,36 @@ export default function HomePage() {
     ? calculators
     : calculators.filter(c => c.category === activeCategory)
 
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'WebSite',
-    name: 'MyCalcFinance',
-    url: 'https://mycalcfinance.com',
-    description: 'Free online financial calculators for mortgage, loans, compound interest, retirement, taxes, and more.',
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: 'https://mycalcfinance.com/?q={search_term_string}',
-      'query-input': 'required name=search_term_string',
+  const faqs = [
+    { question: 'Are these calculators free to use?', answer: 'Yes, all of our financial calculators are 100% free. No signup, no account, no hidden fees. Your data stays in your browser and is never stored on our servers.' },
+    { question: 'How accurate are the calculations?', answer: 'Our calculators use industry-standard formulas. However, they are for informational purposes and should not replace professional financial advice. Real-world results may vary based on fees, taxes, and changing interest rates.' },
+    { question: 'Can I save my calculations?', answer: 'Currently, calculations are performed in real-time in your browser. You can bookmark any calculator page to return to it later, or take a screenshot of your results.' },
+    { question: 'Which calculator should I use first?', answer: 'If you\'re buying a home, start with the Mortgage Calculator. For general savings, try the Compound Interest Calculator. For retirement planning, use the Retirement Calculator. Each calculator is designed for a specific financial scenario.' },
+  ]
+
+  const jsonLd = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      name: 'MyCalcFinance',
+      url: 'https://mycalcfinance.com',
+      description: 'Free online financial calculators for mortgage, loans, compound interest, retirement, taxes, and more.',
+      potentialAction: {
+        '@type': 'SearchAction',
+        target: 'https://mycalcfinance.com/?q={search_term_string}',
+        'query-input': 'required name=search_term_string',
+      },
     },
-  }
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqs.map(f => ({
+        '@type': 'Question',
+        name: f.question,
+        acceptedAnswer: { '@type': 'Answer', text: f.answer },
+      })),
+    },
+  ]
 
   return (
     <main className="main-content">
@@ -82,26 +100,14 @@ export default function HomePage() {
       {/* FAQ Section */}
       <section className="faq-section">
         <h2>Frequently Asked Questions</h2>
-        <FAQ
-          question="Are these calculators free to use?"
-          answer="Yes, all of our financial calculators are 100% free. No signup, no account, no hidden fees. Your data stays in your browser and is never stored on our servers."
-        />
-        <FAQ
-          question="How accurate are the calculations?"
-          answer="Our calculators use industry-standard formulas. However, they are for informational purposes and should not replace professional financial advice. Real-world results may vary based on fees, taxes, and changing interest rates."
-        />
-        <FAQ
-          question="Can I save my calculations?"
-          answer="Currently, calculations are performed in real-time in your browser. You can bookmark any calculator page to return to it later, or take a screenshot of your results."
-        />
-        <FAQ
-          question="Which calculator should I use first?"
-          answer="If you're buying a home, start with the Mortgage Calculator. For general savings, try the Compound Interest Calculator. For retirement planning, use the Retirement Calculator. Each calculator is designed for a specific financial scenario."
-        />
+        {faqs.map((faq, i) => (
+          <FAQ key={i} question={faq.question} answer={faq.answer} />
+        ))}
       </section>
     </main>
   )
 }
+
 
 function FAQ({ question, answer }) {
   const [open, setOpen] = useState(false)

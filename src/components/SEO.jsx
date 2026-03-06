@@ -25,9 +25,17 @@ export default function SEO({ title, description, canonical, type = 'website', j
 
       {/* JSON-LD Structured Data */}
       {jsonLd && (
-        <script type="application/ld+json">
-          {JSON.stringify(jsonLd)}
-        </script>
+        Array.isArray(jsonLd)
+          ? jsonLd.map((schema, i) => (
+              <script key={i} type="application/ld+json">
+                {JSON.stringify(schema)}
+              </script>
+            ))
+          : (
+              <script type="application/ld+json">
+                {JSON.stringify(jsonLd)}
+              </script>
+            )
       )}
     </Helmet>
   )
