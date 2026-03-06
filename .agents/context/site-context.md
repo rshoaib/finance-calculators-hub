@@ -28,21 +28,22 @@ description: Brand voice, internal links, and target keywords for mycalcfinance.
 | Net Worth | `/net-worth` | assets, liabilities, net worth |
 | Inflation | `/inflation` | purchasing power, CPI |
 | Tax Calculator | `/tax` | income tax, tax bracket |
+| Student Loan | `/student-loan-calculator` | student loan, education loan, repayment |
 | Blog | `/blog/[slug]` | Financial guides |
 
 ## Target Keywords
 ### High Priority
 | Keyword | Status |
 |---------|--------|
-| compound interest calculator | 🆕 Need content |
-| mortgage calculator | 🆕 Need content |
-| loan emi calculator | 🆕 Need content |
-| retirement calculator | 🆕 Need content |
-| savings calculator | 🆕 Need content |
+| compound interest calculator | ✅ Published |
+| mortgage calculator | ✅ Published |
+| loan emi calculator | ✅ Published |
+| retirement calculator | ✅ Published |
+| savings calculator | ✅ Published |
 
 ### Content Calendar
-1. "Compound Interest Calculator: Watch Your Money Grow (2026 Guide)"
-2. "Mortgage Calculator: How Much House Can You Afford?"
-3. "Loan EMI Calculator: Compare Monthly Payments Instantly"
-4. "How Much Do You Need to Retire? (Calculator + Formula)"
-5. "Emergency Fund Calculator: How Many Months Do You Need?"
+1. ✅ "Compound Interest Calculator: Watch Your Money Grow (2026 Guide)"
+2. ✅ "Mortgage Calculator: How Much House Can You Afford?"
+3. ✅ "Loan EMI Calculator: Compare Monthly Payments Instantly (2026 Guide)"
+4. ✅ "How Much Do You Need to Retire? (Calculator + Formula)"
+5. ✅ "Emergency Fund Calculator: How Many Months Do You Need?"

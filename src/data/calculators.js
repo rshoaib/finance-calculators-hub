@@ -179,6 +179,15 @@ export const calculators = [
     color: 'cyan',
     cpc: '$5–$15',
   },
+  {
+    title: 'Student Loan Calculator',
+    slug: 'student-loan-calculator',
+    description: 'Estimate student loan payments, compare repayment plans, and see how extra payments save you thousands in interest.',
+    icon: '🎓',
+    category: 'Loans',
+    color: 'purple',
+    cpc: '$5–$15',
+  },
 ]
 
 export const categories = ['All', 'Loans', 'Savings', 'Investment', 'Tax', 'Retirement']
