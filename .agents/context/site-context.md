@@ -49,4 +49,5 @@ description: Brand voice, internal links, and target keywords for mycalcfinance.
 5. ✅ "Emergency Fund Calculator: How Many Months Do You Need?"
 6. ✅ "Student Loan Repayment Guide: How to Pay Off Loans Faster (2026)"
 7. ✅ "CD Calculator Guide: Best Rates & How to Maximize Returns (2026)"
+8. ✅ "Investment Return Calculator: ROI, CAGR & Asset Class Comparison (2026)"
 

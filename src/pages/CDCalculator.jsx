@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
 import SEO from '../components/SEO'
 import AdSlot from '../components/AdSlot'
@@ -24,7 +24,7 @@ export default function CDCalculator() {
   })
   const [results, setResults] = useState(null)
 
-  const calculate = () => {
+  const calculate = useCallback(() => {
     const { deposit, apy, termMonths, compounding } = inputs
     const t = termMonths / 12 // term in years
     const n = compounding
@@ -76,7 +76,9 @@ export default function CDCalculator() {
       chartData,
       comparison,
     })
-  }
+  }, [inputs])
+
+  useEffect(() => { calculate() }, [calculate])
 
   const handleChange = (field, value) => {
     setInputs(prev => ({ ...prev, [field]: parseFloat(value) || 0 }))

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend, ReferenceLine } from 'recharts'
 import SEO from '../components/SEO'
 import AdSlot from '../components/AdSlot'
@@ -14,7 +14,7 @@ export default function BreakEvenCalculator() {
   })
   const [results, setResults] = useState(null)
 
-  const calculate = () => {
+  const calculate = useCallback(() => {
     const { fixedCosts, variableCostPerUnit, sellingPricePerUnit } = inputs
     const contributionMargin = sellingPricePerUnit - variableCostPerUnit
     if (contributionMargin <= 0) {
@@ -39,7 +39,9 @@ export default function BreakEvenCalculator() {
     }
 
     setResults({ breakEvenUnits, breakEvenRevenue, contributionMargin, marginPercent, chartData, error: null })
-  }
+  }, [inputs])
+
+  useEffect(() => { calculate() }, [calculate])
 
   const handleChange = (field, value) => {
     setInputs(prev => ({ ...prev, [field]: parseFloat(value) || 0 }))

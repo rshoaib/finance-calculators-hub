@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell } from 'recharts'
 import SEO from '../components/SEO'
 import AdSlot from '../components/AdSlot'
@@ -39,7 +39,7 @@ export default function TaxBracketCalculator() {
   })
   const [results, setResults] = useState(null)
 
-  const calculate = () => {
+  const calculate = useCallback(() => {
     const { income, filingStatus, deductions, useStandard } = inputs
     const brackets = BRACKETS_2024[filingStatus]
     const totalDeductions = useStandard ? STANDARD_DEDUCTION[filingStatus] : deductions
@@ -69,7 +69,9 @@ export default function TaxBracketCalculator() {
     const takeHome = income - totalTax
 
     setResults({ totalTax, effectiveRate, marginalRate, takeHome, taxableIncome, totalDeductions, bracketBreakdown })
-  }
+  }, [inputs])
+
+  useEffect(() => { calculate() }, [calculate])
 
   const handleChange = (field, value) => {
     if (field === 'filingStatus' || field === 'useStandard') {

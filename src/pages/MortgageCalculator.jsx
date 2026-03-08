@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts'
 import SEO from '../components/SEO'
 import AdSlot from '../components/AdSlot'
@@ -19,7 +19,7 @@ export default function MortgageCalculator() {
   })
   const [results, setResults] = useState(null)
 
-  const calculate = () => {
+  const calculate = useCallback(() => {
     const principal = inputs.homePrice * (1 - inputs.downPayment / 100)
     const monthlyRate = inputs.interestRate / 100 / 12
     const numPayments = inputs.loanTerm * 12
@@ -66,7 +66,9 @@ export default function MortgageCalculator() {
         { name: 'Down Payment', value: Math.round(downPaymentAmount) },
       ],
     })
-  }
+  }, [inputs])
+
+  useEffect(() => { calculate() }, [calculate])
 
   const handleChange = (field, value) => {
     setInputs(prev => ({ ...prev, [field]: parseFloat(value) || 0 }))

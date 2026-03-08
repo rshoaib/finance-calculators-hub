@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts'
 import SEO from '../components/SEO'
 import AdSlot from '../components/AdSlot'
@@ -23,7 +23,7 @@ export default function FourOhOneKCalculator() {
   })
   const [results, setResults] = useState(null)
 
-  const calculate = () => {
+  const calculate = useCallback(() => {
     const years = inputs.retirementAge - inputs.currentAge
     if (years <= 0) return
 
@@ -67,7 +67,9 @@ export default function FourOhOneKCalculator() {
         { name: 'Investment Growth', value: Math.round(totalGrowth) },
       ],
     })
-  }
+  }, [inputs])
+
+  useEffect(() => { calculate() }, [calculate])
 
   const handleChange = (field, value) => {
     setInputs(prev => ({ ...prev, [field]: parseFloat(value) || 0 }))

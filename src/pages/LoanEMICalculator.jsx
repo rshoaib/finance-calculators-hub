@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from 'recharts'
 import SEO from '../components/SEO'
 import AdSlot from '../components/AdSlot'
@@ -17,7 +17,7 @@ export default function LoanEMICalculator() {
   })
   const [results, setResults] = useState(null)
 
-  const calculate = () => {
+  const calculate = useCallback(() => {
     const months = inputs.tenureType === 'years' ? inputs.loanTenure * 12 : inputs.loanTenure
     const monthlyRate = inputs.interestRate / 100 / 12
 
@@ -39,7 +39,9 @@ export default function LoanEMICalculator() {
         { name: 'Interest', value: Math.round(totalInterest) },
       ],
     })
-  }
+  }, [inputs])
+
+  useEffect(() => { calculate() }, [calculate])
 
   const handleChange = (field, value) => {
     setInputs(prev => ({ ...prev, [field]: field === 'tenureType' ? value : (parseFloat(value) || 0) }))

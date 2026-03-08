@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
 import SEO from '../components/SEO'
 import AdSlot from '../components/AdSlot'
@@ -17,7 +17,7 @@ export default function RetirementCalculator() {
   })
   const [results, setResults] = useState(null)
 
-  const calculate = () => {
+  const calculate = useCallback(() => {
     const { currentAge, retirementAge, currentSavings, monthlyContribution, expectedReturn, inflationRate } = inputs
     const years = retirementAge - currentAge
     if (years <= 0) return
@@ -55,7 +55,9 @@ export default function RetirementCalculator() {
     }
 
     setResults({ totalCorpus, totalContributed, totalInterest, inflationAdjusted, monthlyRetirementIncome, chartData })
-  }
+  }, [inputs])
+
+  useEffect(() => { calculate() }, [calculate])
 
   const handleChange = (field, value) => {
     setInputs(prev => ({ ...prev, [field]: parseFloat(value) || 0 }))

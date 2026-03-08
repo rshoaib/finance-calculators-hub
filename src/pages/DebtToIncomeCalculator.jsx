@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import SEO from '../components/SEO'
 import AdSlot from '../components/AdSlot'
 import Breadcrumb from '../components/Breadcrumb'
@@ -24,7 +24,7 @@ export default function DebtToIncomeCalculator() {
   })
   const [results, setResults] = useState(null)
 
-  const calculate = () => {
+  const calculate = useCallback(() => {
     const { monthlyIncome, mortgage, carPayment, studentLoans, creditCards, otherDebts } = inputs
     const totalDebt = mortgage + carPayment + studentLoans + creditCards + otherDebts
     const dtiRatio = monthlyIncome > 0 ? (totalDebt / monthlyIncome) * 100 : 0
@@ -40,7 +40,9 @@ export default function DebtToIncomeCalculator() {
     ].filter(d => d.amount > 0)
 
     setResults({ dtiRatio, totalDebt, rating, remaining: monthlyIncome - totalDebt, debtBreakdown })
-  }
+  }, [inputs])
+
+  useEffect(() => { calculate() }, [calculate])
 
   const handleChange = (field, value) => {
     setInputs(prev => ({ ...prev, [field]: parseFloat(value) || 0 }))

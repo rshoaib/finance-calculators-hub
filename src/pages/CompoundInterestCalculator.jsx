@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
 import SEO from '../components/SEO'
 import AdSlot from '../components/AdSlot'
@@ -16,7 +16,7 @@ export default function CompoundInterestCalculator() {
   })
   const [results, setResults] = useState(null)
 
-  const calculate = () => {
+  const calculate = useCallback(() => {
     const { principal, monthlyContribution, interestRate, years, compounding } = inputs
     const r = interestRate / 100
     const n = compounding
@@ -50,7 +50,9 @@ export default function CompoundInterestCalculator() {
     }
 
     setResults({ futureValue, totalContributions, totalInterest, chartData })
-  }
+  }, [inputs])
+
+  useEffect(() => { calculate() }, [calculate])
 
   const handleChange = (field, value) => {
     setInputs(prev => ({ ...prev, [field]: parseFloat(value) || 0 }))

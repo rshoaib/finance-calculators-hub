@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from 'recharts'
 import SEO from '../components/SEO'
 import AdSlot from '../components/AdSlot'
@@ -18,7 +18,7 @@ export default function BudgetPlannerCalculator() {
   const [income, setIncome] = useState(5000)
   const [results, setResults] = useState(null)
 
-  const calculate = () => {
+  const calculate = useCallback(() => {
     const needs = income * 0.5
     const wants = income * 0.3
     const savings = income * 0.2
@@ -28,7 +28,9 @@ export default function BudgetPlannerCalculator() {
       { name: 'Savings (20%)', value: Math.round(savings), color: COLORS.savings },
     ]
     setResults({ needs, wants, savings, chartData })
-  }
+  }, [income])
+
+  useEffect(() => { calculate() }, [calculate])
 
   const faqs = [
     { question: 'What is the 50/30/20 budget rule?', answer: 'The 50/30/20 rule, popularized by Senator Elizabeth Warren, allocates 50% of after-tax income to needs (housing, groceries, utilities, insurance), 30% to wants (entertainment, dining out, subscriptions), and 20% to savings and debt repayment. It provides a simple framework without requiring you to track every dollar.' },

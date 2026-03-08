@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from 'recharts'
 import SEO from '../components/SEO'
 import AdSlot from '../components/AdSlot'
@@ -18,7 +18,7 @@ export default function CarLoanCalculator() {
   })
   const [results, setResults] = useState(null)
 
-  const calculate = () => {
+  const calculate = useCallback(() => {
     const { vehiclePrice, downPayment, tradeIn, loanTerm, interestRate } = inputs
     const principal = vehiclePrice - downPayment - tradeIn
     if (principal <= 0) return
@@ -44,7 +44,9 @@ export default function CarLoanCalculator() {
         { name: 'Down Payment + Trade-in', value: Math.round(downPayment + tradeIn) },
       ],
     })
-  }
+  }, [inputs])
+
+  useEffect(() => { calculate() }, [calculate])
 
   const handleChange = (field, value) => {
     setInputs(prev => ({ ...prev, [field]: parseFloat(value) || 0 }))

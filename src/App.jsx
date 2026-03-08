@@ -31,6 +31,8 @@ const HomeAffordabilityCalculator = lazy(() => import('./pages/HomeAffordability
 const DebtPayoffCalculator = lazy(() => import('./pages/DebtPayoffCalculator'))
 const CDCalculator = lazy(() => import('./pages/CDCalculator'))
 const StudentLoanCalculator = lazy(() => import('./pages/StudentLoanCalculator'))
+const NotFound = lazy(() => import('./pages/NotFound'))
+const Contact = lazy(() => import('./pages/Contact'))
 
 export default function App() {
   return (
@@ -60,6 +62,7 @@ export default function App() {
           <Route path="/cd-calculator" element={<CDCalculator />} />
           <Route path="/student-loan-calculator" element={<StudentLoanCalculator />} />
           <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/blog" element={<BlogList />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
@@ -77,6 +80,9 @@ export default function App() {
           {savingsPages.map(p => (
             <Route key={p.slug} path={`/${p.slug}`} element={<SeoCalcPage page={p} relatedPages={savingsPages.filter(r => r.slug !== p.slug).slice(0, 6)} />} />
           ))}
+
+          {/* 404 catch-all */}
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </Suspense>

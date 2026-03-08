@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell } from 'recharts'
 import SEO from '../components/SEO'
 import AdSlot from '../components/AdSlot'
@@ -26,7 +26,7 @@ export default function NetWorthCalculator() {
   })
   const [results, setResults] = useState(null)
 
-  const calculate = () => {
+  const calculate = useCallback(() => {
     const totalAssets = Object.values(assets).reduce((a, b) => a + b, 0)
     const totalLiabilities = Object.values(liabilities).reduce((a, b) => a + b, 0)
     const netWorth = totalAssets - totalLiabilities
@@ -46,7 +46,9 @@ export default function NetWorthCalculator() {
     ].filter(d => d.value > 0)
 
     setResults({ totalAssets, totalLiabilities, netWorth, ratio, chartData })
-  }
+  }, [assets, liabilities])
+
+  useEffect(() => { calculate() }, [calculate])
 
   const handleAssetChange = (field, value) => {
     setAssets(prev => ({ ...prev, [field]: parseFloat(value) || 0 }))

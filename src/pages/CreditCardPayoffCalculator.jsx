@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts'
 import SEO from '../components/SEO'
 import AdSlot from '../components/AdSlot'
@@ -14,7 +14,7 @@ export default function CreditCardPayoffCalculator() {
   })
   const [results, setResults] = useState(null)
 
-  const calculate = () => {
+  const calculate = useCallback(() => {
     const { balance, apr, monthlyPayment } = inputs
     const monthlyRate = apr / 100 / 12
 
@@ -75,7 +75,9 @@ export default function CreditCardPayoffCalculator() {
       interestSaved,
       chartData: customData.filter((_, i) => i % Math.max(1, Math.floor(customData.length / 30)) === 0 || i === customData.length - 1),
     })
-  }
+  }, [inputs])
+
+  useEffect(() => { calculate() }, [calculate])
 
   const handleChange = (field, value) => {
     setInputs(prev => ({ ...prev, [field]: parseFloat(value) || 0 }))

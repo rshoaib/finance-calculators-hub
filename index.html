@@ -63,10 +63,13 @@
         document.documentElement.setAttribute('data-theme', theme);
       })();
     </script>
-    <style>
-      /* Hide SEO fallback content to prevent flash before React mounts */
-      #root > h1, #root > h2, #root > p { display: none; }
-    </style>
+    <script>
+      // Hide SEO fallback content to prevent flash before React mounts
+      document.addEventListener('DOMContentLoaded', function() {
+        var root = document.getElementById('root');
+        if (root) { var els = root.querySelectorAll(':scope > h1, :scope > h2, :scope > p'); els.forEach(function(el){el.style.display='none';}); }
+      });
+    </script>
   </head>
   <body>
     <div id="root">

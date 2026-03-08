@@ -8,7 +8,8 @@ const existingPages = [
   '/investment-return-calculator', '/net-worth-calculator', '/inflation-calculator',
   '/salary-calculator', '/capital-gains-tax-calculator', '/budget-planner',
   '/break-even-calculator', '/401k-calculator', '/home-affordability-calculator', '/debt-payoff-calculator', '/cd-calculator',
-  '/about', '/privacy-policy', '/blog',
+  '/student-loan-calculator',
+  '/about', '/contact', '/privacy-policy', '/blog',
 ];
 
 // Salary pages

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer, Legend } from 'recharts'
 import SEO from '../components/SEO'
 import AdSlot from '../components/AdSlot'
@@ -25,7 +25,7 @@ export default function SalaryCalculator() {
   })
   const [results, setResults] = useState(null)
 
-  const calculate = () => {
+  const calculate = useCallback(() => {
     const { grossSalary, payFrequency, stateTaxRate, retirement401k, insurancePremium } = inputs
     const periods = FREQUENCIES[payFrequency].periods
 
@@ -78,7 +78,9 @@ export default function SalaryCalculator() {
     ].filter(d => d.value > 0)
 
     setResults({ federalTax, stateTax, fica, retirement, insuranceAnnual, totalDeductions, netPay, perPeriod, chartData })
-  }
+  }, [inputs])
+
+  useEffect(() => { calculate() }, [calculate])
 
   const handleChange = (field, value) => {
     if (field === 'payFrequency') {

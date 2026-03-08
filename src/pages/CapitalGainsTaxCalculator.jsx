@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell, Legend } from 'recharts'
 import SEO from '../components/SEO'
 import AdSlot from '../components/AdSlot'
@@ -29,7 +29,7 @@ export default function CapitalGainsTaxCalculator() {
   })
   const [results, setResults] = useState(null)
 
-  const calculate = () => {
+  const calculate = useCallback(() => {
     const { purchasePrice, salePrice, holdingPeriod, filingStatus, taxableIncome } = inputs
     const gain = salePrice - purchasePrice
 
@@ -78,7 +78,9 @@ export default function CapitalGainsTaxCalculator() {
     ]
 
     setResults({ gain, taxRate, taxOwed, netProceeds, isLoss: false, comparisonData, shortTermTax, longTermTax, savings: shortTermTax - longTermTax })
-  }
+  }, [inputs])
+
+  useEffect(() => { calculate() }, [calculate])
 
   const handleChange = (field, value) => {
     if (field === 'holdingPeriod' || field === 'filingStatus') {

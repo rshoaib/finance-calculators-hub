@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Legend } from 'recharts'
 import SEO from '../components/SEO'
 import AdSlot from '../components/AdSlot'
@@ -26,7 +26,7 @@ export default function StudentLoanCalculator() {
   })
   const [results, setResults] = useState(null)
 
-  const calculate = () => {
+  const calculate = useCallback(() => {
     const { loanBalance, interestRate, repaymentPlan, customMonths, extraPayment, gracePeriod } = inputs
     if (loanBalance <= 0) return
 
@@ -118,7 +118,9 @@ export default function StudentLoanCalculator() {
         { name: 'Repayment Interest', value: Math.round(totalInterestPaid) },
       ].filter(d => d.value > 0),
     })
-  }
+  }, [inputs])
+
+  useEffect(() => { calculate() }, [calculate])
 
   const handleChange = (field, value) => {
     setInputs(prev => ({ ...prev, [field]: field === 'repaymentPlan' ? value : (parseFloat(value) || 0) }))

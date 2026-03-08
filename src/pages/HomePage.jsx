@@ -1,9 +1,17 @@
-import { useState } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Calculator, TrendingUp, Shield } from 'lucide-react'
 import SEO from '../components/SEO'
 import AdSlot from '../components/AdSlot'
 import { calculators, categories } from '../data/calculators'
+
+const POPULAR_SLUGS = ['mortgage-calculator', 'compound-interest-calculator', 'retirement-calculator', '401k-calculator', 'home-affordability-calculator']
+
+const SPOTLIGHT = [
+  { slug: 'mortgage-calculator', icon: '🏠', color: 'linear-gradient(135deg, #10b981, #059669)', title: 'Mortgage Calculator', desc: 'Calculate monthly payments, total interest, and view amortization schedules for any home loan.' },
+  { slug: 'compound-interest-calculator', icon: '📈', color: 'linear-gradient(135deg, #3b82f6, #2563eb)', title: 'Compound Interest', desc: 'See how your investments grow with compound interest and regular contributions over time.' },
+  { slug: 'retirement-calculator', icon: '🏖️', color: 'linear-gradient(135deg, #f59e0b, #d97706)', title: 'Retirement Planner', desc: 'Plan your retirement savings and discover how much you need to save each month.' },
+]
 
 export default function HomePage() {
   const [activeCategory, setActiveCategory] = useState('All')
@@ -60,6 +68,49 @@ export default function HomePage() {
         <p>
           Calculate mortgage payments, investment growth, retirement savings, taxes, and more — 100% free, no signup required.
         </p>
+
+        {/* CTA Buttons */}
+        <div className="hero-cta">
+          <Link to="/mortgage-calculator" className="btn-primary">
+            🏠 Mortgage Calculator
+          </Link>
+          <Link to="/compound-interest-calculator" className="btn-secondary">
+            📈 Investment Growth
+          </Link>
+        </div>
+
+        {/* Trust Signals */}
+        <div className="trust-signals">
+          <div className="trust-item">
+            <span>🔒</span> <span>100% Private — No Data Stored</span>
+          </div>
+          <div className="trust-item">
+            <span>⚡</span> <span>Instant Results</span>
+          </div>
+          <div className="trust-item">
+            <span>🆓</span> <span>Forever Free — No Signup</span>
+          </div>
+          <div className="trust-item">
+            <span>📊</span> <span>20+ Calculators</span>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Spotlight */}
+      <section className="spotlight-section">
+        <div className="spotlight-grid">
+          {SPOTLIGHT.map(s => (
+            <Link key={s.slug} to={`/${s.slug}`} className="spotlight-card">
+              <div className="spotlight-icon" style={{ background: s.color }}>
+                {s.icon}
+              </div>
+              <div className="spotlight-info">
+                <h3>{s.title}</h3>
+                <p>{s.desc}</p>
+              </div>
+            </Link>
+          ))}
+        </div>
       </section>
 
       {/* Category Filter */}
@@ -78,19 +129,30 @@ export default function HomePage() {
       {/* Ad slot */}
       <AdSlot size="leaderboard" />
 
-      {/* Calculator grid */}
+      {/* Calculator grid with in-feed ad */}
       <div className="calculators-grid">
         {filtered.map((calc, idx) => (
-          <Link key={calc.slug} to={`/${calc.slug}`} className="card card-link calc-card" style={{ animationDelay: `${idx * 60}ms` }}>
-            <div className={`calc-card-icon ${calc.color}`}>
-              {calc.icon}
-            </div>
-            <h3>{calc.title}</h3>
-            <p>{calc.description}</p>
-            <span className="card-cta">
-              Calculate now <ArrowRight size={16} />
-            </span>
-          </Link>
+          <>
+            <Link key={calc.slug} to={`/${calc.slug}`} className="card card-link calc-card" style={{ animationDelay: `${idx * 60}ms` }}>
+              {POPULAR_SLUGS.includes(calc.slug) && (
+                <span className="popular-badge">⭐ Popular</span>
+              )}
+              <div className={`calc-card-icon ${calc.color}`}>
+                {calc.icon}
+              </div>
+              <h3>{calc.title}</h3>
+              <p>{calc.description}</p>
+              <span className="card-cta">
+                Calculate now <ArrowRight size={16} />
+              </span>
+            </Link>
+            {/* In-feed ad after every 6 cards */}
+            {(idx + 1) % 6 === 0 && idx + 1 < filtered.length && (
+              <div key={`ad-${idx}`} style={{ gridColumn: '1 / -1' }}>
+                <AdSlot size="leaderboard" />
+              </div>
+            )}
+          </>
         ))}
       </div>
 

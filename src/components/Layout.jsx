@@ -1,27 +1,43 @@
+import { useState } from 'react'
 import { Outlet, Link, NavLink, useLocation } from 'react-router-dom'
-import { Calculator, Home, TrendingUp, PiggyBank, Receipt } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import ThemeToggle from './ThemeToggle'
 
 export default function Layout() {
   const location = useLocation()
+  const [menuOpen, setMenuOpen] = useState(false)
+
+  // Close mobile menu on navigation
+  const closeMenu = () => setMenuOpen(false)
 
   return (
     <div className="app-wrapper">
       <header className="header">
-        <Link to="/" className="header-logo">
+        <Link to="/" className="header-logo" onClick={closeMenu}>
           <span className="logo-icon">FC</span>
           <span>MyCalcFinance</span>
         </Link>
-        <nav className="header-nav">
-          <NavLink to="/" end>Home</NavLink>
-          <NavLink to="/mortgage-calculator">Mortgage</NavLink>
-          <NavLink to="/compound-interest-calculator">Investing</NavLink>
-          <NavLink to="/retirement-calculator">Retirement</NavLink>
-          <NavLink to="/blog">Blog</NavLink>
-          <NavLink to="/about">About</NavLink>
+        <nav className={`header-nav ${menuOpen ? 'open' : ''}`}>
+          <NavLink to="/" end onClick={closeMenu}>Home</NavLink>
+          <NavLink to="/mortgage-calculator" onClick={closeMenu}>Mortgage</NavLink>
+          <NavLink to="/compound-interest-calculator" onClick={closeMenu}>Investing</NavLink>
+          <NavLink to="/retirement-calculator" onClick={closeMenu}>Retirement</NavLink>
+          <NavLink to="/blog" onClick={closeMenu}>Blog</NavLink>
+          <NavLink to="/about" onClick={closeMenu}>About</NavLink>
+          <NavLink to="/contact" onClick={closeMenu}>Contact</NavLink>
           <ThemeToggle />
         </nav>
+        <button
+          className="mobile-menu-toggle"
+          onClick={() => setMenuOpen(o => !o)}
+          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+        >
+          {menuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
       </header>
+
+      {/* Overlay to close menu when clicking outside */}
+      {menuOpen && <div className="mobile-menu-overlay" onClick={closeMenu} />}
 
       <Outlet />
 
@@ -39,8 +55,10 @@ export default function Layout() {
           <Link to="/break-even-calculator">Break-Even</Link>
           <Link to="/inflation-calculator">Inflation</Link>
           <Link to="/cd-calculator">CD Calculator</Link>
+          <Link to="/student-loan-calculator">Student Loans</Link>
           <Link to="/blog">Blog</Link>
           <Link to="/about">About</Link>
+          <Link to="/contact">Contact</Link>
           <Link to="/privacy-policy">Privacy Policy</Link>
         </div>
         <p>&copy; {new Date().getFullYear()} MyCalcFinance. Free financial calculators for smarter money decisions.</p>

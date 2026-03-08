@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
 import SEO from '../components/SEO'
 import AdSlot from '../components/AdSlot'
@@ -14,7 +14,7 @@ export default function InflationCalculator() {
   })
   const [results, setResults] = useState(null)
 
-  const calculate = () => {
+  const calculate = useCallback(() => {
     const { amount, rate, years } = inputs
     const r = rate / 100
     const chartData = []
@@ -36,7 +36,9 @@ export default function InflationCalculator() {
     const lossPercent = (purchasingPowerLoss / amount) * 100
 
     setResults({ futureValue, purchasingPowerLoss, realValue, lossPercent, chartData })
-  }
+  }, [inputs])
+
+  useEffect(() => { calculate() }, [calculate])
 
   const handleChange = (field, value) => {
     setInputs(prev => ({ ...prev, [field]: parseFloat(value) || 0 }))

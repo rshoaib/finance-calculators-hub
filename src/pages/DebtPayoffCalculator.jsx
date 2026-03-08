@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts'
 import SEO from '../components/SEO'
 import AdSlot from '../components/AdSlot'
@@ -81,7 +81,7 @@ export default function DebtPayoffCalculator() {
     return { months: month, totalInterest, chartData, order: active.map(d => ({ name: d.name || 'Debt', paidOffMonth: d.paidOffMonth, totalInterest: d.totalInterest })) }
   }
 
-  const calculate = () => {
+  const calculate = useCallback(() => {
     const validDebts = debts.filter(d => d.balance > 0)
     if (validDebts.length === 0) return
 
@@ -111,7 +111,9 @@ export default function DebtPayoffCalculator() {
       interestSavedAvalanche: minOnly.totalInterest - avalanche.totalInterest,
       interestSavedSnowball: minOnly.totalInterest - snowball.totalInterest,
     })
-  }
+  }, [debts, extraPayment])
+
+  useEffect(() => { calculate() }, [calculate])
 
   const active = results ? (strategy === 'avalanche' ? results.avalanche : results.snowball) : null
 
