@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 import { calculators } from '../data/calculators'
 
 export default function RelatedCalculators({ currentSlug, category }) {
@@ -12,7 +12,7 @@ export default function RelatedCalculators({ currentSlug, category }) {
       <h4>Related Calculators</h4>
       <div className="related-calcs-list">
         {related.map(calc => (
-          <Link key={calc.slug} to={`/${calc.slug}`} className="related-calc-item">
+          <Link key={calc.slug} href={`/${calc.slug}`} className="related-calc-item">
             <span>{calc.icon}</span>
             <span>{calc.title}</span>
           </Link>

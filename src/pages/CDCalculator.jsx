@@ -1,6 +1,6 @@
+"use client"
 import { useState, useCallback, useEffect } from 'react'
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
-import SEO from '../components/SEO'
 import AdSlot from '../components/AdSlot'
 import Breadcrumb from '../components/Breadcrumb'
 import RelatedCalculators from '../components/RelatedCalculators'
@@ -112,12 +112,7 @@ export default function CDCalculator() {
   return (
     <div className="page-with-sidebar">
       <div className="page-main">
-        <SEO
-          title="CD Calculator — Certificate of Deposit Interest & Maturity"
-          description="Free CD calculator. Calculate your certificate of deposit maturity value, compare terms from 3 months to 5 years, and estimate early withdrawal penalties."
-          canonical="/cd-calculator"
-          jsonLd={jsonLd}
-        />
+        
         <Breadcrumb items={[{ label: 'CD Calculator' }]} />
 
         <div className="calc-header">

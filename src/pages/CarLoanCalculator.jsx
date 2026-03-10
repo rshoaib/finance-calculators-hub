@@ -1,6 +1,6 @@
+"use client"
 import { useState, useCallback, useEffect } from 'react'
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from 'recharts'
-import SEO from '../components/SEO'
 import AdSlot from '../components/AdSlot'
 import Breadcrumb from '../components/Breadcrumb'
 import RelatedCalculators from '../components/RelatedCalculators'
@@ -68,12 +68,7 @@ export default function CarLoanCalculator() {
   return (
     <div className="page-with-sidebar">
       <div className="page-main">
-        <SEO
-          title="Car Loan Calculator — Auto Payment Estimator"
-          description="Free car loan calculator. Estimate your monthly auto payment, total interest, and compare different loan terms. Includes down payment and trade-in value."
-          canonical="/car-loan-calculator"
-          jsonLd={jsonLd}
-        />
+        
         <Breadcrumb items={[{ label: 'Car Loan Calculator' }]} />
 
         <div className="calc-header">

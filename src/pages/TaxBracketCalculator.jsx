@@ -1,6 +1,6 @@
+"use client"
 import { useState, useCallback, useEffect } from 'react'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell } from 'recharts'
-import SEO from '../components/SEO'
 import AdSlot from '../components/AdSlot'
 import Breadcrumb from '../components/Breadcrumb'
 import RelatedCalculators from '../components/RelatedCalculators'
@@ -97,12 +97,7 @@ export default function TaxBracketCalculator() {
   return (
     <div className="page-with-sidebar">
       <div className="page-main">
-        <SEO
-          title="Tax Bracket Calculator — Federal Income Tax 2024"
-          description="Free federal income tax calculator. See your tax bracket, effective rate, marginal rate, and take-home pay. Updated for 2024 tax brackets."
-          canonical="/tax-bracket-calculator"
-          jsonLd={jsonLd}
-        />
+        
         <Breadcrumb items={[{ label: 'Tax Bracket Calculator' }]} />
 
         <div className="calc-header">

@@ -1,6 +1,6 @@
+"use client"
 import { useState, useCallback, useEffect } from 'react'
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Legend } from 'recharts'
-import SEO from '../components/SEO'
 import AdSlot from '../components/AdSlot'
 import Breadcrumb from '../components/Breadcrumb'
 import RelatedCalculators from '../components/RelatedCalculators'
@@ -154,12 +154,7 @@ export default function StudentLoanCalculator() {
   return (
     <div className="page-with-sidebar">
       <div className="page-main">
-        <SEO
-          title="Student Loan Calculator — Repayment & Interest Estimator (2026)"
-          description="Free student loan calculator. Estimate monthly payments, compare repayment plans, and see how extra payments save thousands in interest. Updated for 2026 rates."
-          canonical="/student-loan-calculator"
-          jsonLd={jsonLd}
-        />
+        
         <Breadcrumb items={[{ label: 'Student Loan Calculator' }]} />
 
         <div className="calc-header">

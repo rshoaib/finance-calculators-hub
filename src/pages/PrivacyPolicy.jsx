@@ -1,13 +1,9 @@
-import SEO from '../components/SEO'
+"use client"
 
 export default function PrivacyPolicy() {
   return (
     <main className="main-content" style={{ maxWidth: 800 }}>
-      <SEO
-        title="Privacy Policy"
-        description="MyCalcFinance privacy policy. We do not collect, store, or transmit your personal or financial data."
-        canonical="/privacy-policy"
-      />
+      
       <div className="calc-header">
         <h1 style={{ background: 'none', WebkitTextFillColor: 'var(--text-primary)' }}>Privacy Policy</h1>
         <p>Last updated: February 2026</p>

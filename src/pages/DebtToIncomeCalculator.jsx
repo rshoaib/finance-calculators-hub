@@ -1,5 +1,5 @@
+"use client"
 import { useState, useCallback, useEffect } from 'react'
-import SEO from '../components/SEO'
 import AdSlot from '../components/AdSlot'
 import Breadcrumb from '../components/Breadcrumb'
 import RelatedCalculators from '../components/RelatedCalculators'
@@ -64,12 +64,7 @@ export default function DebtToIncomeCalculator() {
   return (
     <div className="page-with-sidebar">
       <div className="page-main">
-        <SEO
-          title="Debt-to-Income Ratio Calculator — DTI Check"
-          description="Free DTI calculator. Calculate your debt-to-income ratio, see your rating, and understand what lenders look for in mortgage and loan applications."
-          canonical="/debt-to-income-calculator"
-          jsonLd={jsonLd}
-        />
+        
         <Breadcrumb items={[{ label: 'Debt-to-Income Calculator' }]} />
 
         <div className="calc-header">

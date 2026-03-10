@@ -1,6 +1,6 @@
+"use client"
 import { useState, useCallback, useEffect } from 'react'
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from 'recharts'
-import SEO from '../components/SEO'
 import AdSlot from '../components/AdSlot'
 import Breadcrumb from '../components/Breadcrumb'
 import RelatedCalculators from '../components/RelatedCalculators'
@@ -48,8 +48,7 @@ export default function BudgetPlannerCalculator() {
   return (
     <div className="page-with-sidebar">
       <div className="page-main">
-        <SEO title="Budget Planner — 50/30/20 Rule Calculator" description="Free budget planner using the 50/30/20 rule. Allocate your monthly income between needs, wants, and savings." canonical="/budget-planner"
-          jsonLd={jsonLd} />
+        
         <Breadcrumb items={[{ label: 'Budget Planner' }]} />
 
         <div className="calc-header">

@@ -1,6 +1,6 @@
+"use client"
 import { useState, useCallback, useEffect } from 'react'
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts'
-import SEO from '../components/SEO'
 import AdSlot from '../components/AdSlot'
 import Breadcrumb from '../components/Breadcrumb'
 import RelatedCalculators from '../components/RelatedCalculators'
@@ -103,12 +103,7 @@ export default function FourOhOneKCalculator() {
   return (
     <div className="page-with-sidebar">
       <div className="page-main">
-        <SEO
-          title="401(k) Calculator — Retirement Savings With Employer Match"
-          description="Free 401(k) calculator. See how your contributions, employer match, and compound growth build your retirement nest egg. Includes salary growth projections."
-          canonical="/401k-calculator"
-          jsonLd={jsonLd}
-        />
+        
         <Breadcrumb items={[{ label: '401(k) Calculator' }]} />
 
         <div className="calc-header">

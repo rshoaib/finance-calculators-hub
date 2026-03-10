@@ -1,6 +1,6 @@
+"use client"
 import { useState, useCallback, useEffect } from 'react'
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from 'recharts'
-import SEO from '../components/SEO'
 import AdSlot from '../components/AdSlot'
 import Breadcrumb from '../components/Breadcrumb'
 import RelatedCalculators from '../components/RelatedCalculators'
@@ -75,12 +75,7 @@ export default function LoanEMICalculator() {
   return (
     <div className="page-with-sidebar">
       <div className="page-main">
-        <SEO
-          title="Loan EMI Calculator — Equated Monthly Installment"
-          description="Free EMI calculator. Calculate your equated monthly installment for personal, auto, or education loans. See principal vs interest breakdown."
-          canonical="/emi-calculator"
-          jsonLd={jsonLd}
-        />
+        
         <Breadcrumb items={[{ label: 'EMI Calculator' }]} />
 
         <div className="calc-header">

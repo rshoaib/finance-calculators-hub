@@ -1,6 +1,6 @@
+"use client"
 import { useState, useCallback, useEffect } from 'react'
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
-import SEO from '../components/SEO'
 import AdSlot from '../components/AdSlot'
 import Breadcrumb from '../components/Breadcrumb'
 import RelatedCalculators from '../components/RelatedCalculators'
@@ -69,12 +69,7 @@ export default function SavingsGoalCalculator() {
   return (
     <div className="page-with-sidebar">
       <div className="page-main">
-        <SEO
-          title="Savings Goal Calculator — How Long to Save"
-          description="Free savings goal calculator. Find out how long it will take to reach your savings target with regular monthly deposits and interest."
-          canonical="/savings-goal-calculator"
-          jsonLd={jsonLd}
-        />
+        
         <Breadcrumb items={[{ label: 'Savings Goal Calculator' }]} />
 
         <div className="calc-header">

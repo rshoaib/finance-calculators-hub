@@ -1,6 +1,6 @@
+"use client"
 import { useState, useCallback, useEffect } from 'react'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell, Legend } from 'recharts'
-import SEO from '../components/SEO'
 import AdSlot from '../components/AdSlot'
 import Breadcrumb from '../components/Breadcrumb'
 import RelatedCalculators from '../components/RelatedCalculators'
@@ -106,12 +106,7 @@ export default function CapitalGainsTaxCalculator() {
   return (
     <div className="page-with-sidebar">
       <div className="page-main">
-        <SEO
-          title="Capital Gains Tax Calculator — Short-Term vs Long-Term"
-          description="Free capital gains tax calculator. Compare short-term vs long-term capital gains tax rates and see how much you'll owe on investment profits."
-          canonical="/capital-gains-tax-calculator"
-          jsonLd={jsonLd}
-        />
+        
         <Breadcrumb items={[{ label: 'Capital Gains Tax Calculator' }]} />
 
         <div className="calc-header">

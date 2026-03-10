@@ -1,6 +1,6 @@
+"use client"
 import { useState, useCallback, useEffect } from 'react'
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
-import SEO from '../components/SEO'
 import AdSlot from '../components/AdSlot'
 import Breadcrumb from '../components/Breadcrumb'
 import RelatedCalculators from '../components/RelatedCalculators'
@@ -86,12 +86,7 @@ export default function CompoundInterestCalculator() {
   return (
     <div className="page-with-sidebar">
       <div className="page-main">
-        <SEO
-          title="Compound Interest Calculator — Investment Growth"
-          description="Free compound interest calculator. See how your investments grow with compound interest and regular monthly contributions. Visualize growth over time."
-          canonical="/compound-interest-calculator"
-          jsonLd={jsonLd}
-        />
+        
         <Breadcrumb items={[{ label: 'Compound Interest Calculator' }]} />
 
         <div className="calc-header">

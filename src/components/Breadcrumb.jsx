@@ -1,9 +1,11 @@
-import { Link } from 'react-router-dom'
+"use client"
+import Link from 'next/link'
 import { ChevronRight } from 'lucide-react'
-import { Helmet } from 'react-helmet-async'
+import { usePathname } from 'next/navigation'
 
 export default function Breadcrumb({ items }) {
   const siteUrl = 'https://mycalcfinance.com'
+  const pathname = usePathname()
 
   const breadcrumbJsonLd = {
     '@context': 'https://schema.org',
@@ -16,10 +18,7 @@ export default function Breadcrumb({ items }) {
         item: siteUrl,
       },
       ...items.map((item, idx) => {
-        // According to schema.org, the last item doesn't strictly need a URL, 
-        // but Google's Rich Results often flags missing 'item' as an error for Breadcrumbs.
-        // We will default to a placeholder or the actual path if available.
-        const itemUrl = item.href ? `${siteUrl}${item.href}` : `${siteUrl}${window.location.pathname}`
+        const itemUrl = item.href ? `${siteUrl}${item.href}` : `${siteUrl}${pathname}`
         return {
           '@type': 'ListItem',
           position: idx + 2,
@@ -32,18 +31,17 @@ export default function Breadcrumb({ items }) {
 
   return (
     <>
-      <Helmet>
-        <script type="application/ld+json">
-          {JSON.stringify(breadcrumbJsonLd)}
-        </script>
-      </Helmet>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <nav className="breadcrumb" aria-label="Breadcrumb">
-        <Link to="/">Home</Link>
+        <Link href="/">Home</Link>
         {items.map((item, idx) => (
           <span key={idx}>
             <ChevronRight size={14} className="separator" />
             {item.href ? (
-              <Link to={item.href}>{item.label}</Link>
+              <Link href={item.href}>{item.label}</Link>
             ) : (
               <span style={{ color: 'var(--text-secondary)' }}>{item.label}</span>
             )}

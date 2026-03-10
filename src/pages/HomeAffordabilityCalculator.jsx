@@ -1,6 +1,6 @@
+"use client"
 import { useState, useCallback, useEffect } from 'react'
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from 'recharts'
-import SEO from '../components/SEO'
 import AdSlot from '../components/AdSlot'
 import Breadcrumb from '../components/Breadcrumb'
 import RelatedCalculators from '../components/RelatedCalculators'
@@ -125,12 +125,7 @@ export default function HomeAffordabilityCalculator() {
   return (
     <div className="page-with-sidebar">
       <div className="page-main">
-        <SEO
-          title="Home Affordability Calculator — How Much House Can I Afford?"
-          description="Free home affordability calculator. Find out how much house you can afford based on your income, debts, down payment, and interest rates. Uses the 28/36 DTI rule."
-          canonical="/home-affordability-calculator"
-          jsonLd={jsonLd}
-        />
+        
         <Breadcrumb items={[{ label: 'Home Affordability Calculator' }]} />
 
         <div className="calc-header">

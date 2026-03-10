@@ -1,6 +1,6 @@
+"use client"
 import { useState, useCallback, useEffect } from 'react'
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend, ReferenceLine } from 'recharts'
-import SEO from '../components/SEO'
 import AdSlot from '../components/AdSlot'
 import Breadcrumb from '../components/Breadcrumb'
 import RelatedCalculators from '../components/RelatedCalculators'
@@ -63,8 +63,7 @@ export default function BreakEvenCalculator() {
   return (
     <div className="page-with-sidebar">
       <div className="page-main">
-        <SEO title="Break-Even Calculator — Find Your Profit Point" description="Free break-even calculator. Find how many units you need to sell to cover costs and start making profit."
-          canonical="/break-even-calculator" jsonLd={jsonLd} />
+        
         <Breadcrumb items={[{ label: 'Break-Even Calculator' }]} />
 
         <div className="calc-header">

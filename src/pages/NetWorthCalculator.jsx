@@ -1,6 +1,6 @@
+"use client"
 import { useState, useCallback, useEffect } from 'react'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell } from 'recharts'
-import SEO from '../components/SEO'
 import AdSlot from '../components/AdSlot'
 import Breadcrumb from '../components/Breadcrumb'
 import RelatedCalculators from '../components/RelatedCalculators'
@@ -74,12 +74,7 @@ export default function NetWorthCalculator() {
   return (
     <div className="page-with-sidebar">
       <div className="page-main">
-        <SEO
-          title="Net Worth Calculator — Track Your Financial Health"
-          description="Free net worth calculator. Add up your assets and liabilities to see your total net worth and assets-to-debt ratio."
-          canonical="/net-worth-calculator"
-          jsonLd={jsonLd}
-        />
+        
         <Breadcrumb items={[{ label: 'Net Worth Calculator' }]} />
 
         <div className="calc-header">

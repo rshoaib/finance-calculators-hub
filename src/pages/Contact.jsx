@@ -1,5 +1,5 @@
+"use client"
 import { useState } from 'react'
-import SEO from '../components/SEO'
 import Breadcrumb from '../components/Breadcrumb'
 
 export default function Contact() {
@@ -17,11 +17,7 @@ export default function Contact() {
 
   return (
     <main className="main-content" style={{ maxWidth: 700 }}>
-      <SEO
-        title="Contact Us — MyCalcFinance"
-        description="Have a question, suggestion, or found a bug? Contact the MyCalcFinance team. We'd love to hear from you."
-        canonical="/contact"
-      />
+      
       <Breadcrumb items={[{ label: 'Contact' }]} />
 
       <div className="calc-header">

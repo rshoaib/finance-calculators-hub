@@ -1,6 +1,6 @@
+"use client"
 import { useState, useCallback, useEffect } from 'react'
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts'
-import SEO from '../components/SEO'
 import AdSlot from '../components/AdSlot'
 import Breadcrumb from '../components/Breadcrumb'
 import RelatedCalculators from '../components/RelatedCalculators'
@@ -102,12 +102,7 @@ export default function MortgageCalculator() {
   return (
     <div className="page-with-sidebar">
       <div className="page-main">
-        <SEO
-          title="Mortgage Calculator — Monthly Payment & Amortization"
-          description="Free mortgage calculator. Calculate your monthly mortgage payment, total interest paid, and view a full amortization schedule. Compare 15, 20, and 30-year terms."
-          canonical="/mortgage-calculator"
-          jsonLd={jsonLd}
-        />
+        
         <Breadcrumb items={[{ label: 'Mortgage Calculator' }]} />
 
         <div className="calc-header">

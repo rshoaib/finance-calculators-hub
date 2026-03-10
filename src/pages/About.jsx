@@ -1,14 +1,9 @@
-import SEO from '../components/SEO'
-import { Link } from 'react-router-dom'
+"use client"
+import Link from 'next/link'
 
 export default function About() {
   return (
     <main className="main-content" style={{ maxWidth: 800 }}>
-      <SEO
-        title="About MyCalcFinance"
-        description="MyCalcFinance provides free, privacy-first financial calculators. No signup, no data collection, no fees."
-        canonical="/about"
-      />
       <div className="calc-header">
         <h1 style={{ background: 'none', WebkitTextFillColor: 'var(--text-primary)' }}>About MyCalcFinance</h1>
       </div>
@@ -29,16 +24,16 @@ export default function About() {
         </p>
         <h3>Our Calculators</h3>
         <ul>
-          <li><Link to="/mortgage-calculator">Mortgage Calculator</Link> — Monthly payments & amortization</li>
-          <li><Link to="/emi-calculator">Loan EMI Calculator</Link> — Equated monthly installments</li>
-          <li><Link to="/compound-interest-calculator">Compound Interest Calculator</Link> — Investment growth</li>
-          <li><Link to="/retirement-calculator">Retirement Calculator</Link> — Savings planning</li>
-          <li><Link to="/credit-card-payoff-calculator">Credit Card Payoff Calculator</Link> — Debt elimination</li>
-          <li><Link to="/tax-bracket-calculator">Tax Bracket Calculator</Link> — Federal tax breakdown</li>
-          <li><Link to="/car-loan-calculator">Car Loan Calculator</Link> — Auto payment estimator</li>
-          <li><Link to="/savings-goal-calculator">Savings Goal Calculator</Link> — Savings timeline</li>
-          <li><Link to="/debt-to-income-calculator">Debt-to-Income Calculator</Link> — DTI ratio check</li>
-          <li><Link to="/investment-return-calculator">Investment Return Calculator</Link> — ROI & CAGR</li>
+          <li><Link href="/mortgage-calculator">Mortgage Calculator</Link> — Monthly payments & amortization</li>
+          <li><Link href="/emi-calculator">Loan EMI Calculator</Link> — Equated monthly installments</li>
+          <li><Link href="/compound-interest-calculator">Compound Interest Calculator</Link> — Investment growth</li>
+          <li><Link href="/retirement-calculator">Retirement Calculator</Link> — Savings planning</li>
+          <li><Link href="/credit-card-payoff-calculator">Credit Card Payoff Calculator</Link> — Debt elimination</li>
+          <li><Link href="/tax-bracket-calculator">Tax Bracket Calculator</Link> — Federal tax breakdown</li>
+          <li><Link href="/car-loan-calculator">Car Loan Calculator</Link> — Auto payment estimator</li>
+          <li><Link href="/savings-goal-calculator">Savings Goal Calculator</Link> — Savings timeline</li>
+          <li><Link href="/debt-to-income-calculator">Debt-to-Income Calculator</Link> — DTI ratio check</li>
+          <li><Link href="/investment-return-calculator">Investment Return Calculator</Link> — ROI & CAGR</li>
         </ul>
         <h3>Disclaimer</h3>
         <p>

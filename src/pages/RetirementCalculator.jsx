@@ -1,6 +1,6 @@
+"use client"
 import { useState, useCallback, useEffect } from 'react'
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
-import SEO from '../components/SEO'
 import AdSlot from '../components/AdSlot'
 import Breadcrumb from '../components/Breadcrumb'
 import RelatedCalculators from '../components/RelatedCalculators'
@@ -79,12 +79,7 @@ export default function RetirementCalculator() {
   return (
     <div className="page-with-sidebar">
       <div className="page-main">
-        <SEO
-          title="Retirement Calculator — Savings & Income Planner"
-          description="Free retirement calculator. Plan your retirement savings, estimate your corpus, and calculate monthly retirement income using the 4% rule."
-          canonical="/retirement-calculator"
-          jsonLd={jsonLd}
-        />
+        
         <Breadcrumb items={[{ label: 'Retirement Calculator' }]} />
 
         <div className="calc-header">

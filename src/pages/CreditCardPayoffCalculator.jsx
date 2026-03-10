@@ -1,6 +1,6 @@
+"use client"
 import { useState, useCallback, useEffect } from 'react'
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts'
-import SEO from '../components/SEO'
 import AdSlot from '../components/AdSlot'
 import Breadcrumb from '../components/Breadcrumb'
 import RelatedCalculators from '../components/RelatedCalculators'
@@ -99,12 +99,7 @@ export default function CreditCardPayoffCalculator() {
   return (
     <div className="page-with-sidebar">
       <div className="page-main">
-        <SEO
-          title="Credit Card Payoff Calculator — Pay Off Debt Faster"
-          description="Free credit card payoff calculator. See how long it takes to pay off your balance, compare payment strategies, and discover how much interest you can save."
-          canonical="/credit-card-payoff-calculator"
-          jsonLd={jsonLd}
-        />
+        
         <Breadcrumb items={[{ label: 'Credit Card Payoff Calculator' }]} />
 
         <div className="calc-header">

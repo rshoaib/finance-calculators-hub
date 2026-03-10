@@ -1,6 +1,6 @@
+"use client"
 import { useState, useCallback, useEffect } from 'react'
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer, Legend } from 'recharts'
-import SEO from '../components/SEO'
 import AdSlot from '../components/AdSlot'
 import Breadcrumb from '../components/Breadcrumb'
 import RelatedCalculators from '../components/RelatedCalculators'
@@ -108,12 +108,7 @@ export default function SalaryCalculator() {
   return (
     <div className="page-with-sidebar">
       <div className="page-main">
-        <SEO
-          title="Salary & Paycheck Calculator — Take-Home Pay Estimator"
-          description="Free salary calculator. Estimate your take-home pay after federal tax, state tax, FICA, 401(k), and insurance deductions for any pay frequency."
-          canonical="/salary-calculator"
-          jsonLd={jsonLd}
-        />
+        
         <Breadcrumb items={[{ label: 'Salary Calculator' }]} />
 
         <div className="calc-header">

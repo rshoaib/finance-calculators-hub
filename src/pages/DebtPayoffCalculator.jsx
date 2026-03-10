@@ -1,6 +1,6 @@
+"use client"
 import { useState, useCallback, useEffect } from 'react'
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts'
-import SEO from '../components/SEO'
 import AdSlot from '../components/AdSlot'
 import Breadcrumb from '../components/Breadcrumb'
 import RelatedCalculators from '../components/RelatedCalculators'
@@ -133,12 +133,7 @@ export default function DebtPayoffCalculator() {
   return (
     <div className="page-with-sidebar">
       <div className="page-main">
-        <SEO
-          title="Debt Payoff Calculator — Snowball vs Avalanche Strategy"
-          description="Free debt payoff calculator. Compare avalanche and snowball methods, see your payoff timeline, and discover how much interest you can save by paying extra."
-          canonical="/debt-payoff-calculator"
-          jsonLd={jsonLd}
-        />
+        
         <Breadcrumb items={[{ label: 'Debt Payoff Calculator' }]} />
 
         <div className="calc-header">

@@ -1,6 +1,6 @@
+"use client"
 import { useState, useCallback, useEffect } from 'react'
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
-import SEO from '../components/SEO'
 import AdSlot from '../components/AdSlot'
 import Breadcrumb from '../components/Breadcrumb'
 import RelatedCalculators from '../components/RelatedCalculators'
@@ -63,12 +63,7 @@ export default function InvestmentReturnCalculator() {
   return (
     <div className="page-with-sidebar">
       <div className="page-main">
-        <SEO
-          title="Investment Return Calculator — ROI & CAGR"
-          description="Free investment return calculator. Calculate ROI, CAGR (compound annual growth rate), and inflation-adjusted returns on your investments."
-          canonical="/investment-return-calculator"
-          jsonLd={jsonLd}
-        />
+        
         <Breadcrumb items={[{ label: 'Investment Return Calculator' }]} />
 
         <div className="calc-header">
