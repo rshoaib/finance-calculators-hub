@@ -2,7 +2,7 @@
 // Run: node scripts/insert-emergency-fund-article.mjs
 
 const SUPABASE_URL = 'https://fyjqnidhhwxvzllhjfxk.supabase.co'
-const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ5anFuaWRoaHd4dnpsbGhqZnhrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzEwOTQ3NjgsImV4cCI6MjA4NjY3MDc2OH0.SC_j9-6NB6-WEdf2YntJjheYslyRkYqnGSpMnudZOZc'
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ5anFuaWRoaHd4dnpsbGhqZnhrIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3MTA5NDc2OCwiZXhwIjoyMDg2NjcwNzY4fQ.3KJ6l85zYhgEcpPkTlbdYtdykh3utiBsvjK2bqdqz1g'
 
 const article = {
   slug: 'emergency-fund-guide-2026',
