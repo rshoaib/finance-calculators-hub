@@ -6,7 +6,7 @@ export default function AdSlot({ size = 'leaderboard' }) {
   }[size] || 'ad-slot-leaderboard'
 
   const labels = {
-    leaderboard: 'Ad · 728×90',
+    leaderboard: 'Ad · Responsive',
     rectangle: 'Ad · 300×250',
     'mobile-banner': 'Ad · 320×50',
   }

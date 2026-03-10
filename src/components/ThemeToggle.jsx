@@ -26,7 +26,7 @@ export default function ThemeToggle() {
   if (!mounted) {
     return (
       <button className="theme-toggle" aria-label="Loading theme..." disabled>
-        <Moon size={18} style={{ opacity: 0 }} />
+        <Moon size={20} style={{ opacity: 0 }} />
       </button>
     )
   }
@@ -38,7 +38,7 @@ export default function ThemeToggle() {
       aria-label={dark ? 'Switch to light mode' : 'Switch to dark mode'}
       title={dark ? 'Switch to light mode' : 'Switch to dark mode'}
     >
-      {dark ? <Sun size={18} /> : <Moon size={18} />}
+      {dark ? <Sun size={20} /> : <Moon size={20} />}
     </button>
   )
 }
