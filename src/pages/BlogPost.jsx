@@ -92,7 +92,7 @@ export default function BlogPost() {
         <article className="blog-article">
           {post.image_url && (
             <div className="blog-article-hero">
-              <img src={post.image_url} alt={post.title} />
+              <img src={post.image_url} alt={post.title} width="1200" height="514" fetchpriority="high" />
             </div>
           )}
 

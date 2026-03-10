@@ -86,7 +86,7 @@ export default function BlogList() {
             <article key={post.id || idx} className="blog-card">
               {post.image_url && (
                 <Link to={`/blog/${post.slug}`} className="blog-card-image">
-                  <img src={post.image_url} alt={post.title} loading="lazy" />
+                  <img src={post.image_url} alt={post.title} width="800" height="450" loading="lazy" />
                 </Link>
               )}
               <div className="blog-card-body">
