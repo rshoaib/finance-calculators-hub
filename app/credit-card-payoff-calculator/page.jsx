@@ -1,4 +1,4 @@
-import Calculator from '../../src/pages/CreditCardPayoffCalculator'
+import Calculator from '../../src/calculators/CreditCardPayoffCalculator'
 
 export const metadata = {
   title: 'Credit Card Payoff Calculator - Free Calculator',

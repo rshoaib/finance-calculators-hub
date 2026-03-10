@@ -1,4 +1,4 @@
-import Calculator from '../../src/pages/BudgetPlannerCalculator'
+import Calculator from '../../src/calculators/BudgetPlannerCalculator'
 
 export const metadata = {
   title: 'Budget Planner Calculator - Free Calculator',

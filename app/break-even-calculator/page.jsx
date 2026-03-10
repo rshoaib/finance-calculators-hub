@@ -1,4 +1,4 @@
-import Calculator from '../../src/pages/BreakEvenCalculator'
+import Calculator from '../../src/calculators/BreakEvenCalculator'
 
 export const metadata = {
   title: 'Break Even Calculator - Free Calculator',

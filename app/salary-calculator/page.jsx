@@ -1,4 +1,4 @@
-import Calculator from '../../src/pages/SalaryCalculator'
+import Calculator from '../../src/calculators/SalaryCalculator'
 
 export const metadata = {
   title: 'Salary Calculator - Free Calculator',

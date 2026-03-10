@@ -1,4 +1,4 @@
-import Calculator from '../../src/pages/Contact'
+import Calculator from '../../src/calculators/Contact'
 
 export const metadata = {
   title: 'Contact - Free Calculator',

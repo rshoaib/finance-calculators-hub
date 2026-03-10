@@ -1,4 +1,4 @@
-import Calculator from '../../src/pages/CapitalGainsTaxCalculator'
+import Calculator from '../../src/calculators/CapitalGainsTaxCalculator'
 
 export const metadata = {
   title: 'Capital Gains Tax Calculator - Free Calculator',

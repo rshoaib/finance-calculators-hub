@@ -1,4 +1,4 @@
-import Calculator from '../../src/pages/HomeAffordabilityCalculator'
+import Calculator from '../../src/calculators/HomeAffordabilityCalculator'
 
 export const metadata = {
   title: 'Home Affordability Calculator - Free Calculator',

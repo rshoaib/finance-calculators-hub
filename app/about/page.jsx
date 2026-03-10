@@ -1,4 +1,4 @@
-import Calculator from '../../src/pages/About'
+import Calculator from '../../src/calculators/About'
 
 export const metadata = {
   title: 'About - Free Calculator',

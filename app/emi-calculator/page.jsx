@@ -1,4 +1,4 @@
-import Calculator from '../../src/pages/LoanEMICalculator'
+import Calculator from '../../src/calculators/LoanEMICalculator'
 
 export const metadata = {
   title: 'Loan E M I Calculator - Free Calculator',

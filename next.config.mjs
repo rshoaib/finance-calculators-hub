@@ -2,7 +2,12 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['fyjqnidhhwxvzllhjfxk.supabase.co'], // Allow Supabase images
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'fyjqnidhhwxvzllhjfxk.supabase.co',
+      },
+    ],
   },
   env: {
     NEXT_PUBLIC_SUPABASE_URL: process.env.VITE_SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL,

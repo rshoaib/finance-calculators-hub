@@ -1,4 +1,4 @@
-import Calculator from '../../src/pages/MortgageCalculator'
+import Calculator from '../../src/calculators/MortgageCalculator'
 
 export const metadata = {
   title: 'Mortgage Calculator - Free Calculator',

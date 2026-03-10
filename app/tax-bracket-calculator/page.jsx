@@ -1,4 +1,4 @@
-import Calculator from '../../src/pages/TaxBracketCalculator'
+import Calculator from '../../src/calculators/TaxBracketCalculator'
 
 export const metadata = {
   title: 'Tax Bracket Calculator - Free Calculator',

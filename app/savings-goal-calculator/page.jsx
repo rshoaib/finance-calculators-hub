@@ -1,4 +1,4 @@
-import Calculator from '../../src/pages/SavingsGoalCalculator'
+import Calculator from '../../src/calculators/SavingsGoalCalculator'
 
 export const metadata = {
   title: 'Savings Goal Calculator - Free Calculator',

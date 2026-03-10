@@ -1,4 +1,4 @@
-import Calculator from '../../src/pages/DebtToIncomeCalculator'
+import Calculator from '../../src/calculators/DebtToIncomeCalculator'
 
 export const metadata = {
   title: 'Debt To Income Calculator - Free Calculator',

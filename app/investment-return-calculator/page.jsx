@@ -1,4 +1,4 @@
-import Calculator from '../../src/pages/InvestmentReturnCalculator'
+import Calculator from '../../src/calculators/InvestmentReturnCalculator'
 
 export const metadata = {
   title: 'Investment Return Calculator - Free Calculator',

@@ -1,4 +1,4 @@
-import Calculator from '../../src/pages/CDCalculator'
+import Calculator from '../../src/calculators/CDCalculator'
 
 export const metadata = {
   title: 'C D Calculator - Free Calculator',

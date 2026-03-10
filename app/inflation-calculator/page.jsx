@@ -1,4 +1,4 @@
-import Calculator from '../../src/pages/InflationCalculator'
+import Calculator from '../../src/calculators/InflationCalculator'
 
 export const metadata = {
   title: 'Inflation Calculator - Free Calculator',

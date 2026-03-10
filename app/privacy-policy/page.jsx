@@ -1,4 +1,4 @@
-import Calculator from '../../src/pages/PrivacyPolicy'
+import Calculator from '../../src/calculators/PrivacyPolicy'
 
 export const metadata = {
   title: 'Privacy Policy - Free Calculator',

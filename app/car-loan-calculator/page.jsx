@@ -1,4 +1,4 @@
-import Calculator from '../../src/pages/CarLoanCalculator'
+import Calculator from '../../src/calculators/CarLoanCalculator'
 
 export const metadata = {
   title: 'Car Loan Calculator - Free Calculator',

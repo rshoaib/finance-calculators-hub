@@ -1,4 +1,4 @@
-import Calculator from '../../src/pages/NetWorthCalculator'
+import Calculator from '../../src/calculators/NetWorthCalculator'
 
 export const metadata = {
   title: 'Net Worth Calculator - Free Calculator',

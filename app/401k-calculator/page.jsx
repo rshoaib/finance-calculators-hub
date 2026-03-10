@@ -1,4 +1,4 @@
-import Calculator from '../../src/pages/FourOhOneKCalculator'
+import Calculator from '../../src/calculators/FourOhOneKCalculator'
 
 export const metadata = {
   title: 'Four Oh One K Calculator - Free Calculator',

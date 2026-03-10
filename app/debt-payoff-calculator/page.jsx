@@ -1,4 +1,4 @@
-import Calculator from '../../src/pages/DebtPayoffCalculator'
+import Calculator from '../../src/calculators/DebtPayoffCalculator'
 
 export const metadata = {
   title: 'Debt Payoff Calculator - Free Calculator',

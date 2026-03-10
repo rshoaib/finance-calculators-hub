@@ -1,0 +1,58 @@
+﻿Ôû▓ Next.js 16.1.6 (Turbopack)
+- Environments: .env.local, .env
+
+  Creating an optimized production build ...
+Ô£ô Compiled successfully in 16.2s
+  Running TypeScript ...
+  Collecting page data using 7 workers ...
+  Generating static pages using 7 workers (0/160) ...
+  Generating static pages using 7 workers (40/160) 
+  Generating static pages using 7 workers (80/160) 
+  Generating static pages using 7 workers (120/160) 
+Ô£ô Generating static pages using 7 workers (160/160) in 9.9s
+  Finalizing page optimization ...
+
+Route (app)                                Revalidate  Expire
+Ôöî Ôùï /
+Ôö£ Ôùï /_not-found
+Ôö£ ÔùÅ /[slug]
+Ôöé Ôö£ /15000-a-year-is-how-much-an-hour
+Ôöé Ôö£ /20000-a-year-is-how-much-an-hour
+Ôöé Ôö£ /25000-a-year-is-how-much-an-hour
+Ôöé Ôöö [+102 more paths]
+Ôö£ Ôùï /401k-calculator
+Ôö£ Ôùï /about
+Ôö£ Ôùï /blog                                          1m      1y
+Ôö£ ÔùÅ /blog/[slug]                                   1m      1y
+Ôöé Ôö£ /blog/mortgage-tips-first-time-buyers          1m      1y
+Ôöé Ôö£ /blog/compound-interest-power                  1m      1y
+Ôöé Ôö£ /blog/tax-deductions-you-might-miss            1m      1y
+Ôöé Ôöö [+23 more paths]
+Ôö£ Ôùï /break-even-calculator
+Ôö£ Ôùï /budget-planner
+Ôö£ Ôùï /capital-gains-tax-calculator
+Ôö£ Ôùï /car-loan-calculator
+Ôö£ Ôùï /cd-calculator
+Ôö£ Ôùï /compound-interest-calculator
+Ôö£ Ôùï /contact
+Ôö£ Ôùï /credit-card-payoff-calculator
+Ôö£ Ôùï /debt-payoff-calculator
+Ôö£ Ôùï /debt-to-income-calculator
+Ôö£ Ôùï /emi-calculator
+Ôö£ Ôùï /home-affordability-calculator
+Ôö£ Ôùï /inflation-calculator
+Ôö£ Ôùï /investment-return-calculator
+Ôö£ Ôùï /mortgage-calculator
+Ôö£ Ôùï /net-worth-calculator
+Ôö£ Ôùï /privacy-policy
+Ôö£ Ôùï /retirement-calculator
+Ôö£ Ôùï /salary-calculator
+Ôö£ Ôùï /savings-goal-calculator
+Ôö£ Ôùï /sitemap.xml
+Ôö£ Ôùï /student-loan-calculator
+Ôöö Ôùï /tax-bracket-calculator
+
+
+Ôùï  (Static)  prerendered as static content
+ÔùÅ  (SSG)     prerendered as static HTML (uses generateStaticParams)
+

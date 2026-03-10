@@ -1,4 +1,4 @@
-import Calculator from '../../src/pages/RetirementCalculator'
+import Calculator from '../../src/calculators/RetirementCalculator'
 
 export const metadata = {
   title: 'Retirement Calculator - Free Calculator',

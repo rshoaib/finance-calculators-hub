@@ -1,4 +1,4 @@
-import Calculator from '../../src/pages/StudentLoanCalculator'
+import Calculator from '../../src/calculators/StudentLoanCalculator'
 
 export const metadata = {
   title: 'Student Loan Calculator - Free Calculator',
