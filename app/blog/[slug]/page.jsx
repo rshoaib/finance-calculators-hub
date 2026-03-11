@@ -27,16 +27,16 @@ export async function generateMetadata({ params }) {
   }
 
   return {
-    title: `\${post.title} — MyCalcFinance Blog`,
+    title: `${post.title} — MyCalcFinance Blog`,
     description: post.excerpt || post.title,
     alternates: {
-      canonical: `/blog/\${post.slug}`
+      canonical: `/blog/${post.slug}`
     },
     openGraph: {
       title: post.title,
       description: post.excerpt,
       type: 'article',
-      url: `https://mycalcfinance.com/blog/\${post.slug}`,
+      url: `https://mycalcfinance.com/blog/${post.slug}`,
       images: post.image_url ? [{ url: post.image_url }] : [],
     }
   }
