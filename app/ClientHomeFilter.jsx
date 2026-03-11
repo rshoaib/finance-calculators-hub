@@ -6,13 +6,28 @@ import AdSlot from '../src/components/AdSlot'
 
 export default function ClientHomeFilter({ calculators, categories, popularSlugs }) {
   const [activeCategory, setActiveCategory] = useState('All')
+  const [searchQuery, setSearchQuery] = useState('')
 
-  const filtered = activeCategory === 'All'
-    ? calculators
-    : calculators.filter(c => c.category === activeCategory)
+  const filtered = calculators.filter(c => {
+    const matchesCategory = activeCategory === 'All' || c.category === activeCategory
+    const matchesSearch = c.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                          c.description.toLowerCase().includes(searchQuery.toLowerCase())
+    return matchesCategory && matchesSearch
+  })
 
   return (
     <>
+      <div className="search-container">
+        <input
+          type="text"
+          className="search-input"
+          placeholder="Search for a calculator... (e.g. Mortgage, ROI, Tax)"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
+        <span className="search-icon">🔍</span>
+      </div>
+
       <div className="category-filter">
         {categories.map(cat => (
           <button
