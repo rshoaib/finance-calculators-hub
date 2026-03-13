@@ -188,6 +188,15 @@ export const calculators = [
     color: 'purple',
     cpc: '$5–$15',
   },
+  {
+    title: 'Mortgage Refinance Calculator',
+    slug: 'mortgage-refinance-calculator',
+    description: 'Calculate your break-even point and see how much you can save by refinancing your home loan.',
+    icon: '🔄',
+    category: 'Loans',
+    color: 'blue',
+    cpc: '$15–$35',
+  },
 ]
 
 export const categories = ['All', 'Loans', 'Savings', 'Investment', 'Tax', 'Retirement']
