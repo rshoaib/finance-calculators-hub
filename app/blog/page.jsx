@@ -18,7 +18,7 @@ export default async function BlogListPage() {
   try {
     const { data, error } = await supabase
       .from('blog_posts')
-      .select('id, slug, title, excerpt, category, image_url, author, published_at')
+      .select('id, slug, title, category, excerpt, image_url, author, published_at')
       .order('published_at', { ascending: false })
 
     if (error) throw error
