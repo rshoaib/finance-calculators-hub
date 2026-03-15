@@ -1,0 +1,36 @@
+﻿Fetching all blog posts from Supabase...
+Found 35 posts. Analyzing...\n
+=== AUDIT RESULTS ===\n
+Total Posts Checked: 35
+Posts completely missing 'image_url' in database: 25
+  - [mortgage-tips-first-time-buyers] 10 Mortgage Tips Every First-Time Buyer Needs to Know
+  - [compound-interest-power] The Power of Compound Interest: Why Starting Early Matters
+  - [tax-deductions-you-might-miss] 15 Tax Deductions You Might Be Missing
+  - [emergency-fund-guide] How to Build an Emergency Fund in 6 Months
+  - [how-to-calculate-take-home-pay] How to Calculate Your Take-Home Pay: A Complete Salary Breakdown
+  - [capital-gains-tax-short-term-vs-long-term] Capital Gains Tax Explained: Short-Term vs Long-Term Rates in 2026
+  - [fifty-thirty-twenty-budget-rule-guide] The 50/30/20 Budget Rule: A Simple Framework for Financial Freedom
+  - [how-to-calculate-net-worth] How to Calculate Your Net Worth (And Why It Matters More Than Income)
+  - [inflation-protect-purchasing-power-2026] Inflation and Your Money: How to Protect Your Purchasing Power in 2026
+  - [break-even-analysis-side-hustles] Break-Even Analysis for Side Hustles: Know Your Numbers Before You Start
+  - [401k-employer-match-guide] Your 401(k) Employer Match: Free Money You Might Be Leaving Behind
+  - [401k-retirement-planning-guide-2026] 401(k) Retirement Planning in 2026: New Limits, SECURE 2.0 Changes & Smart Strategies
+  - [car-loan-guide-how-to-save-thousands-2026] Car Loan Guide 2026: How to Save Thousands on Your Next Auto Loan
+  - [compound-interest-beginners-guide-2026] Compound Interest Explained: The Beginner's Guide to Growing Wealth in 2026
+  - [credit-card-debt-payoff-strategies-2026] How to Pay Off Credit Card Debt Fast: Avalanche vs Snowball & 5 More Strategies for 2026
+  - [mortgage-refinancing-guide-2026] Should You Refinance Your Mortgage in 2026? A Complete Guide to Today's Rates & Strategies
+  - [how-much-money-need-to-retire-2026] How Much Money Do You Really Need to Retire? The Complete 2026 Guide
+  - [debt-to-income-ratio-mortgage-guide-2026] Debt-to-Income (DTI) Ratio for Mortgage in 2026: The Ultimate Guide
+  - [home-affordability-guide-2026] How Much House Can I Afford in 2026? Top Affordability Rules Explained
+  - [understanding-tax-brackets-2026] Understanding Your Tax Bracket: The Complete 2026 Guide to Federal Income Tax
+  - [emergency-fund-calculator-guide] Emergency Fund Calculator: How Many Months Do You Actually Need?
+  - [cd-calculator-guide-2026] CD Calculator Guide: Best Rates & How to Maximize Returns (2026)
+  - [how-to-pay-off-credit-card-debt-fast-2026] How to Pay Off Credit Card Debt Fast: Snowball vs Avalanche (2026 Guide)
+  - [car-loan-calculator-guide-2026] Car Loan Calculator (2026): How to Estimate Your Auto Financing Payments
+  - [mortgage-refinance-guide-2026] 2026 Guide to Mortgage Refinancing: How to Calculate Your Break-Even Point
+
+Posts with 'image_url', but file missing from public/ folder: 0
+
+Duplicate Slugs Found: 0
+
+Posts with valid existing images: 10
