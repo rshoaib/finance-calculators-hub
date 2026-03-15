@@ -18,13 +18,13 @@ const req = https.request(options, res => {
     const posts = JSON.parse(data);
     posts.sort((a,b) => new Date(b.published_at) - new Date(a.published_at));
     
-    const now = new Date('2026-03-12T00:58:57+03:00');
+    const now = new Date('2026-03-15T12:05:13+03:00');
     const day = now.getDay();
     const diff = now.getDate() - day + (day === 0 ? -6 : 1);
     const startOfWeek = new Date(now.setDate(diff));
     startOfWeek.setHours(0,0,0,0);
     
-    const today = new Date('2026-03-12T00:58:57+03:00');
+    const today = new Date('2026-03-15T12:05:13+03:00');
     today.setHours(0,0,0,0);
 
     let publishedToday = 0;
