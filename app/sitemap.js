@@ -42,13 +42,13 @@ export default async function sitemap() {
     console.error('Sitemap Blog Fetch Error:', error)
   }
 
-  // 3. Programmatic SEO Pages
+  // 3. Programmatic SEO Pages (lower priority — Google treats many as thin)
   const allSeoPages = [...salaryPages, ...hourlyPages, ...mortgagePages, ...savingsPages]
   const seoRoutes = allSeoPages.map((page) => ({
-    url: `\${baseUrl}/\${page.slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly',
-    priority: 0.7,
+    url: `${baseUrl}/${page.slug}`,
+    lastModified: new Date('2025-12-01'),
+    changeFrequency: 'yearly',
+    priority: 0.5,
   }))
 
   return [...staticRoutes, ...calculatorRoutes, ...blogRoutes, ...seoRoutes]
