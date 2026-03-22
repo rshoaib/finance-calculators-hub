@@ -10,6 +10,9 @@ export const metadata = {
   title: 'MyCalcFinance — Free Financial Calculators',
   description: 'Free online financial calculators for mortgage, loans, compound interest, retirement, taxes, and more. Make smarter money decisions today.',
   metadataBase: new URL('https://mycalcfinance.com'),
+  verification: {
+    google: 'R_vSYrg1sYgKbmV3FMbdXPpiz55MkJ8pYzpsC9myU8s',
+  },
   openGraph: {
     title: 'MyCalcFinance — Free Financial Calculators',
     description: 'Free online financial calculators for mortgage, loans, compound interest, retirement, taxes, and more.',
