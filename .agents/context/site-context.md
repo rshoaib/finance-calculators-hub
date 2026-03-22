@@ -80,7 +80,7 @@
 |---|---|---|---|
 | Net Worth | "net worth calculator" | Transactional | ✅ Published |
 | Inflation | "inflation calculator purchasing power" | Transactional | ✅ Published |
-| APR vs APY | "apr vs apy difference explained" | Informational | 🟡 Gap |
+| APR vs APY | "apr vs apy difference explained" | Informational | ✅ Published |
 | Budget Rule | "50 30 20 budget rule explained" | Informational | 🟡 Gap |
 | Financial Planning | "how to create a financial plan 2026" | Informational | 🟡 Gap |
 
@@ -103,6 +103,7 @@
 | 11 | Car Loan Calculator: Auto Financing Payments | Mar 2026 | "car loan calculator" |
 | 12 | Inflation Calculator: Purchasing Power | Mar 2026 | "inflation calculator" |
 | 13 | HYSA vs CD: Where to Put Your Savings | Mar 2026 | "hysa vs cd" |
+| 14 | APR vs APY: What's the Difference? | Mar 23, 2026 | "apr vs apy difference explained" |
 
 ---
 
@@ -110,8 +111,8 @@
 
 | Priority | Keyword | Why High Priority |
 |---|---|---|
-| 🔴 1 | "apr vs apy difference explained" | Financial literacy — builds authority, links to multiple tools |
-| 🔴 2 | "50 30 20 budget rule explained" | Broad reach — top of funnel, easy to rank |
-| 🔴 3 | "how much down payment for a house 2026" | Year-specific — supports mortgage calculator |
-| 🟠 4 | "renting vs buying calculator" | Comparison — high intent, drives mortgage tool |
-| 🟠 5 | "529 plan calculator education savings" | New tool opportunity + educational content |
+| ~~🔴 1~~ | ~~"apr vs apy difference explained"~~ | ✅ Published Mar 23, 2026 |
+| 🔴 1 | "50 30 20 budget rule explained" | Broad reach — top of funnel, easy to rank |
+| 🔴 2 | "how much down payment for a house 2026" | Year-specific — supports mortgage calculator |
+| 🟠 3 | "renting vs buying calculator" | Comparison — high intent, drives mortgage tool |
+| 🟠 4 | "529 plan calculator education savings" | New tool opportunity + educational content |
