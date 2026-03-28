@@ -13,14 +13,14 @@ export default async function sitemap() {
     '/contact',
     '/privacy-policy',
   ].map((route) => ({
-    url: `\${baseUrl}\${route}`,
+    url: `${baseUrl}${route}`,
     lastModified: new Date(),
     changeFrequency: 'weekly',
     priority: route === '' ? 1.0 : 0.8,
   }))
 
   const calculatorRoutes = calculators.map((calc) => ({
-    url: `\${baseUrl}/\${calc.slug}`,
+    url: `${baseUrl}/${calc.slug}`,
     lastModified: new Date(),
     changeFrequency: 'monthly',
     priority: 0.9,
@@ -32,7 +32,7 @@ export default async function sitemap() {
     const { data: posts } = await supabase.from('blog_posts').select('slug, published_at')
     if (posts) {
       blogRoutes = posts.map(post => ({
-        url: `\${baseUrl}/blog/\${post.slug}`,
+        url: `${baseUrl}/blog/${post.slug}`,
         lastModified: new Date(post.published_at || new Date()),
         changeFrequency: 'weekly',
         priority: 0.8,
