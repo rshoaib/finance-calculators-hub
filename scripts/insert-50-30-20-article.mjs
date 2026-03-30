@@ -186,7 +186,6 @@ const article = {
   category: 'Financial Literacy',
   author: 'MyCalcFinance Team',
   published_at: new Date().toISOString(),
-  image_url: '/images/blog/50-30-20-budget-hero.png',
   content: content,
 };
 

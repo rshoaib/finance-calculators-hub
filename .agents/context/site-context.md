@@ -114,5 +114,5 @@
 | ~~🔴 1~~ | ~~"apr vs apy difference explained"~~ | ✅ Published Mar 23, 2026 |
 | 🔴 1 | "50 30 20 budget rule explained" | Broad reach — top of funnel, easy to rank |
 | 🔴 2 | "how much down payment for a house 2026" | Year-specific — supports mortgage calculator |
-| 🟠 3 | "renting vs buying calculator" | Comparison — high intent, drives mortgage tool |
+| ~~🟠 3~~ | ~~"renting vs buying calculator"~~ | ✅ Published Mar 30, 2026 |
 | 🟠 4 | "529 plan calculator education savings" | New tool opportunity + educational content |
