@@ -31,6 +31,7 @@ export default function Footer() {
         <div className="footer-links" style={{ fontSize: '0.75rem' }}>
           <a href="https://dailysmartcalc.com" target="_blank" rel="noopener noreferrer">Smart Calculators</a>
           <a href="https://onlineimageshrinker.com" target="_blank" rel="noopener noreferrer">Image Compressor</a>
+          <a href="https://tinypdftools.com" target="_blank" rel="noopener noreferrer">PDF Tools</a>
           <a href="https://legalpolicygen.com" target="_blank" rel="noopener noreferrer">Legal Policy Generator</a>
           <a href="https://imrizwan.com" target="_blank" rel="noopener noreferrer">Developer Blog</a>
         </div>
