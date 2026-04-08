@@ -86,7 +86,7 @@ export default async function BlogPostPage({ params }) {
         <article className="blog-article">
           {post.image_url && (
             <div className="blog-article-hero">
-              <img src={post.image_url} alt={post.title} width="1200" height="514" fetchpriority="high" />
+              <img src={post.image_url} alt={post.title} width="1200" height="514" fetchPriority="high" />
             </div>
           )}
 
