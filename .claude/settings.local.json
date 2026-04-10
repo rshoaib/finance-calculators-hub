@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "mcp__41e5a762-ed3b-4397-a775-d87a597733f9__execute_sql",
+      "mcp__41e5a762-ed3b-4397-a775-d87a597733f9__list_tables",
+      "WebFetch(domain:www.irs.gov)",
+      "WebFetch(domain:newsroom.fidelity.com)"
+    ]
+  }
+}

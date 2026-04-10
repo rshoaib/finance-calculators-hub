@@ -1,0 +1,101 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "buildwithriz",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["next", "dev", "-p", "3000"],
+      "port": 3000
+    },
+    {
+      "name": "certquiz",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["next", "dev", "-p", "3001"],
+      "port": 3001
+    },
+    {
+      "name": "dailysmartcalc-next",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["next", "dev", "-p", "3002"],
+      "port": 3002
+    },
+    {
+      "name": "imrizwan",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["next", "dev", "-p", "3003"],
+      "port": 3003
+    },
+    {
+      "name": "legalpolicygen",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["next", "dev", "-p", "3004"],
+      "port": 3004
+    },
+    {
+      "name": "mycalcfinance",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["next", "dev", "-p", "3005"],
+      "port": 3005
+    },
+    {
+      "name": "onlineimageshrinker",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["next", "dev", "-p", "3006"],
+      "port": 3006
+    },
+    {
+      "name": "orderviachat",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["next", "dev", "-p", "3007"],
+      "port": 3007
+    },
+    {
+      "name": "pdftoolkit",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["next", "dev", "-p", "3008"],
+      "port": 3008
+    },
+    {
+      "name": "azanapp",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["expo", "start", "--port", "8081"],
+      "port": 8081
+    },
+    {
+      "name": "fasting-buddy",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["expo", "start", "--port", "8082"],
+      "port": 8082
+    },
+    {
+      "name": "gsc-dashboard",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["expo", "start", "--port", "8083"],
+      "port": 8083
+    },
+    {
+      "name": "hala-app",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["expo", "start", "--port", "8084"],
+      "port": 8084
+    },
+    {
+      "name": "mentalism-app",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["expo", "start", "--port", "8085"],
+      "port": 8085
+    },
+    {
+      "name": "orderviachat-mobile",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["expo", "start", "--port", "8086"],
+      "port": 8086
+    },
+    {
+      "name": "speakup-app",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["expo", "start", "--port", "8087"],
+      "port": 8087
+    }
+  ]
+}
