@@ -1,8 +1,8 @@
 import Calculator from '../../src/calculators/BreakEvenCalculator'
 
 export const metadata = {
-  title: 'Break Even Calculator - Free Calculator',
-  description: 'Use our free Break Even Calculator to make smarter financial decisions.',
+  title: 'Break-Even Calculator — Find Your Profit Point (2026)',
+  description: 'Calculate how many units you need to sell to cover fixed and variable costs. Find your break-even point and start planning for profit. Free business tool.',
   alternates: {
     canonical: '/break-even-calculator',
   }

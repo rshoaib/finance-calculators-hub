@@ -1,8 +1,8 @@
 import Calculator from '../../src/calculators/BudgetPlannerCalculator'
 
 export const metadata = {
-  title: 'Budget Planner Calculator - Free Calculator',
-  description: 'Use our free Budget Planner Calculator to make smarter financial decisions.',
+  title: '50/30/20 Budget Planner — Allocate Your Income Smarter (2026)',
+  description: 'Use the 50/30/20 rule to split your income into needs, wants, and savings. Get a personalized budget breakdown based on your take-home pay. Free tool.',
   alternates: {
     canonical: '/budget-planner',
   }

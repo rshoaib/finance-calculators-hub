@@ -1,8 +1,8 @@
 import Calculator from '../../src/calculators/CompoundInterestCalculator'
 
 export const metadata = {
-  title: 'Compound Interest Calculator - Free Calculator',
-  description: 'Use our free Compound Interest Calculator to make smarter financial decisions.',
+  title: 'Compound Interest Calculator — See How Your Money Grows (2026)',
+  description: 'Calculate compound interest with monthly contributions. See how compounding frequency, rate, and time grow your savings. Interactive charts and breakdown included.',
   alternates: {
     canonical: '/compound-interest-calculator',
   }

@@ -1,8 +1,8 @@
 import Calculator from '../../src/calculators/LoanEMICalculator'
 
 export const metadata = {
-  title: 'Loan E M I Calculator - Free Calculator',
-  description: 'Use our free Loan E M I Calculator to make smarter financial decisions.',
+  title: 'Loan EMI Calculator — Calculate Equated Monthly Installments (2026)',
+  description: 'Compute your EMI for personal, auto, or education loans. See total interest, payment schedule, and compare different loan terms. Free and instant.',
   alternates: {
     canonical: '/emi-calculator',
   }

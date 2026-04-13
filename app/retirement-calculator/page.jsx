@@ -1,8 +1,8 @@
 import Calculator from '../../src/calculators/RetirementCalculator'
 
 export const metadata = {
-  title: 'Retirement Calculator - Free Calculator',
-  description: 'Use our free Retirement Calculator to make smarter financial decisions.',
+  title: 'Retirement Calculator 2026 — How Much Do You Need to Retire?',
+  description: 'Estimate your retirement savings goal, monthly contributions needed, and projected corpus. Factor in inflation, Social Security, and withdrawal rates. Free tool.',
   alternates: {
     canonical: '/retirement-calculator',
   }

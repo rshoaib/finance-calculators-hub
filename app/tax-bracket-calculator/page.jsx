@@ -1,8 +1,8 @@
 import Calculator from '../../src/calculators/TaxBracketCalculator'
 
 export const metadata = {
-  title: 'Tax Bracket Calculator - Free Calculator',
-  description: 'Use our free Tax Bracket Calculator to make smarter financial decisions.',
+  title: 'Tax Bracket Calculator 2026 — Federal Income Tax Rates & Effective Rate',
+  description: 'Calculate your federal income tax by bracket, see your effective tax rate, and understand how marginal rates work. Updated for 2026 tax brackets.',
   alternates: {
     canonical: '/tax-bracket-calculator',
   }

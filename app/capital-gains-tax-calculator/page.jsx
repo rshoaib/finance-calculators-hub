@@ -1,8 +1,8 @@
 import Calculator from '../../src/calculators/CapitalGainsTaxCalculator'
 
 export const metadata = {
-  title: 'Capital Gains Tax Calculator - Free Calculator',
-  description: 'Use our free Capital Gains Tax Calculator to make smarter financial decisions.',
+  title: 'Capital Gains Tax Calculator 2026 — Short-Term vs Long-Term Rates',
+  description: 'Calculate capital gains tax on stocks, real estate, and investments. Compare short-term vs long-term rates and see your tax owed by bracket. Free tool.',
   alternates: {
     canonical: '/capital-gains-tax-calculator',
   }

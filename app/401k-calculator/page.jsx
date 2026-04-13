@@ -1,8 +1,8 @@
 import Calculator from '../../src/calculators/FourOhOneKCalculator'
 
 export const metadata = {
-  title: 'Four Oh One K Calculator - Free Calculator',
-  description: 'Use our free Four Oh One K Calculator to make smarter financial decisions.',
+  title: '401(k) Calculator 2026 — Estimate Your Retirement Balance with Employer Match',
+  description: 'Calculate your 401(k) growth with employer match, contribution limits, and compound interest. See how much your 401(k) will be worth at retirement. Free tool.',
   alternates: {
     canonical: '/401k-calculator',
   }

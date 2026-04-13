@@ -1,8 +1,8 @@
 import Calculator from '../../src/calculators/CreditCardPayoffCalculator'
 
 export const metadata = {
-  title: 'Credit Card Payoff Calculator - Free Calculator',
-  description: 'Use our free Credit Card Payoff Calculator to make smarter financial decisions.',
+  title: 'Credit Card Payoff Calculator — How Long to Pay Off Your Balance? (2026)',
+  description: 'Find out how long it takes to pay off your credit card debt and how much interest you will pay. Compare minimum vs fixed payment strategies. Free calculator.',
   alternates: {
     canonical: '/credit-card-payoff-calculator',
   }

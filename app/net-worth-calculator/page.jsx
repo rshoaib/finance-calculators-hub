@@ -1,8 +1,8 @@
 import Calculator from '../../src/calculators/NetWorthCalculator'
 
 export const metadata = {
-  title: 'Net Worth Calculator - Free Calculator',
-  description: 'Use our free Net Worth Calculator to make smarter financial decisions.',
+  title: 'Net Worth Calculator — Track Your Assets vs Liabilities (2026)',
+  description: 'Calculate your total net worth by adding up assets and subtracting liabilities. See your full financial picture and track progress over time. Free calculator.',
   alternates: {
     canonical: '/net-worth-calculator',
   }

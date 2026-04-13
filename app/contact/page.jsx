@@ -1,8 +1,8 @@
 import Calculator from '../../src/calculators/Contact'
 
 export const metadata = {
-  title: 'Contact - Free Calculator',
-  description: 'Use our free Contact to make smarter financial decisions.',
+  title: 'Contact Us — MyCalcFinance',
+  description: 'Get in touch with the MyCalcFinance team. Questions, feedback, or partnership inquiries — we would love to hear from you.',
   alternates: {
     canonical: '/contact',
   }
