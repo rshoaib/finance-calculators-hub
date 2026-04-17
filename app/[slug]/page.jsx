@@ -12,8 +12,8 @@ export function generateStaticParams() {
   }))
 }
 
-export function generateMetadata({ params }) {
-  const { slug } = params
+export async function generateMetadata({ params }) {
+  const { slug } = await params
   const page = allSeoPages.find(p => p.slug === slug)
 
   if (!page) {
@@ -24,13 +24,13 @@ export function generateMetadata({ params }) {
     title: page.title,
     description: page.description,
     alternates: {
-      canonical: `/\${page.slug}`,
+      canonical: `/${page.slug}`,
     }
   }
 }
 
-export default function SeoPage({ params }) {
-  const { slug } = params
+export default async function SeoPage({ params }) {
+  const { slug } = await params
   const page = allSeoPages.find(p => p.slug === slug)
 
   if (!page) {
@@ -132,7 +132,7 @@ export default function SeoPage({ params }) {
               {relatedPages.map(r => (
                 <Link
                   key={r.slug}
-                  href={`/\${r.slug}`}
+                  href={`/${r.slug}`}
                   style={{
                     display: 'block',
                     padding: '0.75rem 1rem',

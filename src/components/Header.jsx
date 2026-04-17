@@ -27,7 +27,7 @@ export default function Header() {
           <span className="logo-icon">FC</span>
           <span>MyCalcFinance</span>
         </Link>
-        <nav className={`header-nav \${menuOpen ? 'open' : ''}`}>
+        <nav className={`header-nav ${menuOpen ? 'open' : ''}`}>
           <NavLink href="/">Home</NavLink>
           <NavLink href="/mortgage-calculator">Mortgage</NavLink>
           <NavLink href="/compound-interest-calculator">Investing</NavLink>
