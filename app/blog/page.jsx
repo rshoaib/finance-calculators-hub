@@ -18,11 +18,19 @@ export default async function BlogListPage() {
   try {
     const { data, error } = await supabase
       .from('blog_posts')
-      .select('id, slug, title, category, excerpt, image_url, author, published_at')
+      .select('id, slug, title, category, excerpt, author, published_at, content')
       .order('published_at', { ascending: false })
 
     if (error) throw error
-    posts = data || []
+
+    // Extract the hero <svg>...</svg> (the first one in content) for each post
+    // so ClientBlogFilter can render it as the card thumbnail without shipping
+    // the full article body to the client.
+    const SVG_RE = /<svg\b[^>]*>[\s\S]*?<\/svg>/i
+    posts = (data || []).map(({ content, ...rest }) => {
+      const m = content ? content.match(SVG_RE) : null
+      return { ...rest, thumbnail_svg: m ? m[0] : null }
+    })
   } catch (err) {
     console.error('Error fetching posts:', err)
   }

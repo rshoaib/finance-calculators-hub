@@ -41,10 +41,13 @@ export default function ClientBlogFilter({ initialPosts }) {
         <div className="blog-grid">
           {filtered.map((post, idx) => (
             <article key={post.id || idx} className="blog-card">
-              {post.image_url && (
-                <Link href={`/blog/${post.slug}`} className="blog-card-image">
-                  <img src={post.image_url} alt={post.title} width="800" height="450" loading="lazy" />
-                </Link>
+              {post.thumbnail_svg && (
+                <Link
+                  href={`/blog/${post.slug}`}
+                  className="blog-card-image"
+                  aria-label={post.title}
+                  dangerouslySetInnerHTML={{ __html: post.thumbnail_svg }}
+                />
               )}
               <div className="blog-card-body">
                 {post.category && <span className="blog-card-category">{post.category}</span>}

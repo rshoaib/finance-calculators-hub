@@ -37,7 +37,6 @@ export async function generateMetadata({ params }) {
       description: post.excerpt,
       type: 'article',
       url: `https://mycalcfinance.com/blog/${post.slug}`,
-      images: post.image_url ? [{ url: post.image_url }] : [],
     }
   }
 }
@@ -68,7 +67,6 @@ export default async function BlogPostPage({ params }) {
     author: { '@type': 'Person', name: post.author || 'MyCalcFinance Team' },
     datePublished: post.published_at,
     publisher: { '@type': 'Organization', name: 'MyCalcFinance' },
-    ...(post.image_url ? { image: post.image_url } : {}),
   }
 
   return (
@@ -84,11 +82,7 @@ export default async function BlogPostPage({ params }) {
         ]} />
 
         <article className="blog-article">
-          {post.image_url && (
-            <div className="blog-article-hero">
-              <img src={post.image_url} alt={post.title} width="1200" height="514" fetchPriority="high" />
-            </div>
-          )}
+          {/* Hero image is now inlined as the first <svg> inside post.content */}
 
           <div className="blog-article-header">
             {post.category && <span className="blog-card-category">{post.category}</span>}
