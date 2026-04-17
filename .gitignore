@@ -27,3 +27,6 @@ npm-debug.log*
 build_output.txt
 .vercel
 .env*.local
+
+# scheduled-task secrets (API keys etc.)
+.secrets/
