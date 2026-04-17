@@ -1,9 +1,14 @@
 import Link from 'next/link'
+import dynamic from 'next/dynamic'
 import { ArrowRight, Calculator, TrendingUp, Shield } from 'lucide-react'
 import AdSlot from '../src/components/AdSlot'
 import { calculators, categories } from '../src/data/calculators'
-import ClientHomeFilter from './ClientHomeFilter'
-import FAQ from './ClientFAQ'
+
+// Both components render below the fold. Dynamically importing them keeps the
+// server-rendered HTML (ssr: true) so SEO is untouched, but pushes their JS
+// out of the critical path so it doesn't compete with LCP paint.
+const ClientHomeFilter = dynamic(() => import('./ClientHomeFilter'), { ssr: true })
+const FAQ = dynamic(() => import('./ClientFAQ'), { ssr: true })
 
 const POPULAR_SLUGS = ['mortgage-calculator', 'compound-interest-calculator', 'retirement-calculator', '401k-calculator', 'home-affordability-calculator']
 
