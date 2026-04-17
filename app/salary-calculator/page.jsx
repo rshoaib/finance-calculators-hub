@@ -1,4 +1,6 @@
 import Calculator from '../../src/calculators/SalaryCalculator'
+import PopularCalculations from '../../src/components/PopularCalculations'
+import { salaryPages, hourlyPages } from '../../src/data/seoPages'
 
 export const metadata = {
   title: 'Salary Calculator 2026 — Estimate Take-Home Pay After Taxes',
@@ -9,5 +11,11 @@ export const metadata = {
 }
 
 export default function Page() {
-  return <Calculator />
+  return (
+    <>
+      <Calculator />
+      <PopularCalculations heading="Popular salary calculations" pages={salaryPages} />
+      <PopularCalculations heading="Popular hourly-wage calculations" pages={hourlyPages} />
+    </>
+  )
 }

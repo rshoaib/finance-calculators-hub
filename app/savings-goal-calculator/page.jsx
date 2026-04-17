@@ -1,4 +1,6 @@
 import Calculator from '../../src/calculators/SavingsGoalCalculator'
+import PopularCalculations from '../../src/components/PopularCalculations'
+import { savingsPages } from '../../src/data/seoPages'
 
 export const metadata = {
   title: 'Savings Goal Calculator — How Long to Reach Your Target? (2026)',
@@ -9,5 +11,10 @@ export const metadata = {
 }
 
 export default function Page() {
-  return <Calculator />
+  return (
+    <>
+      <Calculator />
+      <PopularCalculations heading="Popular savings scenarios" pages={savingsPages} />
+    </>
+  )
 }

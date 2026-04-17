@@ -18,6 +18,24 @@ async function getPost(slug) {
   return data
 }
 
+// SEO description cap. Google typically truncates around 155-160 chars in SERPs.
+const SAFE_DESC_LEN = 155;
+
+// Prefer a curated SEO title when set; otherwise the editorial title.
+// No auto-truncation — over-length raw titles are tracked as content debt.
+function safeTitle(post) {
+  return post.meta_title || post.title;
+}
+
+function safeDescription(post) {
+  if (post.meta_description) return post.meta_description;
+  const text = post.excerpt || post.title || '';
+  if (text.length <= SAFE_DESC_LEN) return text;
+  const cut = text.slice(0, SAFE_DESC_LEN);
+  const lastSpace = cut.lastIndexOf(' ');
+  return (lastSpace > 0 ? cut.slice(0, lastSpace) : cut) + '…';
+}
+
 export async function generateMetadata({ params }) {
   const { slug } = await params;
   const post = await getPost(slug);
@@ -26,17 +44,29 @@ export async function generateMetadata({ params }) {
     return { title: 'Post Not Found - MyCalcFinance' }
   }
 
+  const title = safeTitle(post);
+  const description = safeDescription(post);
+
   return {
-    title: `${post.title} — MyCalcFinance Blog`,
-    description: post.excerpt || post.title,
+    // Title suffix intentionally omitted — the layout-level site name already
+    // appears in Google's SERP result line; adding " — MyCalcFinance Blog"
+    // here was pushing most posts past the ~60-char title cap. For posts whose
+    // editorial title is itself over 60 chars, set blog_posts.meta_title.
+    title,
+    description,
     alternates: {
       canonical: `/blog/${post.slug}`
     },
     openGraph: {
-      title: post.title,
-      description: post.excerpt,
+      title,
+      description,
       type: 'article',
       url: `https://mycalcfinance.com/blog/${post.slug}`,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
     }
   }
 }
