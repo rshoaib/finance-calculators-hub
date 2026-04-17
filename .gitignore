@@ -31,3 +31,6 @@ build_output.txt
 # scheduled-task secrets (API keys etc.)
 .secrets/
 .gsc-service-account.json
+
+# local scratch (one-off scripts, retired artifacts)
+.scratch/
