@@ -7,11 +7,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "npx serve@latest out",
-    "lint": "next lint",
-    "export:blog": "node scripts/export-blog-from-supabase.mjs"
+    "lint": "next lint"
   },
   "dependencies": {
-    "@supabase/supabase-js": "^2.95.3",
     "googleapis": "^144.0.0",
     "gray-matter": "^4.0.3",
     "lucide-react": "^0.460.0",
