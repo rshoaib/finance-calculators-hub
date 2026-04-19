@@ -3,19 +3,13 @@ import { notFound } from 'next/navigation'
 import AdSlot from '../../../src/components/AdSlot'
 import Breadcrumb from '../../../src/components/Breadcrumb'
 import RelatedCalculators from '../../../src/components/RelatedCalculators'
-import { supabase } from '../../../src/lib/supabaseClient'
+import { getPost as readPost, getAllSlugs } from '../../../src/lib/posts'
 
-export const revalidate = 60 // Revalidate every 60 seconds
+// Static export — no revalidate, posts are baked at build time. To publish a
+// new post, drop a Markdown file in /content/blog and rebuild.
 
 async function getPost(slug) {
-  const { data, error } = await supabase
-    .from('blog_posts')
-    .select('*')
-    .eq('slug', slug)
-    .single()
-
-  if (error || !data) return null
-  return data
+  return readPost(slug)
 }
 
 // SEO description cap. Google typically truncates around 155-160 chars in SERPs.
@@ -71,9 +65,8 @@ export async function generateMetadata({ params }) {
   }
 }
 
-export async function generateStaticParams() {
-  const { data } = await supabase.from('blog_posts').select('slug')
-  return (data || []).map(post => ({ slug: post.slug }))
+export function generateStaticParams() {
+  return getAllSlugs().map((slug) => ({ slug }))
 }
 
 const formatDate = (dateStr) => {

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-label="Mortgage points buy-down illustration">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e3a8a"/>
+    </linearGradient>
+    <linearGradient id="bar1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#60a5fa"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+    <linearGradient id="bar2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="600" fill="url(#bg)"/>
+  <g opacity="0.08">
+    <circle cx="1050" cy="120" r="180" fill="#ffffff"/>
+    <circle cx="130" cy="520" r="150" fill="#ffffff"/>
+  </g>
+  <!-- House icon -->
+  <g transform="translate(90,170)" fill="none" stroke="#e0f2fe" stroke-width="6" stroke-linejoin="round">
+    <path d="M0 110 L110 20 L220 110 L220 250 L0 250 Z" fill="#0b1f4d"/>
+    <path d="M0 110 L110 20 L220 110"/>
+    <rect x="90" y="150" width="50" height="100" fill="#1e40af"/>
+    <rect x="30" y="135" width="40" height="40" fill="#1e40af"/>
+    <rect x="160" y="135" width="40" height="40" fill="#1e40af"/>
+  </g>
+  <!-- Chart bars -->
+  <g transform="translate(420,110)">
+    <rect x="0" y="220" width="80" height="220" fill="url(#bar1)" rx="6"/>
+    <rect x="110" y="160" width="80" height="280" fill="url(#bar1)" rx="6"/>
+    <rect x="220" y="90" width="80" height="350" fill="url(#bar2)" rx="6"/>
+    <rect x="330" y="40" width="80" height="400" fill="url(#bar2)" rx="6"/>
+    <text x="40" y="470" text-anchor="middle" fill="#bfdbfe" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="600">0 pts</text>
+    <text x="150" y="470" text-anchor="middle" fill="#bfdbfe" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="600">0.5 pt</text>
+    <text x="260" y="470" text-anchor="middle" fill="#a7f3d0" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="600">1 pt</text>
+    <text x="370" y="470" text-anchor="middle" fill="#a7f3d0" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="600">2 pts</text>
+  </g>
+  <!-- Title -->
+  <g transform="translate(880,220)" font-family="Inter, Arial, sans-serif" fill="#f8fafc">
+    <text x="0" y="0" font-size="44" font-weight="800">Mortgage</text>
+    <text x="0" y="56" font-size="44" font-weight="800">Points</text>
+    <text x="0" y="112" font-size="22" font-weight="500" fill="#bfdbfe">Buy down your rate?</text>
+    <text x="0" y="146" font-size="22" font-weight="500" fill="#a7f3d0">Run the break-even math.</text>
+  </g>
+  <text x="600" y="560" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" fill="#cbd5e1">mycalcfinance.com · 2026 Guide</text>
+</svg>

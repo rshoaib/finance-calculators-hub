@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title-how-to-read-pay-stub-2026" style="width:100%;height:auto;border-radius:12px;margin:0 0 24px 0;display:block;">
+  <title id="title-how-to-read-pay-stub-2026">How to Read Your Pay Stub: Every 2026 Line Item, Decoded</title>
+  <defs>
+    <linearGradient id="g" gradientTransform="rotate(124)">
+      <stop offset="0%" stop-color="#065f46"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.82" cy="0.40" r="0.55">
+      <stop offset="0%" stop-color="#d1fae5" stop-opacity="0.38"/>
+      <stop offset="70%" stop-color="#d1fae5" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="pat" width="80" height="80" patternUnits="userSpaceOnUse">
+      <circle cx="40" cy="40" r="26" fill="none" stroke="#d1fae5" stroke-width="1.2" stroke-opacity="0.18"/>
+      <circle cx="0" cy="0" r="26" fill="none" stroke="#d1fae5" stroke-width="1.2" stroke-opacity="0.18"/>
+      <circle cx="80" cy="80" r="26" fill="none" stroke="#d1fae5" stroke-width="1.2" stroke-opacity="0.18"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#g)"/>
+  <rect width="1200" height="630" fill="url(#pat)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <circle cx="960" cy="315" r="210" fill="#d1fae5" fill-opacity="0.08"/>
+  <circle cx="960" cy="315" r="150" fill="#d1fae5" fill-opacity="0.12"/>
+  <g transform="translate(860 150)">
+    <rect x="0" y="0" width="220" height="300" rx="12" fill="#ffffff" fill-opacity="0.95"/>
+    <rect x="0" y="0" width="220" height="48" rx="12" fill="#065f46"/>
+    <text x="110" y="30" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="800" fill="#ffffff" letter-spacing="2">PAY STUB</text>
+    <line x1="18" y1="72" x2="202" y2="72" stroke="#065f46" stroke-width="1.5" stroke-opacity="0.3"/>
+    <text x="18" y="94" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#065f46">Gross Pay</text>
+    <text x="202" y="94" text-anchor="end" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="700" fill="#065f46">$4,615.38</text>
+    <text x="18" y="118" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#334155">Fed Income Tax</text>
+    <text x="202" y="118" text-anchor="end" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#334155">-$518.00</text>
+    <text x="18" y="140" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#334155">OASDI (6.2%)</text>
+    <text x="202" y="140" text-anchor="end" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#334155">-$286.15</text>
+    <text x="18" y="162" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#334155">Medicare (1.45%)</text>
+    <text x="202" y="162" text-anchor="end" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#334155">-$66.92</text>
+    <text x="18" y="184" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#334155">State Tax</text>
+    <text x="202" y="184" text-anchor="end" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#334155">-$185.00</text>
+    <text x="18" y="206" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#334155">401(k) 6%</text>
+    <text x="202" y="206" text-anchor="end" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#334155">-$276.92</text>
+    <text x="18" y="228" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#334155">Health Ins</text>
+    <text x="202" y="228" text-anchor="end" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#334155">-$185.00</text>
+    <line x1="18" y1="248" x2="202" y2="248" stroke="#065f46" stroke-width="1.5" stroke-opacity="0.5"/>
+    <text x="18" y="272" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="800" fill="#065f46">Net Pay</text>
+    <text x="202" y="272" text-anchor="end" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="800" fill="#10b981">$3,097.39</text>
+  </g>
+  <g transform="translate(80 160)">
+    <rect x="0" y="0" rx="22" ry="22" width="90" height="36" fill="#d1fae5" fill-opacity="0.18" stroke="#d1fae5" stroke-opacity="0.55"/>
+    <text x="18" y="24" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" letter-spacing="2" fill="#d1fae5">TAX</text>
+  </g>
+  <text font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="54" font-weight="800" fill="#ffffff" x="80" y="280">How to Read Your</text>
+  <text font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="54" font-weight="800" fill="#ffffff" x="80" y="345">Pay Stub in 2026</text>
+  <text font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="500" fill="#d1fae5" x="80" y="395">Every line item decoded — with the exact numbers</text>
+  <text font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="500" fill="#d1fae5" x="80" y="425">that determine each deduction</text>
+  <g transform="translate(80 500)">
+    <rect x="0" y="0" rx="10" ry="10" width="130" height="60" fill="#ffffff" fill-opacity="0.14" stroke="#d1fae5" stroke-opacity="0.4"/>
+    <text x="16" y="26" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#d1fae5" letter-spacing="1">OASDI WAGE BASE</text>
+    <text x="16" y="48" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="800" fill="#ffffff">$184,500</text>
+  </g>
+  <g transform="translate(230 500)">
+    <rect x="0" y="0" rx="10" ry="10" width="130" height="60" fill="#ffffff" fill-opacity="0.14" stroke="#d1fae5" stroke-opacity="0.4"/>
+    <text x="16" y="26" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#d1fae5" letter-spacing="1">401(k) LIMIT</text>
+    <text x="16" y="48" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="800" fill="#ffffff">$24,500</text>
+  </g>
+  <g transform="translate(380 500)">
+    <rect x="0" y="0" rx="10" ry="10" width="130" height="60" fill="#ffffff" fill-opacity="0.14" stroke="#d1fae5" stroke-opacity="0.4"/>
+    <text x="16" y="26" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#d1fae5" letter-spacing="1">STD DEDUCTION</text>
+    <text x="16" y="48" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="800" fill="#ffffff">$16,100</text>
+  </g>
+</svg>
