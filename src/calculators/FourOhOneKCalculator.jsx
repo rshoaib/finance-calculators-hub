@@ -103,7 +103,13 @@ export default function FourOhOneKCalculator() {
   return (
     <div className="page-with-sidebar">
       <div className="page-main">
-        
+        {jsonLd.map((ld, i) => (
+          <script
+            key={i}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }}
+          />
+        ))}
         <Breadcrumb items={[{ label: '401(k) Calculator' }]} />
 
         <div className="calc-header">

@@ -112,7 +112,13 @@ export default function CDCalculator() {
   return (
     <div className="page-with-sidebar">
       <div className="page-main">
-        
+        {jsonLd.map((ld, i) => (
+          <script
+            key={i}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }}
+          />
+        ))}
         <Breadcrumb items={[{ label: 'CD Calculator' }]} />
 
         <div className="calc-header">

@@ -133,7 +133,13 @@ export default function DebtPayoffCalculator() {
   return (
     <div className="page-with-sidebar">
       <div className="page-main">
-        
+        {jsonLd.map((ld, i) => (
+          <script
+            key={i}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }}
+          />
+        ))}
         <Breadcrumb items={[{ label: 'Debt Payoff Calculator' }]} />
 
         <div className="calc-header">

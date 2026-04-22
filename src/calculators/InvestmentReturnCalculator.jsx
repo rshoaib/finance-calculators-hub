@@ -63,7 +63,13 @@ export default function InvestmentReturnCalculator() {
   return (
     <div className="page-with-sidebar">
       <div className="page-main">
-        
+        {jsonLd.map((ld, i) => (
+          <script
+            key={i}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }}
+          />
+        ))}
         <Breadcrumb items={[{ label: 'Investment Return Calculator' }]} />
 
         <div className="calc-header">

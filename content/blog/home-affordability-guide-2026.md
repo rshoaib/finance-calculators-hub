@@ -6,8 +6,8 @@ category: "Personal Finance"
 author: "MyCalcFinance Team"
 published_at: "2026-02-27T10:00:00.000Z"
 updated_at: "2026-04-17T12:46:07.705Z"
-meta_title: ""
-meta_description: ""
+meta_title: "How Much House Can I Afford in 2026? (28/36 Rule)"
+meta_description: "How much house can you afford in 2026? Use the 28/36 rule, current mortgage rates, and hidden costs to find your real home-buying budget."
 image_url: "/images/blog/hero-home-affordability-guide-2026.svg"
 ---
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title-home-affordability-guide-2026" style="width:100%;height:auto;border-radius:12px;margin:0 0 24px 0;display:block;">
