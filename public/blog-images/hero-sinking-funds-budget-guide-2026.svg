@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Sinking funds illustration with labeled jars">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e3a8a"/>
+    </linearGradient>
+    <linearGradient id="jarFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#0ea5e9" stop-opacity="0.95"/>
+    </linearGradient>
+    <linearGradient id="jarFill2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0.95"/>
+    </linearGradient>
+    <linearGradient id="jarFill3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#34d399" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#10b981" stop-opacity="0.95"/>
+    </linearGradient>
+    <linearGradient id="jarFill4" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f472b6" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#ec4899" stop-opacity="0.95"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <g font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif" fill="#e2e8f0">
+    <text x="60" y="100" font-size="46" font-weight="800" fill="#f8fafc">Sinking Funds, Visualized</text>
+    <text x="60" y="148" font-size="22" font-weight="500" fill="#cbd5e1">Save a little each month for the bills you know are coming.</text>
+  </g>
+  <!-- Shelf -->
+  <rect x="60" y="500" width="1080" height="10" fill="#475569"/>
+  <rect x="60" y="510" width="1080" height="6" fill="#334155"/>
+  <!-- Jar 1 -->
+  <g transform="translate(120,250)">
+    <rect x="0" y="0" width="180" height="250" rx="14" fill="#0b1224" stroke="#94a3b8" stroke-width="3"/>
+    <rect x="8" y="120" width="164" height="125" rx="8" fill="url(#jarFill)"/>
+    <rect x="-10" y="-22" width="200" height="30" rx="6" fill="#94a3b8"/>
+    <text x="90" y="-2" text-anchor="middle" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="#0f172a">CAR REPAIRS</text>
+    <text x="90" y="180" text-anchor="middle" font-family="Inter, sans-serif" font-size="32" font-weight="800" fill="#0f172a">$1,200</text>
+    <text x="90" y="210" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#0f172a">/yr</text>
+  </g>
+  <!-- Jar 2 -->
+  <g transform="translate(360,230)">
+    <rect x="0" y="0" width="180" height="270" rx="14" fill="#0b1224" stroke="#94a3b8" stroke-width="3"/>
+    <rect x="8" y="80" width="164" height="185" rx="8" fill="url(#jarFill2)"/>
+    <rect x="-10" y="-22" width="200" height="30" rx="6" fill="#94a3b8"/>
+    <text x="90" y="-2" text-anchor="middle" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="#0f172a">HOLIDAYS</text>
+    <text x="90" y="170" text-anchor="middle" font-family="Inter, sans-serif" font-size="32" font-weight="800" fill="#0f172a">$1,500</text>
+    <text x="90" y="200" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#0f172a">/yr</text>
+  </g>
+  <!-- Jar 3 -->
+  <g transform="translate(600,260)">
+    <rect x="0" y="0" width="180" height="240" rx="14" fill="#0b1224" stroke="#94a3b8" stroke-width="3"/>
+    <rect x="8" y="140" width="164" height="95" rx="8" fill="url(#jarFill3)"/>
+    <rect x="-10" y="-22" width="200" height="30" rx="6" fill="#94a3b8"/>
+    <text x="90" y="-2" text-anchor="middle" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="#0f172a">VET BILLS</text>
+    <text x="90" y="200" text-anchor="middle" font-family="Inter, sans-serif" font-size="30" font-weight="800" fill="#0f172a">$600</text>
+    <text x="90" y="225" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#0f172a">/yr</text>
+  </g>
+  <!-- Jar 4 -->
+  <g transform="translate(840,210)">
+    <rect x="0" y="0" width="180" height="290" rx="14" fill="#0b1224" stroke="#94a3b8" stroke-width="3"/>
+    <rect x="8" y="60" width="164" height="225" rx="8" fill="url(#jarFill4)"/>
+    <rect x="-10" y="-22" width="200" height="30" rx="6" fill="#94a3b8"/>
+    <text x="90" y="-2" text-anchor="middle" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="#0f172a">HOME REPAIRS</text>
+    <text x="90" y="175" text-anchor="middle" font-family="Inter, sans-serif" font-size="32" font-weight="800" fill="#0f172a">$2,500</text>
+    <text x="90" y="205" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#0f172a">/yr</text>
+  </g>
+  <!-- Coin drops -->
+  <g fill="#fde68a" stroke="#92400e" stroke-width="2">
+    <circle cx="210" cy="220" r="10"/>
+    <circle cx="450" cy="200" r="10"/>
+    <circle cx="690" cy="230" r="10"/>
+    <circle cx="930" cy="180" r="10"/>
+  </g>
+  <text x="60" y="585" font-family="Inter, sans-serif" font-size="20" font-weight="600" fill="#cbd5e1">mycalcfinance.com</text>
+</svg>
