@@ -5,9 +5,9 @@ excerpt: "Want to get approved for a mortgage in 2026? Learn the exact Debt-to-I
 category: "Mortgage"
 author: "MyCalcFinance Team"
 published_at: "2026-02-27T12:00:00.000Z"
-updated_at: "2026-04-19T04:07:42.415Z"
-meta_title: "DTI Ratio for Mortgage in 2026: Typical Range & Guide"
-meta_description: "DTI ratio for a mortgage in 2026: the typical range, 28/36 rule, lender limits by loan type, and 5 proven ways to lower your DTI fast."
+updated_at: "2026-04-25T15:10:00.000Z"
+meta_title: "DTI Ratio for Mortgage 2026: Typical Range & Guidelines"
+meta_description: "Typical mortgage DTI ratio in 2026: 36% front-end, 43% CFPB QM limit, 50% FHA max. See guidelines by loan type and ways to lower DTI."
 image_url: "/images/blog/hero-debt-to-income-ratio-mortgage-guide-2026.svg"
 ---
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title-debt-to-income-ratio-mortgage-guide-2026" style="width:100%;height:auto;border-radius:12px;margin:0 0 24px 0;display:block;">
