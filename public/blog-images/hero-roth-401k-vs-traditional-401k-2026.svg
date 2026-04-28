@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Roth 401(k) vs Traditional 401(k) in 2026" style="width:100%;height:auto;display:block;border-radius:12px;margin-bottom:1.25rem;">
+  <defs>
+    <linearGradient id="bgR4k" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1f3a"/>
+      <stop offset="100%" stop-color="#1d4f7a"/>
+    </linearGradient>
+    <linearGradient id="rothBar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="tradBar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bgR4k)"/>
+  <g opacity="0.08" stroke="#ffffff" stroke-width="1">
+    <line x1="0" y1="100" x2="1200" y2="100"/>
+    <line x1="0" y1="200" x2="1200" y2="200"/>
+    <line x1="0" y1="300" x2="1200" y2="300"/>
+    <line x1="0" y1="400" x2="1200" y2="400"/>
+    <line x1="0" y1="500" x2="1200" y2="500"/>
+  </g>
+  <text x="60" y="120" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="58" font-weight="800">Roth 401(k) vs Traditional 401(k)</text>
+  <text x="60" y="180" fill="#cbd5e1" font-family="Inter, system-ui, sans-serif" font-size="34" font-weight="500">2026 contribution limit: $24,500</text>
+  <g transform="translate(120,260)">
+    <rect x="0" y="120" width="180" height="220" rx="10" fill="url(#tradBar)"/>
+    <text x="90" y="100" fill="#fde68a" font-family="Inter, system-ui, sans-serif" font-size="26" font-weight="700" text-anchor="middle">Traditional</text>
+    <text x="90" y="370" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="600" text-anchor="middle">Tax break now</text>
+    <text x="90" y="395" fill="#fde68a" font-family="Inter, system-ui, sans-serif" font-size="18" text-anchor="middle">Pay tax later</text>
+  </g>
+  <g transform="translate(420,220)">
+    <rect x="0" y="40" width="180" height="300" rx="10" fill="url(#rothBar)"/>
+    <text x="90" y="20" fill="#bbf7d0" font-family="Inter, system-ui, sans-serif" font-size="26" font-weight="700" text-anchor="middle">Roth</text>
+    <text x="90" y="410" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="600" text-anchor="middle">Pay tax now</text>
+    <text x="90" y="435" fill="#bbf7d0" font-family="Inter, system-ui, sans-serif" font-size="18" text-anchor="middle">Tax-free later</text>
+  </g>
+  <g transform="translate(700,250)">
+    <text x="0" y="40" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="700">Same paycheck.</text>
+    <text x="0" y="80" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="700">Different tax timing.</text>
+    <text x="0" y="140" fill="#cbd5e1" font-family="Inter, system-ui, sans-serif" font-size="22">Choose based on your</text>
+    <text x="0" y="170" fill="#cbd5e1" font-family="Inter, system-ui, sans-serif" font-size="22">tax bracket — now vs.</text>
+    <text x="0" y="200" fill="#cbd5e1" font-family="Inter, system-ui, sans-serif" font-size="22">in retirement.</text>
+  </g>
+  <text x="60" y="590" fill="#94a3b8" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="500">MyCalcFinance.com — Personal Finance Guides</text>
+</svg>
