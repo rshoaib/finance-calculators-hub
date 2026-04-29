@@ -1,21 +1,22 @@
 # mycalcfinance-content-pipeline
 
-Auto-publish one SEO-friendly personal finance article to mycalcfinance.com via Supabase, on the cadence controlled by the Claude scheduled task (plus manual triggers).
+Auto-publish one SEO-friendly personal finance article to mycalcfinance.com by committing a Markdown file to the GitHub repo, on the cadence controlled by the Claude scheduled task (plus manual triggers).
 
-**Objective:** On each run, generate and publish ONE helpful, topical, SEO-optimized article to https://mycalcfinance.com/blog/ by inserting a row into the Supabase `blog_posts` table. The site reads posts from Supabase at request time (blog index is client-filtered, detail pages use Next.js App Router dynamic params), so NO code commit, NO GitHub push, and NO Vercel redeploy are required. Cadence is driven by the scheduled task's own cron/frequency plus ad-hoc manual triggers — do NOT enforce hardcoded daily/weekly caps inside the run.
+**Objective:** On each run, generate and publish ONE helpful, topical, SEO-optimized article to https://mycalcfinance.com/blog/ by writing a Markdown file to `content/blog/<slug>.md` and a hero SVG to `public/blog-images/hero-<slug>.svg`, then committing and pushing to GitHub. The site is a static Next.js export — pushes trigger a Vercel/Cloudflare rebuild and the new post is live within ~1–2 minutes. Cadence is driven by the scheduled task's own cron/frequency plus ad-hoc manual triggers — do NOT enforce hardcoded daily/weekly caps inside the run.
 
 **Fixed infrastructure (do not re-discover these at runtime):**
-- Supabase project name: mycalcfinance
-- Supabase project_id (ref): `fyjqnidhhwxvzllhjfxk`
-- Supabase URL: https://fyjqnidhhwxvzllhjfxk.supabase.co
-- Table: `public.blog_posts`
-- Columns: `id` (int8/auto PK), `slug` (text UNIQUE), `title` (text), `excerpt` (text), `category` (text), `image_url` (text), `author` (text), `published_at` (timestamptz, default now()), `content` (text, stored as HTML + optional leading inline SVG), `created_at` / `updated_at` (timestamptz)
-- Storage bucket for hero art: `blog-images` (public). Hero uploaded as `hero-<slug>.svg`, served from `/storage/v1/object/public/blog-images/hero-<slug>.svg`.
+- Repo: `rshoaib/finance-calculators-hub` on GitHub (origin)
+- Local checkout (in scheduled task sandbox): the project root mounted into the run; treat the working tree as authoritative.
+- Branch: `master` (push targets origin/master; the static host watches that branch).
+- Posts directory: `content/blog/` — one Markdown file per post, named `<slug>.md`.
+- Hero images directory: `public/blog-images/` — one SVG per post, named `hero-<slug>.svg`. Served from `https://mycalcfinance.com/blog-images/hero-<slug>.svg`.
+- Frontmatter fields per post: `slug`, `title`, `excerpt`, `category`, `author`, `published_at`, `updated_at`, `meta_title`, `meta_description`, `image_url`. Body is HTML (Markdown allows inline HTML — no conversion needed).
 - Live site: https://mycalcfinance.com
+- Hosting: static export deployed via Git push (Vercel auto-deploys `master`).
 - Brand: **MyCalcFinance** — free personal-finance calculators and plain-English guides for individuals and families. Tone: practical, numbers-forward, friendly, no jargon. Never offer personalized financial, tax, or investment advice.
 - Default author string: `MyCalcFinance Team`
 
-Use the Supabase MCP tools (`mcp__*__list_tables`, `mcp__*__execute_sql`, `mcp__*__apply_migration`). For reads, use `execute_sql`. For the insert, use `execute_sql` with a parameter-safe INSERT (dollar-quoted strings). Storage upload for the hero SVG is done via the Node helper `publish_post.mjs` in the project root (uses `SUPABASE_SERVICE_ROLE_KEY` env var) OR directly through the Supabase storage REST endpoint if the helper is unavailable.
+**No Supabase. No database. No storage bucket.** The Supabase project that previously held posts has been retired — all reads happen at build time from local files, all writes happen as `git commit` + `git push`. Do NOT call Supabase MCP tools for this task.
 
 ---
 
@@ -23,13 +24,19 @@ Use the Supabase MCP tools (`mcp__*__list_tables`, `mcp__*__execute_sql`, `mcp__
 
 ### 1. AUDIT EXISTING POSTS (pick a topic that doesn't collide)
 
-Run:
+List the existing posts from the filesystem:
 
-```sql
-SELECT slug, title, category, published_at
-FROM public.blog_posts
-ORDER BY published_at DESC
-LIMIT 60;
+```bash
+ls content/blog/*.md | sort
+```
+
+For a richer view of titles and categories, read frontmatter from the 30 most-recently-modified files:
+
+```bash
+ls -t content/blog/*.md | head -30 | while read f; do
+  head -n 15 "$f" | sed -n 's/^title: //p; s/^category: //p; s/^published_at: //p'
+  echo "---"
+done
 ```
 
 Read the titles to understand coverage, voice, and which calculators already have companion articles. The site's content pillars are:
@@ -78,7 +85,7 @@ Record: primary keyword, 2–3 secondary keywords, target audience, search inten
     `/mortgage-calculator`, `/mortgage-refinance-calculator`, `/home-affordability-calculator`, `/car-loan-calculator`, `/emi-calculator`, `/student-loan-calculator`, `/credit-card-payoff-calculator`, `/debt-payoff-calculator`, `/debt-to-income-calculator`, `/compound-interest-calculator`, `/cd-calculator`, `/investment-return-calculator`, `/savings-goal-calculator`, `/retirement-calculator`, `/401k-calculator`, `/budget-planner`, `/net-worth-calculator`, `/capital-gains-tax-calculator`, `/tax-bracket-calculator`, `/salary-calculator`, `/inflation-calculator`, `/break-even-calculator`
   - Include at least one link to the on-topic calculator with a clear CTA anchor like "run the numbers in our <Calculator Name>".
 - **2–4 outbound citations** to authoritative sources (gov.*, federalreserve.gov, irs.gov, ssa.gov, consumerfinance.gov, treasury.gov, fdic.gov, sec.gov, bls.gov, nerdwallet/bankrate ONLY for widely reported averages with a link). Open in new tab: `<a href="..." target="_blank" rel="noopener noreferrer">`.
-- **Hero image:** always produce a simple, on-brand SVG hero and upload it to the `blog-images` bucket as `hero-<slug>.svg`. Reference it via `image_url = /storage/v1/object/public/blog-images/hero-<slug>.svg`. If the upload step cannot run, set `image_url` to `null` rather than invent a path.
+- **Hero image:** always produce a simple, on-brand SVG hero and write it to `public/blog-images/hero-<slug>.svg`. Reference it via `image_url: "/blog-images/hero-<slug>.svg"` in the frontmatter. If the SVG can't be produced for any reason, set `image_url` to an empty string and prepend the inline SVG to the HTML body so the post still has a hero on the detail page.
 
 **Quality constraints:**
 
@@ -89,75 +96,83 @@ Record: primary keyword, 2–3 secondary keywords, target audience, search inten
 - No AI-boilerplate openings ("In today's fast-paced economy…").
 - American English, US-centric tax/regulatory framing unless the topic is explicitly global.
 
-### 4. PREPARE THE ROW
+### 4. PREPARE THE FILES
 
-- **slug:** kebab-case, <60 chars, keyword-forward, globally unique. Before inserting, run:
-  `SELECT 1 FROM public.blog_posts WHERE slug = '<your-slug>';` — if it returns a row, append a distinguishing suffix (e.g., `-2026-guide`) and recheck. Also reject the run only if the *exact* slug collides; cadence-based skips (day of week, weekly counts) do NOT apply here.
+- **slug:** kebab-case, <60 chars, keyword-forward, globally unique. Before writing, check:
+  `test -f content/blog/<your-slug>.md && echo COLLISION` — if it prints COLLISION, append a distinguishing suffix (e.g., `-2026-guide`) and recheck. Reject the run only if the *exact* slug collides; cadence-based skips (day of week, weekly counts) do NOT apply here.
 - **title:** <65 chars for SERP, include primary keyword near the front, include year (2026) when the angle is time-sensitive.
 - **excerpt:** 140–160 chars (used as meta description), include primary keyword once, end with a complete sentence.
-- **category:** pick one that matches existing values already in the table (audit step 1 reveals the set — typical values: `Mortgages`, `Loans`, `Credit`, `Savings`, `Investing`, `Retirement`, `Budgeting`, `Taxes`, `Net Worth`). Do NOT invent a new one unless no existing category fits.
+- **category:** pick one that matches existing values already in use (audit step 1 reveals the set — typical values: `Mortgages`, `Loans`, `Credit`, `Savings`, `Investing`, `Retirement`, `Budgeting`, `Taxes`, `Net Worth`). Do NOT invent a new one unless no existing category fits.
 - **author:** `MyCalcFinance Team` (unless the user specifies otherwise).
-- **image_url:** `/storage/v1/object/public/blog-images/hero-<slug>.svg` after successful upload; `null` if the upload step was skipped.
-- **published_at:** `now()` at insert time (ISO timestamp). Use the sandbox's current time.
-- **content:** full HTML string. If a hero SVG was generated, prepend the **raw inline SVG** to the HTML (matches the existing `publish_post.mjs` pattern: `svg.trim() + '\n\n' + body.trim()`). This gives each post a self-contained hero even if the storage URL 404s.
+- **image_url:** `/blog-images/hero-<slug>.svg` if the hero SVG file was written; empty string otherwise.
+- **published_at** / **updated_at:** current ISO 8601 timestamp (e.g., `2026-04-19T14:22:12.000Z`). Use the sandbox's current time for both.
+- **content (body):** full HTML string. If a hero SVG was generated, also prepend the **raw inline SVG** to the HTML body. This keeps each post self-contained (the hero renders from inline markup even if the separate SVG file is missing) and preserves the existing thumbnail pattern used by the blog index.
 
-### 5. INSERT
+### 5. WRITE AND COMMIT
 
-Preferred path is the existing helper when env + files are ready:
+Write the Markdown post file. YAML-quote every frontmatter string value (double quotes, escape embedded `"` as `\"`):
 
 ```bash
-# From /sessions/gracious-keen-keller/mnt/mycalcfinance
-# Requires SUPABASE_SERVICE_ROLE_KEY in env. Writes ./hero.svg + ./post_body.html into the row.
-node publish_post.mjs
+cat > content/blog/<slug>.md <<'MDEOF'
+---
+slug: "<slug>"
+title: "<title>"
+excerpt: "<excerpt>"
+category: "<category>"
+author: "MyCalcFinance Team"
+published_at: "<iso-timestamp>"
+updated_at: "<iso-timestamp>"
+meta_title: ""
+meta_description: ""
+image_url: "/blog-images/hero-<slug>.svg"
+---
+
+<inline-svg>
+
+<html-body>
+MDEOF
 ```
 
-Otherwise, use the Supabase MCP with dollar-quoted SQL:
+Write the hero SVG:
 
-```sql
-INSERT INTO public.blog_posts (slug, title, excerpt, category, image_url, author, published_at, content)
-VALUES (
-  $$<slug>$$,
-  $$<title>$$,
-  $$<excerpt>$$,
-  $$<category>$$,
-  $$<image_url_or_null>$$,
-  $$MyCalcFinance Team$$,
-  now(),
-  $body$<inline-svg>\n\n<html-content>$body$
-);
+```bash
+cat > public/blog-images/hero-<slug>.svg <<'SVGEOF'
+<svg ...>...</svg>
+SVGEOF
 ```
 
-Use distinct dollar-quote tags if any field might contain `$$` (e.g., `$tag$...$tag$`).
+Commit and push:
 
-After insert, verify:
-
-```sql
-SELECT id, slug, title, category, published_at, LENGTH(content) AS content_length
-FROM public.blog_posts
-WHERE slug = '<slug>';
+```bash
+git add content/blog/<slug>.md public/blog-images/hero-<slug>.svg
+git commit -m "blog: add <slug>"
+git push origin master
 ```
+
+The static host (Vercel) watches `master` and rebuilds automatically. A typical rebuild of this site is ~1–2 minutes.
 
 ### 6. VERIFY THE LIVE URL
 
-WebFetch `https://mycalcfinance.com/blog/<slug>` and confirm:
+Wait ~90 seconds after the push, then WebFetch `https://mycalcfinance.com/blog/<slug>` and confirm:
 
-- The page renders (not a redirect to `/blog`).
+- The page renders (not a redirect to `/blog`, not a 404).
 - The title and first paragraph appear.
-- The hero image loads (or, if `image_url` was null, the inline SVG at the top of the content renders).
+- The hero image loads (or, if `image_url` was empty, the inline SVG at the top of the content renders).
 - The meta description in `<head>` matches the excerpt (within trimming).
 
 Also WebFetch `https://mycalcfinance.com/blog` and confirm the new post appears in the index (category filter, newest-first).
 
-If the live page 404s or doesn't render the row, check: did the insert succeed? Is the slug unique? Was there a cached redirect from Vercel? Report the issue in the summary — do NOT delete or update the row.
+If the live page 404s after ~3 minutes, check: did `git push` succeed? Is the Vercel deploy green? Was the filename exactly `<slug>.md`? Report the issue in the summary — do NOT rewrite history or force-push.
 
 ### 7. REPORT (concise, under 250 words)
 
 - New post: title, live URL
 - Category
-- Primary keyword, word count (rough), `content_length` chars
+- Primary keyword, word count (rough), HTML body length in chars
 - Internal links used (list)
 - Outbound citations (list, with source + date of any figure cited)
-- Hero image: uploaded URL or "skipped"
+- Hero image: file path or "skipped"
+- Commit SHA from `git rev-parse HEAD`
 - Verified on live URL? yes/no and any issues
 - Any skipped steps or warnings
 
@@ -165,21 +180,22 @@ If the live page 404s or doesn't render the row, check: did the insert succeed? 
 
 ## CONSTRAINTS (hard rules)
 
-- **NEVER insert a duplicate slug** — always pre-check.
+- **NEVER write a duplicate slug** — always pre-check `content/blog/<slug>.md`.
 - **NEVER invent financial statistics, rates, limits, or official figures.** Verify with WebSearch and cite the source + figure date.
 - **ALWAYS include the "not financial advice" disclaimer.**
-- **NEVER store Markdown in the `content` column** — HTML only, optional inline SVG prepended.
-- **NEVER UPDATE or DELETE existing rows in `blog_posts`.** Only INSERT.
-- **Do NOT touch any other Supabase table or project** — this task is scoped to project `fyjqnidhhwxvzllhjfxk`, table `public.blog_posts`, and storage bucket `blog-images` only.
+- **Body content is HTML only**, optional inline SVG prepended. Markdown allows inline HTML; do NOT convert the body to Markdown syntax — the renderer uses `dangerouslySetInnerHTML`.
+- **NEVER edit or delete existing post files** unless the user explicitly asks. Only add new files. Stale or wrong posts get a follow-up commit from the user, not from the scheduled run.
+- **Do NOT call Supabase MCP tools** — Supabase has been retired from this project.
+- **Do NOT touch any file outside `content/blog/` and `public/blog-images/`.** No code changes from this task.
 - **Do NOT enforce cadence rules inside the run** (day-of-week, same-day duplicates by date, weekly post counts). Cadence is controlled by the scheduled task's cron + manual triggers. The only "already posted" gate is exact slug collision.
-- If WebSearch / WebFetch / Supabase MCP auth / storage upload fails mid-run, stop and emit a report explaining what blocked you; do not retry aggressively.
+- **Do NOT force-push, amend, or rewrite history.** Each post is one new commit on `master`.
+- If WebSearch / WebFetch / git push fails mid-run, stop and emit a report explaining what blocked you; do not retry aggressively.
 - No personalized advice: no "you should buy", "you should sell", "invest in X". Explain mechanics and trade-offs, let the reader decide.
 
 ## SUCCESS CRITERIA
 
-- One new row in `public.blog_posts` with a unique slug.
-- Hero SVG present at `https://fyjqnidhhwxvzllhjfxk.supabase.co/storage/v1/object/public/blog-images/hero-<slug>.svg` (or gracefully omitted with `image_url = null`).
-- Live URL `https://mycalcfinance.com/blog/<slug>` renders the new article within ~1 minute of insert.
+- One new commit on `origin/master` adding `content/blog/<slug>.md` and (usually) `public/blog-images/hero-<slug>.svg`.
+- Live URL `https://mycalcfinance.com/blog/<slug>` renders the new article within ~3 minutes of push (Vercel rebuild time).
 - Article appears on `https://mycalcfinance.com/blog` index.
 - No duplicate or near-duplicate of existing content.
 - No fabricated figures; every cited number has a named source and a date.

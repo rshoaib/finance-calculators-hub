@@ -9,7 +9,14 @@
       "Bash(rm C:/Projects/mycalcfinance/.git/index.lock)",
       "Bash(git add *)",
       "Bash(git commit *)",
-      "Bash(git push *)"
+      "Bash(git push *)",
+      "Bash(rm -f /c/Projects/dailysmartcalc-next/.git/index.lock /c/Projects/dailysmartcalc-next/.git/HEAD.lock)",
+      "Bash(git -C /c/Projects/dailysmartcalc-next add .agent/workflows/)",
+      "Bash(git -C /c/Projects/dailysmartcalc-next status --short)",
+      "Bash(git -C /c/Projects/dailysmartcalc-next commit -m \"chore: remove unused .agent workflow docs\")",
+      "Bash(git -C /c/Projects/dailysmartcalc-next push origin main)",
+      "Bash(rm -f .git/index.lock)",
+      "Bash(git -c user.name=Rizwan -c user.email=segmentbi@gmail.com commit -m \"blog: add how-to-build-cd-ladder-2026\")"
     ]
   }
 }
