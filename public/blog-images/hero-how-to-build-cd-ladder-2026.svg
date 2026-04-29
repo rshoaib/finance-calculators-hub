@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title-cd-ladder-2026" style="width:100%;height:auto;border-radius:12px;margin:0 0 24px 0;display:block;">
+  <title id="title-cd-ladder-2026">How to Build a CD Ladder in 2026</title>
+  <defs>
+    <linearGradient id="cdg" gradientTransform="rotate(28)">
+      <stop offset="0%" stop-color="#0f3a3a"/>
+      <stop offset="60%" stop-color="#0d9488"/>
+      <stop offset="100%" stop-color="#2dd4bf"/>
+    </linearGradient>
+    <radialGradient id="cdglow" cx="0.82" cy="0.35" r="0.6">
+      <stop offset="0%" stop-color="#ccfbf1" stop-opacity="0.4"/>
+      <stop offset="70%" stop-color="#ccfbf1" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="cdpat" width="56" height="56" patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
+      <rect width="56" height="56" fill="none"/>
+      <line x1="0" y1="0" x2="0" y2="56" stroke="#ccfbf1" stroke-width="1.2" stroke-opacity="0.18"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#cdg)"/>
+  <rect width="1200" height="630" fill="url(#cdpat)"/>
+  <rect width="1200" height="630" fill="url(#cdglow)"/>
+
+  <!-- Ladder rungs (bars representing CD terms) -->
+  <g transform="translate(80,180)">
+    <rect x="0" y="0" width="380" height="44" rx="8" fill="#ccfbf1" fill-opacity="0.95"/>
+    <rect x="0" y="64" width="440" height="44" rx="8" fill="#a7f3d0" fill-opacity="0.92"/>
+    <rect x="0" y="128" width="500" height="44" rx="8" fill="#5eead4" fill-opacity="0.92"/>
+    <rect x="0" y="192" width="560" height="44" rx="8" fill="#2dd4bf" fill-opacity="0.92"/>
+    <rect x="0" y="256" width="620" height="44" rx="8" fill="#14b8a6" fill-opacity="0.95"/>
+
+    <text x="395" y="30" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="22" font-weight="600" fill="#0f3a3a">1-yr</text>
+    <text x="455" y="94" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="22" font-weight="600" fill="#0f3a3a">2-yr</text>
+    <text x="515" y="158" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="22" font-weight="600" fill="#0f3a3a">3-yr</text>
+    <text x="575" y="222" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="22" font-weight="600" fill="#083b3b">4-yr</text>
+    <text x="635" y="286" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="22" font-weight="600" fill="#ccfbf1">5-yr</text>
+  </g>
+
+  <!-- Title text -->
+  <g transform="translate(80,80)">
+    <text font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="56" font-weight="700" fill="#ccfbf1">How to Build</text>
+    <text y="64" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="56" font-weight="700" fill="#ccfbf1">a CD Ladder</text>
+  </g>
+
+  <!-- Year tag -->
+  <g transform="translate(960,90)">
+    <rect x="0" y="0" width="160" height="64" rx="32" fill="#ccfbf1" fill-opacity="0.92"/>
+    <text x="80" y="42" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="30" font-weight="700" fill="#0f3a3a">2026</text>
+  </g>
+
+  <!-- Footer line -->
+  <text x="80" y="560" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="24" font-weight="500" fill="#ccfbf1" fill-opacity="0.9">Step-by-step strategy for predictable savings income</text>
+  <text x="80" y="595" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="20" font-weight="500" fill="#a7f3d0" fill-opacity="0.85">mycalcfinance.com</text>
+</svg>
