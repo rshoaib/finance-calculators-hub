@@ -5,9 +5,9 @@ excerpt: "Learn the 2026 HSA contribution limits ($4,400 individual / $8,750 fam
 category: "Tax"
 author: "MyCalcFinance Team"
 published_at: "2026-04-10T15:33:22.769Z"
-updated_at: "2026-04-17T12:46:07.705Z"
-meta_title: ""
-meta_description: ""
+updated_at: "2026-05-03T07:00:00.000Z"
+meta_title: "HSA Contribution Limits 2026: Catch-Up, Family & Single"
+meta_description: "2026 HSA contribution limits: $4,400 single, $8,750 family, plus $1,000 catch-up at 55+. See IRS Pub 969 rules, deadlines, and triple tax savings."
 image_url: "/images/blog/hero-hsa-calculator-guide-2026.svg"
 ---
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title-hsa-calculator-guide-2026" style="width:100%;height:auto;border-radius:12px;margin:0 0 24px 0;display:block;">

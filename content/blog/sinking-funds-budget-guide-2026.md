@@ -5,7 +5,7 @@ excerpt: "Sinking funds turn lumpy yearly bills like holidays, car repairs, and 
 category: "Budgeting"
 author: "MyCalcFinance Team"
 published_at: "2026-04-25T15:35:59.000Z"
-updated_at: "2026-04-25T15:35:59.000Z"
+updated_at: "2026-05-03T07:00:00.000Z"
 meta_title: "Sinking Funds Guide 2026: Budget for Irregular Expenses | MyCalcFinance"
 meta_description: "Learn how to set up sinking funds in 2026 to save for holidays, car repairs, insurance, and home maintenance. Worked examples, HYSA tips, and a FAQ."
 image_url: "/blog-images/hero-sinking-funds-budget-guide-2026.svg"
@@ -151,7 +151,7 @@ image_url: "/blog-images/hero-sinking-funds-budget-guide-2026.svg"
 <p>If figuring out target dates feels tedious, just sum every irregular bill you paid in the last 12 months and divide by 12. That's your minimum monthly sinking-fund contribution to break even on next year. Last year's 12 months of credit card and bank statements are usually enough data.</p>
 
 <h2>Where to keep sinking funds</h2>
-<p>Two rules: kept separate from your checking account so you don't accidentally spend them, and earning interest while they wait. The FDIC's <a href="https://www.fdic.gov/resources/bankers/national-rates/" target="_blank" rel="noopener noreferrer">national average rate</a> for savings accounts was just 0.38% as of April 2026, but online high-yield savings accounts (HYSAs) have been advertising 4.00–5.00% APY in the same window, per Bankrate and Fortune coverage. On a household holding $8,000 in pooled sinking funds, that's roughly the difference between $30 a year of interest and $320 a year — for the same money sitting in the same place.</p>
+<p>Two rules: kept separate from your checking account so you don't accidentally spend them, and earning interest while they wait. The FDIC's <a href="https://www.fdic.gov/national-rates-and-rate-caps" target="_blank" rel="noopener noreferrer">national average rate</a> for savings accounts was just 0.38% as of April 2026, but online high-yield savings accounts (HYSAs) have been advertising 4.00–5.00% APY in the same window, per Bankrate and Fortune coverage. On a household holding $8,000 in pooled sinking funds, that's roughly the difference between $30 a year of interest and $320 a year — for the same money sitting in the same place.</p>
 <p>Three setups that work in practice:</p>
 <ul>
   <li><strong>One HYSA, many "buckets" or sub-accounts.</strong> Banks like Ally, SoFi, Capital One 360, and Discover let you label sub-accounts ("Holidays 2026", "Car repairs"). Same APY, separate balances, no real friction.</li>
