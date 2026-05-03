@@ -5,7 +5,7 @@ excerpt: "With the 2026 401(k) limit at $24,500 and new Roth catch-up rules in e
 category: "Investing"
 author: "MyCalcFinance Team"
 published_at: "2026-04-28T16:09:50.000Z"
-updated_at: "2026-04-28T16:09:50.000Z"
+updated_at: "2026-05-03T05:20:03.000Z"
 meta_title: "Roth 401(k) vs Traditional 401(k) 2026: The Real Math"
 meta_description: "2026 limit is $24,500. See worked numbers, when each option wins, the new mandatory Roth catch-up for high earners, and how to split contributions."
 image_url: "/blog-images/hero-roth-401k-vs-traditional-401k-2026.svg"
@@ -71,7 +71,7 @@ image_url: "/blog-images/hero-roth-401k-vs-traditional-401k-2026.svg"
   <li><strong>Roth 401(k):</strong> contributions come from after-tax pay — no deduction today. The money grows tax-free, and qualified withdrawals in retirement (after age 59½ and the 5-year rule) come out completely tax-free.</li>
 </ul>
 
-<p>One detail confuses people: your <strong>employer match always lands in the traditional, pre-tax bucket</strong> by default in most plans, even if your contributions are 100% Roth. Under <a href="https://www.irs.gov/retirement-plans/secure-2-0-act-changes-affect-how-businesses-complete-forms-w-2" target="_blank" rel="noopener noreferrer">SECURE 2.0</a> employers can offer a Roth match, but plans have been slow to add it. Check your plan documents — your match may be growing as a future tax bill regardless of which bucket you choose.</p>
+<p>One detail confuses people: your <strong>employer match always lands in the traditional, pre-tax bucket</strong> by default in most plans, even if your contributions are 100% Roth. Under <a href="https://www.irs.gov/newsroom/treasury-irs-issue-final-regulations-on-new-roth-catch-up-rule-other-secure-2point0-act-provisions" target="_blank" rel="noopener noreferrer">SECURE 2.0</a> employers can offer a Roth match, but plans have been slow to add it. Check your plan documents — your match may be growing as a future tax bill regardless of which bucket you choose.</p>
 
 <h2>2026 contribution limits and catch-up rules</h2>
 
@@ -164,7 +164,7 @@ image_url: "/blog-images/hero-roth-401k-vs-traditional-401k-2026.svg"
 
 <h3>RMDs are gone</h3>
 
-<p>Starting in 2024, Roth 401(k)s no longer require Required Minimum Distributions during the original owner's lifetime, thanks to <a href="https://www.dol.gov/agencies/ebsa/about-ebsa/our-activities/resource-center/faqs/secure-2.0-act" target="_blank" rel="noopener noreferrer">SECURE 2.0</a>. That removed one of the historical reasons to favor a Roth IRA over a Roth 401(k), and is why many savers are now happy to leave the money in the employer plan.</p>
+<p>Starting in 2024, Roth 401(k)s no longer require Required Minimum Distributions during the original owner's lifetime, thanks to <a href="https://www.dol.gov/agencies/ebsa/laws-and-regulations/laws/secure-2-0-act-of-2022" target="_blank" rel="noopener noreferrer">SECURE 2.0</a>. That removed one of the historical reasons to favor a Roth IRA over a Roth 401(k), and is why many savers are now happy to leave the money in the employer plan.</p>
 
 <h3>The match is still pre-tax in most plans</h3>
 
@@ -224,4 +224,4 @@ image_url: "/blog-images/hero-roth-401k-vs-traditional-401k-2026.svg"
 <h3>I'm 55 and earned $200,000 last year — what changes for me in 2026?</h3>
 <p>Your base $24,500 contribution can still go to either Roth or traditional. But your $8,000 catch-up must be Roth, because your prior-year wages exceeded the $150,000 threshold. If your plan doesn't yet offer a Roth option, ask HR — without one, you can't make the catch-up at all under the new rule.</p>
 
-<p><em>This article is for general informational purposes only and is not financial, tax, or investment advice. Figures reflect IRS guidance and inflation-adjusted limits as of November 2025 for tax year 2026 and may change. Consult a qualified financial professional before making decisions about your money.</em></p>
+<p><em>This article is for general informational purposes only and is not financial, tax, or investment advice. Figures reflect IRS guidance and inflation-adjusted limits as of May 2026 for tax year 2026 and may change. Consult a qualified financial professional before making decisions about your money.</em></p>

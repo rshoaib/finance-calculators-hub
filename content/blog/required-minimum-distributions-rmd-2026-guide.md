@@ -5,7 +5,7 @@ excerpt: "Required minimum distributions kick in at 73 (or 75). Here's how to ca
 category: "Investing"
 author: "MyCalcFinance Team"
 published_at: "2026-05-01T06:10:00.000Z"
-updated_at: "2026-05-01T06:10:00.000Z"
+updated_at: "2026-05-03T05:20:03.000Z"
 meta_title: "Required Minimum Distributions (RMDs) 2026: Rules & Math Guide"
 meta_description: "Required minimum distributions kick in at 73 (or 75). Learn how to calculate your 2026 RMD, the deadlines, and the 25% missed-RMD penalty."
 image_url: "/blog-images/hero-required-minimum-distributions-rmd-2026-guide.svg"
@@ -102,7 +102,7 @@ image_url: "/blog-images/hero-required-minimum-distributions-rmd-2026-guide.svg"
   </tbody>
 </table>
 
-<p>The biggest practical change in this list is the <strong>Roth 401(k) exemption</strong>. For tax years 2024 onward, a Roth 401(k) (and Roth 403(b), Roth 457(b)) holder no longer has to take an RMD during their lifetime, thanks to <a href="https://www.dol.gov/agencies/ebsa/about-ebsa/our-activities/resource-center/faqs/secure-2.0-act" target="_blank" rel="noopener noreferrer">SECURE 2.0</a>. That removed one of the historical reasons to roll a Roth 401(k) into a Roth IRA at retirement; if you're weighing the choice, see our <a href="/blog/roth-401k-vs-traditional-401k-2026">Roth 401(k) vs Traditional 401(k) guide</a>.</p>
+<p>The biggest practical change in this list is the <strong>Roth 401(k) exemption</strong>. For tax years 2024 onward, a Roth 401(k) (and Roth 403(b), Roth 457(b)) holder no longer has to take an RMD during their lifetime, thanks to <a href="https://www.dol.gov/agencies/ebsa/laws-and-regulations/laws/secure-2-0-act-of-2022" target="_blank" rel="noopener noreferrer">SECURE 2.0</a>. That removed one of the historical reasons to roll a Roth 401(k) into a Roth IRA at retirement; if you're weighing the choice, see our <a href="/blog/roth-401k-vs-traditional-401k-2026">Roth 401(k) vs Traditional 401(k) guide</a>.</p>
 
 <h2>Inherited accounts: the 10-year rule</h2>
 

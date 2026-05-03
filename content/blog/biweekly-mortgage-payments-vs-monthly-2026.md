@@ -5,9 +5,9 @@ excerpt: "Biweekly mortgage payments add one extra monthly payment a year. See t
 category: "Mortgage"
 author: "MyCalcFinance Team"
 published_at: "2026-04-20T15:35:00.000Z"
-updated_at: "2026-04-20T15:35:00.000Z"
-meta_title: ""
-meta_description: ""
+updated_at: "2026-05-03T05:20:03.000Z"
+meta_title: "Biweekly Mortgage Payments vs Monthly 2026: Real Math"
+meta_description: "Biweekly mortgage payments add one extra annual payment. On a $400K, 6.30% 2026 loan that's ~$108K saved and 5+ years off — plus the free DIY 1/12 method."
 image_url: "/blog-images/hero-biweekly-mortgage-payments-vs-monthly-2026.svg"
 ---
 
@@ -163,8 +163,8 @@ image_url: "/blog-images/hero-biweekly-mortgage-payments-vs-monthly-2026.svg"
 
 <p>That's the failure mode to watch for. Always check the next statement after your first biweekly or extra-principal payment. If the balance didn't move, call the servicer and ask them to reallocate the payment as "principal only." Most portals have a dedicated field for this to avoid the confusion.</p>
 
-<p><em>This article is for general informational purposes only and is not financial, tax, or investment advice. Figures reflect conditions as of April 2026 and may change — the Freddie Mac 30-year fixed average cited above was 6.30% for the week ending April 16, 2026. Consult a qualified financial professional before making decisions about your money.</em></p>
+<p><em>This article is for general informational purposes only and is not financial, tax, or investment advice. Figures reflect conditions as of May 2026 and may change — the Freddie Mac 30-year fixed average cited above was 6.30% for the week ending April 16, 2026. Consult a qualified financial professional before making decisions about your money.</em></p>
 
 <p>Want to see exactly how biweekly changes <em>your</em> amortization schedule? Plug your loan balance, rate, and remaining term into our <a href="/mortgage-calculator">mortgage calculator</a> and compare scenarios. Curious how a refinance might stack with biweekly? Run the break-even in the <a href="/mortgage-refinance-calculator">refinance calculator</a> first, then layer on the extra principal.</p>
 
-<p>Sources and further reading: the U.S. average 30-year fixed mortgage rate of 6.30% is drawn from the Freddie Mac Primary Mortgage Market Survey released April 16, 2026 (<a href="https://www.freddiemac.com/pmms" target="_blank" rel="noopener noreferrer">freddiemac.com/pmms</a>). For servicer rules on applying extra principal, see the <a href="https://www.consumerfinance.gov/ask-cfpb/if-i-want-to-pay-extra-on-my-mortgage-how-should-i-tell-the-lender-to-apply-the-extra-amount-en-1947/" target="_blank" rel="noopener noreferrer">Consumer Financial Protection Bureau's guidance on principal-only payments</a>. For a skeptical look at third-party biweekly services, the <a href="https://consumer.ftc.gov/" target="_blank" rel="noopener noreferrer">Federal Trade Commission</a> has long-running consumer guidance on fee-based payment programs.</p>
+<p>Sources and further reading: the U.S. average 30-year fixed mortgage rate of 6.30% is drawn from the Freddie Mac Primary Mortgage Market Survey released April 16, 2026 (<a href="https://www.freddiemac.com/pmms" target="_blank" rel="noopener noreferrer">freddiemac.com/pmms</a>). For servicer rules on applying extra principal, see the <a href="https://www.consumerfinance.gov/ask-cfpb/how-does-paying-down-a-mortgage-work-en-1943/" target="_blank" rel="noopener noreferrer">Consumer Financial Protection Bureau's guidance on principal-only payments</a>. For a skeptical look at third-party biweekly services, the <a href="https://consumer.ftc.gov/" target="_blank" rel="noopener noreferrer">Federal Trade Commission</a> has long-running consumer guidance on fee-based payment programs.</p>
