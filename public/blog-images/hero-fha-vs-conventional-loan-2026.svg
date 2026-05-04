@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-label="FHA vs conventional loan comparison for 2026">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1220"/>
+      <stop offset="100%" stop-color="#1e40af"/>
+    </linearGradient>
+    <linearGradient id="fhaBar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="convBar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#60a5fa"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="600" fill="url(#bg)"/>
+  <g opacity="0.08" stroke="#ffffff" stroke-width="1">
+    <line x1="0" y1="150" x2="1200" y2="150"/>
+    <line x1="0" y1="300" x2="1200" y2="300"/>
+    <line x1="0" y1="450" x2="1200" y2="450"/>
+  </g>
+  <text x="60" y="90" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="42" font-weight="700">FHA vs Conventional</text>
+  <text x="60" y="135" fill="#bae6fd" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="500">2026 Mortgage Comparison &middot; $400,000 Home Example</text>
+
+  <g transform="translate(120,210)">
+    <text fill="#a7f3d0" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600">FHA</text>
+    <text y="32" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="18">3.5% down &middot; 580 FICO</text>
+    <text y="62" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="18">Rate ~6.10%</text>
+    <text y="92" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="18">MIP ~0.55% (life of loan)</text>
+    <rect x="0" y="120" width="280" height="180" rx="14" fill="url(#fhaBar)" opacity="0.92"/>
+    <text x="140" y="195" text-anchor="middle" fill="#022c22" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="700">Cash to close</text>
+    <text x="140" y="232" text-anchor="middle" fill="#022c22" font-family="Inter, system-ui, sans-serif" font-size="40" font-weight="800">$26,000</text>
+    <text x="140" y="265" text-anchor="middle" fill="#022c22" font-family="Inter, system-ui, sans-serif" font-size="16">monthly ~$2,558</text>
+  </g>
+
+  <g transform="translate(720,210)">
+    <text fill="#bfdbfe" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600">Conventional</text>
+    <text y="32" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="18">5% down &middot; stronger credit</text>
+    <text y="62" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="18">Rate ~6.30%</text>
+    <text y="92" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="18">PMI ~0.5% (drops at 80% LTV)</text>
+    <rect x="0" y="120" width="280" height="180" rx="14" fill="url(#convBar)" opacity="0.92"/>
+    <text x="140" y="195" text-anchor="middle" fill="#0b1d4d" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="700">Cash to close</text>
+    <text x="140" y="232" text-anchor="middle" fill="#0b1d4d" font-family="Inter, system-ui, sans-serif" font-size="40" font-weight="800">$32,000</text>
+    <text x="140" y="265" text-anchor="middle" fill="#0b1d4d" font-family="Inter, system-ui, sans-serif" font-size="16">monthly ~$2,510</text>
+  </g>
+
+  <text x="600" y="555" text-anchor="middle" fill="#e2e8f0" font-family="Inter, system-ui, sans-serif" font-size="18">FHA frees up cash now &middot; Conventional drops PMI later</text>
+</svg>
