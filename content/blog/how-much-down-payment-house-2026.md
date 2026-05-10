@@ -5,9 +5,9 @@ excerpt: "From 0% to 20% — the down payment you need depends on your loan type
 category: "Mortgage"
 author: "MyCalcFinance Team"
 published_at: "2026-03-27T10:00:00.000Z"
-updated_at: "2026-04-25T15:10:00.000Z"
-meta_title: "How Much Down Payment Needed for a House in 2026?"
-meta_description: "Down payment needed for a house in 2026: conventional 3%, FHA 3.5%, VA/USDA 0%. Yes, you can buy with less than 20% down — see minimums by loan."
+updated_at: "2026-05-10T04:17:00.000Z"
+meta_title: "How Much Down Payment Needed to Buy a House in 2026?"
+meta_description: "How much down payment to buy a house in 2026: conventional 3%, FHA 3.5%, VA/USDA 0%. Minimum requirements by loan type — buy with under 20% down."
 image_url: "/images/blog/hero-how-much-down-payment-house-2026.svg"
 ---
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title-how-much-down-payment-house-2026" style="width:100%;height:auto;border-radius:12px;margin:0 0 24px 0;display:block;">
