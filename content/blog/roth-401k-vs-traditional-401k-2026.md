@@ -5,7 +5,7 @@ excerpt: "With the 2026 401(k) limit at $24,500 and new Roth catch-up rules in e
 category: "Investing"
 author: "MyCalcFinance Team"
 published_at: "2026-04-28T16:09:50.000Z"
-updated_at: "2026-05-03T05:20:03.000Z"
+updated_at: "2026-05-12T00:00:00.000Z"
 meta_title: "Roth 401(k) vs Traditional 401(k) 2026: The Real Math"
 meta_description: "2026 limit is $24,500. See worked numbers, when each option wins, the new mandatory Roth catch-up for high earners, and how to split contributions."
 image_url: "/blog-images/hero-roth-401k-vs-traditional-401k-2026.svg"
@@ -196,6 +196,8 @@ image_url: "/blog-images/hero-roth-401k-vs-traditional-401k-2026.svg"
 </ol>
 
 <p>If you can't pick after running through that, the <strong>50/50 split is a perfectly reasonable default</strong>. You can adjust the mix every January once you have better information about your trajectory.</p>
+
+<p>Before you spend time optimizing <em>how</em> your contributions are taxed, it is worth confirming that your <em>total</em> balance is on track for your age. Our <a href="/blog/retirement-savings-by-age-benchmarks-2026">retirement savings benchmarks by age</a> show what Fidelity and Vanguard data say you should have saved at 30, 40, 50, and beyond — a useful gut-check before the Roth-vs-traditional split even enters the picture.</p>
 
 <h2>Don't forget the employer match</h2>
 
