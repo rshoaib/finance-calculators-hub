@@ -5,7 +5,7 @@ excerpt: "Learn how to calculate your personal savings rate with simple formulas
 category: "Savings"
 author: "MyCalcFinance Team"
 published_at: "2026-04-08T12:24:51.097Z"
-updated_at: "2026-04-17T12:46:07.705Z"
+updated_at: "2026-05-13T00:00:00.000Z"
 meta_title: ""
 meta_description: ""
 image_url: "/images/blog/hero-how-to-calculate-savings-rate-formula-2026.svg"
@@ -355,7 +355,7 @@ image_url: "/images/blog/hero-how-to-calculate-savings-rate-formula-2026.svg"
 </tbody>
 </table>
 
-<p>Pro tip: track your savings rate alongside your <a href="/blog/how-to-calculate-net-worth-2026-guide">net worth</a>. Your savings rate tells you how fast you're driving. Your net worth tells you how far you've gone. Together, they give you the complete financial picture.</p>
+<p>Pro tip: track your savings rate alongside your <a href="/blog/how-to-calculate-net-worth-2026-guide">net worth</a>. Your savings rate tells you how fast you're driving. Your net worth tells you how far you've gone. Together, they give you the complete financial picture — check where you stand right now with our <a href="/net-worth-calculator">net worth tracker</a>.</p>
 
 <h2>Frequently Asked Questions</h2>
 
