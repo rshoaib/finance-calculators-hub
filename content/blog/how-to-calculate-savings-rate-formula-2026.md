@@ -5,7 +5,7 @@ excerpt: "Learn how to calculate your personal savings rate with simple formulas
 category: "Savings"
 author: "MyCalcFinance Team"
 published_at: "2026-04-08T12:24:51.097Z"
-updated_at: "2026-05-13T00:00:00.000Z"
+updated_at: "2026-05-15T00:00:00.000Z"
 meta_title: ""
 meta_description: ""
 image_url: "/images/blog/hero-how-to-calculate-savings-rate-formula-2026.svg"
@@ -355,7 +355,7 @@ image_url: "/images/blog/hero-how-to-calculate-savings-rate-formula-2026.svg"
 </tbody>
 </table>
 
-<p>Pro tip: track your savings rate alongside your <a href="/blog/how-to-calculate-net-worth-2026-guide">net worth</a>. Your savings rate tells you how fast you're driving. Your net worth tells you how far you've gone. Together, they give you the complete financial picture — check where you stand right now with our <a href="/net-worth-calculator">net worth tracker</a>.</p>
+<p>Pro tip: track your savings rate alongside your <a href="/blog/how-to-calculate-net-worth-2026-guide">net worth</a>. Your savings rate tells you how fast you're driving. Your net worth tells you how far you've gone. Together, they give you the complete financial picture.</p>
 
 <h2>Frequently Asked Questions</h2>
 
@@ -373,7 +373,7 @@ image_url: "/images/blog/hero-how-to-calculate-savings-rate-formula-2026.svg"
 
 <h3>How much should I save per month in dollar terms?</h3>
 
-<p>It depends entirely on your income and goals. At a $60,000 salary ($5,000/month gross), a 15% savings rate means $750/month across all savings vehicles. A 20% rate means $1,000/month. According to <a href="https://www.bankrate.com/banking/savings/how-much-money-should-i-save-each-month/" target="_blank" rel="noopener">Bankrate</a>, the key is consistency — even $250/month ($3,000/year) at 7% returns grows to over <strong>$130,000 in 20 years</strong>. Use our <a href="/savings-goal-calculator">Savings Goal Calculator</a> to map out your specific target.</p>
+<p>It depends entirely on your income and goals. At a $60,000 salary ($5,000/month gross), a 15% savings rate means $750/month across all savings vehicles. A 20% rate means $1,000/month. According to <a href="https://www.bankrate.com/banking/savings/how-much-money-should-i-save-each-month/" target="_blank" rel="noopener">Bankrate</a>, the key is consistency — even $250/month ($3,000/year) at 7% returns grows to over <strong>$130,000 in 20 years</strong>. Use our <a href="/savings-goal-calculator">Savings Goal Calculator</a> to map out your specific target, or see our <a href="/blog/savings-goal-calculator-guide-2026">savings goal planning guide</a> to build a plan by goal type and timeline.</p>
 
 <h3>What's the difference between personal savings rate and the national rate?</h3>
 
