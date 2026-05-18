@@ -164,7 +164,7 @@ image_url: "/blog-images/hero-roth-401k-vs-traditional-401k-2026.svg"
 
 <h3>RMDs are gone</h3>
 
-<p>Starting in 2024, Roth 401(k)s no longer require Required Minimum Distributions during the original owner's lifetime, thanks to <a href="https://www.dol.gov/agencies/ebsa/laws-and-regulations/laws/secure-2-0-act-of-2022" target="_blank" rel="noopener noreferrer">SECURE 2.0</a>. That removed one of the historical reasons to favor a Roth IRA over a Roth 401(k), and is why many savers are now happy to leave the money in the employer plan.</p>
+<p>Starting in 2024, Roth 401(k)s no longer require <a href="/blog/required-minimum-distributions-rmd-2026-guide">required minimum distributions (RMDs)</a> during the original owner's lifetime, thanks to <a href="https://www.dol.gov/agencies/ebsa/laws-and-regulations/laws/secure-2-0-act-of-2022" target="_blank" rel="noopener noreferrer">SECURE 2.0</a>. That removed one of the historical reasons to favor a Roth IRA over a Roth 401(k), and is why many savers are now happy to leave the money in the employer plan.</p>
 
 <h3>The match is still pre-tax in most plans</h3>
 
