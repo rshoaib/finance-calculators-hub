@@ -1,4 +1,4 @@
-import Calculator from '../../src/calculators/Contact'
+import Calculator from '../../src/components/static/Contact'
 
 export const metadata = {
   title: 'Contact Us — MyCalcFinance',

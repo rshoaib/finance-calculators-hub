@@ -1,4 +1,4 @@
-import Calculator from '../../src/calculators/PrivacyPolicy'
+import Calculator from '../../src/components/static/PrivacyPolicy'
 
 export const metadata = {
   title: 'Privacy Policy — MyCalcFinance',

@@ -1,4 +1,4 @@
-import Calculator from '../../src/calculators/About'
+import Calculator from '../../src/components/static/About'
 
 export const metadata = {
   title: 'About MyCalcFinance — Free Financial Calculators for Everyone',
