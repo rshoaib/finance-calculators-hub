@@ -1,0 +1,395 @@
+[
+  {
+    "url": "https://www.irs.gov/newsroom/529-plans-questions-and-answers",
+    "posts": [
+      "529-plan-college-savings-guide-2026"
+    ],
+    "ok": true,
+    "status": 200
+  },
+  {
+    "url": "https://www.irs.gov/forms-pubs/about-form-709",
+    "posts": [
+      "529-plan-college-savings-guide-2026"
+    ],
+    "ok": true,
+    "status": 200
+  },
+  {
+    "url": "https://www.irs.gov/newsroom/401k-limit-increases-to-24500-for-2026-ira-limit-increases-to-7500",
+    "posts": [
+      "529-plan-college-savings-guide-2026",
+      "backdoor-roth-ira-2026-high-earners-guide",
+      "what-to-do-with-tax-refund-2026"
+    ],
+    "ok": true,
+    "status": 200
+  },
+  {
+    "url": "https://www.savingforcollege.com/article/roll-over-529-plan-funds-to-a-roth-ira",
+    "posts": [
+      "529-plan-college-savings-guide-2026"
+    ],
+    "ok": true,
+    "status": 200
+  },
+  {
+    "url": "https://www.savingforcollege.com/article/10-rules-for-superfunding-a-529-plan",
+    "posts": [
+      "529-plan-college-savings-guide-2026"
+    ],
+    "ok": true,
+    "status": 200
+  },
+  {
+    "url": "https://www.consumerfinance.gov/ask-cfpb/for-an-adjustable-rate-mortgage-arm-what-are-the-index-and-margin-and-how-do-they-work-en-1949/",
+    "posts": [
+      "arm-vs-fixed-rate-mortgage-2026"
+    ],
+    "ok": true,
+    "status": 200
+  },
+  {
+    "url": "https://www.bankrate.com/mortgages/arm-loan-rates/",
+    "posts": [
+      "arm-vs-fixed-rate-mortgage-2026"
+    ],
+    "ok": false,
+    "status": 405,
+    "fallback": "GET"
+  },
+  {
+    "url": "https://www.freddiemac.com/pmms",
+    "posts": [
+      "arm-vs-fixed-rate-mortgage-2026",
+      "biweekly-mortgage-payments-vs-monthly-2026",
+      "how-much-is-pmi-mortgage-insurance-2026",
+      "mortgage-points-buy-down-rate-2026",
+      "mortgage-recast-vs-refinance-2026"
+    ],
+    "ok": true,
+    "status": 200
+  },
+  {
+    "url": "https://www.consumerfinance.gov/ask-cfpb/what-are-rate-caps-with-an-adjustable-rate-mortgage-arm-and-how-do-they-work-en-1951/",
+    "posts": [
+      "arm-vs-fixed-rate-mortgage-2026"
+    ],
+    "ok": true,
+    "status": 200
+  },
+  {
+    "url": "https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-ira-contribution-limits",
+    "posts": [
+      "backdoor-roth-ira-2026-high-earners-guide"
+    ],
+    "ok": true,
+    "status": 200
+  },
+  {
+    "url": "https://www.irs.gov/pub/irs-drop/n-25-67.pdf",
+    "posts": [
+      "backdoor-roth-ira-2026-high-earners-guide"
+    ],
+    "ok": true,
+    "status": 200
+  },
+  {
+    "url": "https://www.consumerfinance.gov/ask-cfpb/if-i-want-to-pay-extra-on-my-mortgage-how-should-i-tell-the-lender-to-apply-the-extra-amount-en-1947/",
+    "posts": [
+      "biweekly-mortgage-payments-vs-monthly-2026",
+      "mortgage-recast-vs-refinance-2026",
+      "mortgage-recast-vs-refinance-2026"
+    ],
+    "ok": true,
+    "status": 200
+  },
+  {
+    "url": "https://consumer.ftc.gov/",
+    "posts": [
+      "biweekly-mortgage-payments-vs-monthly-2026"
+    ],
+    "ok": true,
+    "status": 200
+  },
+  {
+    "url": "https://www.consumerfinance.gov/ask-cfpb/what-is-a-credit-score-en-315/",
+    "posts": [
+      "credit-utilization-ratio-credit-score-2026"
+    ],
+    "ok": true,
+    "status": 200
+  },
+  {
+    "url": "https://www.bankrate.com/mortgages/basics-of-private-mortgage-insurance-pmi/",
+    "posts": [
+      "how-much-is-pmi-mortgage-insurance-2026"
+    ],
+    "ok": true,
+    "status": 200
+  },
+  {
+    "url": "https://fred.stlouisfed.org/series/TERMCBCCALLNS",
+    "posts": [
+      "credit-utilization-ratio-credit-score-2026"
+    ],
+    "ok": true,
+    "status": 200
+  },
+  {
+    "url": "https://www.fha.com/fha_requirements_mortgage_insurance",
+    "posts": [
+      "how-much-is-pmi-mortgage-insurance-2026"
+    ],
+    "ok": false,
+    "status": 403,
+    "fallback": "GET"
+  },
+  {
+    "url": "https://www.consumerfinance.gov/compliance/supervision-examinations/homeowners-protection-act-hpa-or-pmi-cancellation-act-examination-procedures/",
+    "posts": [
+      "how-much-is-pmi-mortgage-insurance-2026"
+    ],
+    "ok": true,
+    "status": 200
+  },
+  {
+    "url": "https://downpaymentresource.com/",
+    "posts": [
+      "how-much-down-payment-house-2026"
+    ],
+    "ok": true,
+    "status": 200
+  },
+  {
+    "url": "https://www.myfico.com/credit-education/blog/credit-utilization-be",
+    "posts": [
+      "credit-utilization-ratio-credit-score-2026"
+    ],
+    "ok": true,
+    "status": 200
+  },
+  {
+    "url": "https://eligibility.sc.egov.usda.gov/eligibility/",
+    "posts": [
+      "how-much-down-payment-house-2026"
+    ],
+    "ok": true,
+    "status": 200
+  },
+  {
+    "url": "https://www.irs.gov/",
+    "posts": [
+      "how-much-is-pmi-mortgage-insurance-2026"
+    ],
+    "ok": true,
+    "status": 200
+  },
+  {
+    "url": "https://www.bankrate.com/banking/savings/how-much-money-should-i-save-each-month/",
+    "posts": [
+      "how-to-calculate-savings-rate-formula-2026",
+      "how-to-calculate-savings-rate-formula-2026"
+    ],
+    "ok": true,
+    "status": 200
+  },
+  {
+    "url": "https://www.bea.gov/data/income-saving/personal-saving-rate",
+    "posts": [
+      "how-to-calculate-savings-rate-formula-2026",
+      "how-to-calculate-savings-rate-formula-2026"
+    ],
+    "ok": true,
+    "status": 200
+  },
+  {
+    "url": "https://www.indexbox.io/blog/american-retirement-savings-rates-in-2025-how-much-workers-are-contributing/",
+    "posts": [
+      "how-to-calculate-savings-rate-formula-2026",
+      "how-to-calculate-savings-rate-formula-2026"
+    ],
+    "ok": true,
+    "status": 200
+  },
+  {
+    "url": "https://www.fidelity.com/learning-center/smart-money/401k-contribution-limits",
+    "posts": [
+      "how-to-calculate-savings-rate-formula-2026",
+      "how-to-calculate-savings-rate-formula-2026"
+    ],
+    "ok": true,
+    "status": 200
+  },
+  {
+    "url": "https://www.usnews.com/banking/articles/2026-financial-wellness-survey",
+    "posts": [
+      "how-to-calculate-savings-rate-formula-2026"
+    ],
+    "ok": true,
+    "status": 200
+  },
+  {
+    "url": "https://www.bankrate.com/banking/savings/best-high-yield-interests-savings-accounts/",
+    "posts": [
+      "how-to-calculate-savings-rate-formula-2026"
+    ],
+    "ok": false,
+    "status": 405,
+    "fallback": "GET"
+  },
+  {
+    "url": "https://www.self.inc/info/gen-z-financial-habits/",
+    "posts": [
+      "how-to-calculate-savings-rate-formula-2026"
+    ],
+    "ok": true,
+    "status": 200
+  },
+  {
+    "url": "https://www.bogleheads.org/forum/viewtopic.php?t=370410",
+    "posts": [
+      "how-to-calculate-savings-rate-formula-2026"
+    ],
+    "ok": false,
+    "status": 403,
+    "fallback": "GET"
+  },
+  {
+    "url": "https://investor.vanguard.com/investor-resources-education/retirement/early-retirement",
+    "posts": [
+      "how-to-calculate-savings-rate-formula-2026"
+    ],
+    "ok": true,
+    "status": 200
+  },
+  {
+    "url": "https://www.federalreserve.gov/publications/2025-economic-well-being-of-us-households-in-2024-savings-and-investments.htm",
+    "posts": [
+      "how-to-calculate-savings-rate-formula-2026"
+    ],
+    "ok": true,
+    "status": 200
+  },
+  {
+    "url": "https://newsroom.bankofamerica.com/content/newsroom/press-releases/2025/07/confronted-with-higher-living-costs--72--of-young-adults-take-ac.html",
+    "posts": [
+      "how-to-calculate-savings-rate-formula-2026"
+    ],
+    "ok": false,
+    "status": 404
+  },
+  {
+    "url": "https://www.bankrate.com/mortgages/mortgage-points/",
+    "posts": [
+      "mortgage-points-buy-down-rate-2026"
+    ],
+    "ok": true,
+    "status": 200
+  },
+  {
+    "url": "https://www.consumerfinance.gov/ask-cfpb/how-should-i-use-lender-credits-and-points-also-called-discount-points-en-136/",
+    "posts": [
+      "mortgage-points-buy-down-rate-2026"
+    ],
+    "ok": true,
+    "status": 200
+  },
+  {
+    "url": "https://www.bankrate.com/mortgages/what-is-mortgage-recasting-and-why-do-it/",
+    "posts": [
+      "mortgage-recast-vs-refinance-2026"
+    ],
+    "ok": true,
+    "status": 200
+  },
+  {
+    "url": "https://www.pymnts.com/consumer-insights/2026/only-24-percent-of-americans-saved-more-in-2025/",
+    "posts": [
+      "how-to-calculate-savings-rate-formula-2026"
+    ],
+    "ok": true,
+    "status": 200
+  },
+  {
+    "url": "https://www.irs.gov/publications/p936",
+    "posts": [
+      "mortgage-points-buy-down-rate-2026"
+    ],
+    "ok": true,
+    "status": 200
+  },
+  {
+    "url": "https://taxfoundation.org/blog/2026-irs-data-tax-filing-season/",
+    "posts": [
+      "what-to-do-with-tax-refund-2026"
+    ],
+    "ok": true,
+    "status": 200
+  },
+  {
+    "url": "https://www.ssa.gov/benefits/retirement/planner/agereduction.html",
+    "posts": [
+      "when-to-claim-social-security-62-vs-67-vs-70-2026"
+    ],
+    "ok": true,
+    "status": 200
+  },
+  {
+    "url": "https://www.ssa.gov/news/en/cola/factsheets/2026.html",
+    "posts": [
+      "when-to-claim-social-security-62-vs-67-vs-70-2026",
+      "when-to-claim-social-security-62-vs-67-vs-70-2026"
+    ],
+    "ok": true,
+    "status": 200
+  },
+  {
+    "url": "https://www.ssa.gov/benefits/retirement/planner/whileworking.html",
+    "posts": [
+      "when-to-claim-social-security-62-vs-67-vs-70-2026"
+    ],
+    "ok": true,
+    "status": 200
+  },
+  {
+    "url": "https://www.ssa.gov",
+    "posts": [
+      "when-to-claim-social-security-62-vs-67-vs-70-2026"
+    ],
+    "ok": true,
+    "status": 200
+  },
+  {
+    "url": "https://www.fdic.gov/resources/bankers/national-rates/",
+    "posts": [
+      "sinking-funds-budget-guide-2026"
+    ],
+    "ok": true,
+    "status": 200
+  },
+  {
+    "url": "https://www.cnbc.com/2026/04/10/average-tax-refund.html",
+    "posts": [
+      "what-to-do-with-tax-refund-2026"
+    ],
+    "ok": true,
+    "status": 200
+  },
+  {
+    "url": "https://my529.org/2025/10/qualified-education-expenses-expand-with-recent-legislation/",
+    "posts": [
+      "529-plan-college-savings-guide-2026"
+    ],
+    "ok": false,
+    "error": "The operation was aborted due to timeout"
+  },
+  {
+    "url": "https://www.bankrate.com/banking/savings/emergency-savings-report/",
+    "posts": [
+      "how-to-calculate-savings-rate-formula-2026"
+    ],
+    "ok": true,
+    "status": 200
+  }
+]
