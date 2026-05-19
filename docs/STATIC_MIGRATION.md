@@ -27,7 +27,7 @@ infra bill.
 - **`package.json`** — Added `gray-matter`. Added the
   `npm run export:blog` script. `npm start` now serves the static
   `out/` directory (the old `next start` doesn't work with `output: 'export'`).
-- **`docs/claude/mycalcfinance-content-pipeline.md`** — Rewritten so the
+- **`.claude/skills/mycalcfinance-content-pipeline.md`** — Rewritten so the
   Claude scheduled task writes Markdown files + `git commit/push` instead of
   inserting into Supabase.
 - `src/lib/supabaseClient.js` and `@supabase/supabase-js` are intentionally

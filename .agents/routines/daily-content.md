@@ -1,7 +1,7 @@
 # finance-calculators-hub (mycalcfinance.com) — daily content routine
 
 > Triage spec for the scheduled remote agent. This delegates the heavy
-> lifting to the existing pipeline docs under `docs/claude/`, which
+> lifting to the existing pipeline docs under `.claude/skills/`, which
 > are the canonical specs for THIS site's content workflow.
 
 ## Mission
@@ -22,7 +22,7 @@ For every `content/blog/*.md`, determine state. **If `googleapis` is installed a
 
 If any post qualifies:
 - Pick the oldest candidate by `updated_at` frontmatter.
-- **Follow the refresh procedure in `docs/claude/mycalcfinance-content-refresh.SKILL.md`** (Section "For each post in the cohort, refresh content"). This handles: numeric facts, date references, internal links, outbound links, disclaimer freshness, optional SEO meta tune.
+- **Follow the refresh procedure in `.claude/skills/mycalcfinance-content-refresh.SKILL.md`** (Section "For each post in the cohort, refresh content"). This handles: numeric facts, date references, internal links, outbound links, disclaimer freshness, optional SEO meta tune.
 - Bump `updated_at` frontmatter to today's ISO 8601 timestamp.
 - **Do NOT change `slug`, `title`, `published_at`, or `excerpt`.**
 - **Process ONE post per run.** The existing refresh skill caps at 8 — but for a daily cadence, one-at-a-time is correct.
@@ -40,7 +40,7 @@ Only run if Lane A has nothing to do.
 Only run if Lanes A and B have nothing to do AND no new post has been published in the last 3 days (`git log --since="3 days ago" --name-only -- content/blog/`).
 
 - Pick the next unticked topic in `.agents/context/target-keywords.md`. Skip topics that already have a `.md` file.
-- **Follow the full procedure in `docs/claude/mycalcfinance-content-pipeline.md`** (Steps 2–6). This handles: topic selection, article generation (HTML body), hero SVG, frontmatter, commit message.
+- **Follow the full procedure in `.claude/skills/mycalcfinance-content-pipeline.md`** (Steps 2–6). This handles: topic selection, article generation (HTML body), hero SVG, frontmatter, commit message.
 
 ## Hard constraints (all lanes)
 

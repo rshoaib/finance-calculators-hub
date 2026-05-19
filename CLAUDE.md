@@ -21,8 +21,9 @@ reports/              date-stamped audit outputs
 .agents/              routines, agents, and shared context (hidden — infra, not site code)
   ├── routines/       daily-content.md, etc.
   └── context/        site-context.md, target-keywords.md, gsc-snapshot.md
-docs/                 longer-form project docs (claude/ skills, migrations)
+docs/                 longer-form project docs (migrations, architecture notes)
 .claude/              project-scoped Claude Code config
+  └── skills/         mycalcfinance-content-pipeline.md, *-content-refresh.SKILL.md, *-gsc-audit-fixes.SKILL.md
 .github/workflows/    cron via GitHub Actions
 ```
 
