@@ -1,4 +1,4 @@
-import Calculator from '../../src/calculators/InflationCalculator'
+import Calculator from './Calculator'
 
 export const metadata = {
   title: 'Inflation Calculator — See How Prices Change Over Time (2026)',

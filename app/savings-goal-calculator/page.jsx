@@ -1,4 +1,4 @@
-import Calculator from '../../src/calculators/SavingsGoalCalculator'
+import Calculator from './Calculator'
 import PopularCalculations from '../../src/components/PopularCalculations'
 import { savingsPages } from '../../src/config/seoPages'
 

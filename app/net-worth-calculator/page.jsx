@@ -1,4 +1,4 @@
-import Calculator from '../../src/calculators/NetWorthCalculator'
+import Calculator from './Calculator'
 
 export const metadata = {
   title: 'Net Worth Calculator — Track Your Assets vs Liabilities (2026)',

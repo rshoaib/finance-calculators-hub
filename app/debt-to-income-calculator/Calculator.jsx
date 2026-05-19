@@ -1,9 +1,9 @@
 "use client"
 import { useState, useCallback, useEffect } from 'react'
-import AdSlot from '../components/AdSlot'
-import Breadcrumb from '../components/Breadcrumb'
-import RelatedCalculators from '../components/RelatedCalculators'
-import { formatCurrency, formatPercent } from '../utils/formatters'
+import AdSlot from '../../src/components/AdSlot'
+import Breadcrumb from '../../src/components/Breadcrumb'
+import RelatedCalculators from '../../src/components/RelatedCalculators'
+import { formatCurrency, formatPercent } from '../../src/utils/formatters'
 
 const DTI_RATINGS = [
   { max: 20, label: 'Excellent', color: '#10b981', desc: 'You have a very low debt burden. Lenders will view you favorably.' },

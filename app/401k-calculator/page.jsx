@@ -1,4 +1,4 @@
-import Calculator from '../../src/calculators/FourOhOneKCalculator'
+import Calculator from './Calculator'
 
 export const metadata = {
   title: '401(k) Calculator 2026 — Estimate Your Retirement Balance with Employer Match',

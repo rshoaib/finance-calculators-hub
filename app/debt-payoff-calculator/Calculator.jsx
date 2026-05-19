@@ -1,10 +1,10 @@
 "use client"
 import { useState, useCallback, useEffect } from 'react'
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts'
-import AdSlot from '../components/AdSlot'
-import Breadcrumb from '../components/Breadcrumb'
-import RelatedCalculators from '../components/RelatedCalculators'
-import { formatCurrency } from '../utils/formatters'
+import AdSlot from '../../src/components/AdSlot'
+import Breadcrumb from '../../src/components/Breadcrumb'
+import RelatedCalculators from '../../src/components/RelatedCalculators'
+import { formatCurrency } from '../../src/utils/formatters'
 
 const DEFAULT_DEBTS = [
   { id: 1, name: 'Credit Card', balance: 5000, apr: 22.99, minPayment: 100 },

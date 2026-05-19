@@ -1,10 +1,10 @@
 "use client"
 import { useState, useCallback, useEffect } from 'react'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell, Legend } from 'recharts'
-import AdSlot from '../components/AdSlot'
-import Breadcrumb from '../components/Breadcrumb'
-import RelatedCalculators from '../components/RelatedCalculators'
-import { formatCurrency, formatPercent } from '../utils/formatters'
+import AdSlot from '../../src/components/AdSlot'
+import Breadcrumb from '../../src/components/Breadcrumb'
+import RelatedCalculators from '../../src/components/RelatedCalculators'
+import { formatCurrency, formatPercent } from '../../src/utils/formatters'
 
 const LT_BRACKETS = {
   single: [

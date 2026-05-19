@@ -1,4 +1,4 @@
-import Calculator from '../../src/calculators/RetirementCalculator'
+import Calculator from './Calculator'
 
 export const metadata = {
   title: 'Retirement Calculator 2026 — How Much Do You Need to Retire?',

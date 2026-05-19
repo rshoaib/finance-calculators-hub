@@ -1,4 +1,4 @@
-import Calculator from '../../src/calculators/CompoundInterestCalculator'
+import Calculator from './Calculator'
 
 export const metadata = {
   title: 'Compound Interest Calculator — See How Your Money Grows (2026)',

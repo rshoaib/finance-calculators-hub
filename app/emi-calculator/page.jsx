@@ -1,4 +1,4 @@
-import Calculator from '../../src/calculators/LoanEMICalculator'
+import Calculator from './Calculator'
 
 export const metadata = {
   title: 'Loan EMI Calculator — Calculate Equated Monthly Installments (2026)',

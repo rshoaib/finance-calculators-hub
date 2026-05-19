@@ -1,4 +1,4 @@
-import Calculator from '../../src/calculators/SalaryCalculator'
+import Calculator from './Calculator'
 import PopularCalculations from '../../src/components/PopularCalculations'
 import { salaryPages, hourlyPages } from '../../src/config/seoPages'
 

@@ -1,4 +1,4 @@
-import Calculator from '../../src/calculators/TaxBracketCalculator'
+import Calculator from './Calculator'
 
 export const metadata = {
   title: 'Tax Bracket Calculator 2026 — Federal Income Tax Rates & Effective Rate',

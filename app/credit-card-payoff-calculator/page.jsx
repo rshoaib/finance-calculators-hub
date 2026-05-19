@@ -1,4 +1,4 @@
-import Calculator from '../../src/calculators/CreditCardPayoffCalculator'
+import Calculator from './Calculator'
 
 export const metadata = {
   title: 'Credit Card Payoff Calculator — How Long to Pay Off Your Balance? (2026)',

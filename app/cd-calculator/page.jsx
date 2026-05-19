@@ -1,4 +1,4 @@
-import Calculator from '../../src/calculators/CDCalculator'
+import Calculator from './Calculator'
 
 export const metadata = {
   title: 'CD Calculator 2026 — Calculate Certificate of Deposit Returns',

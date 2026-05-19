@@ -1,4 +1,4 @@
-import Calculator from '../../src/calculators/MortgageRefinanceCalculator'
+import Calculator from './Calculator'
 
 export const metadata = {
   title: 'Mortgage Refinance Calculator — Is Refinancing Worth It? (2026)',

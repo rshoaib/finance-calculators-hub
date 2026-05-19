@@ -1,10 +1,10 @@
 "use client"
 import { useState, useCallback, useEffect } from 'react'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell } from 'recharts'
-import AdSlot from '../components/AdSlot'
-import Breadcrumb from '../components/Breadcrumb'
-import RelatedCalculators from '../components/RelatedCalculators'
-import { formatCurrency } from '../utils/formatters'
+import AdSlot from '../../src/components/AdSlot'
+import Breadcrumb from '../../src/components/Breadcrumb'
+import RelatedCalculators from '../../src/components/RelatedCalculators'
+import { formatCurrency } from '../../src/utils/formatters'
 
 const ASSET_COLORS = ['#10b981', '#06b6d4', '#3b82f6', '#8b5cf6', '#f59e0b']
 const LIABILITY_COLORS = ['#ef4444', '#f97316', '#ec4899', '#f43f5e', '#e11d48']

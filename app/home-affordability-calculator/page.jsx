@@ -1,4 +1,4 @@
-import Calculator from '../../src/calculators/HomeAffordabilityCalculator'
+import Calculator from './Calculator'
 
 export const metadata = {
   title: 'Home Affordability Calculator — How Much House Can You Afford? (2026)',

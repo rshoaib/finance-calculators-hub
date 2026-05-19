@@ -1,4 +1,4 @@
-import Calculator from '../../src/calculators/StudentLoanCalculator'
+import Calculator from './Calculator'
 
 export const metadata = {
   title: 'Student Loan Calculator 2026 — Estimate Payments & Total Interest',

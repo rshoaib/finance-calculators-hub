@@ -1,4 +1,4 @@
-import Calculator from '../../src/calculators/BudgetPlannerCalculator'
+import Calculator from './Calculator'
 
 export const metadata = {
   title: '50/30/20 Budget Planner — Allocate Your Income Smarter (2026)',

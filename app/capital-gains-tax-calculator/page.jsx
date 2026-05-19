@@ -1,4 +1,4 @@
-import Calculator from '../../src/calculators/CapitalGainsTaxCalculator'
+import Calculator from './Calculator'
 
 export const metadata = {
   title: 'Capital Gains Tax Calculator 2026 — Short-Term vs Long-Term Rates',

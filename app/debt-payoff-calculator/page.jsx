@@ -1,4 +1,4 @@
-import Calculator from '../../src/calculators/DebtPayoffCalculator'
+import Calculator from './Calculator'
 
 export const metadata = {
   title: 'Debt Payoff Calculator — Snowball vs Avalanche Comparison (2026)',

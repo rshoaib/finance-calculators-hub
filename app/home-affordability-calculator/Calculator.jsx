@@ -1,12 +1,12 @@
 "use client"
 import { useState, useCallback, useEffect } from 'react'
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from 'recharts'
-import AdSlot from '../components/AdSlot'
-import Breadcrumb from '../components/Breadcrumb'
-import RelatedCalculators from '../components/RelatedCalculators'
-import ShareResults from '../components/ShareResults'
-import ExportPDF from '../components/ExportPDF'
-import { formatCurrency } from '../utils/formatters'
+import AdSlot from '../../src/components/AdSlot'
+import Breadcrumb from '../../src/components/Breadcrumb'
+import RelatedCalculators from '../../src/components/RelatedCalculators'
+import ShareResults from '../../src/components/ShareResults'
+import ExportPDF from '../../src/components/ExportPDF'
+import { formatCurrency } from '../../src/utils/formatters'
 
 const COLORS = ['#10b981', '#3b82f6', '#f59e0b', '#ef4444']
 

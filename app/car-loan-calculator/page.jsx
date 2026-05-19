@@ -1,4 +1,4 @@
-import Calculator from '../../src/calculators/CarLoanCalculator'
+import Calculator from './Calculator'
 
 export const metadata = {
   title: 'Car Loan Calculator 2026 — Estimate Monthly Auto Payments & Total Cost',

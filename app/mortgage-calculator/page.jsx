@@ -1,4 +1,4 @@
-import Calculator from '../../src/calculators/MortgageCalculator'
+import Calculator from './Calculator'
 import PopularCalculations from '../../src/components/PopularCalculations'
 import { mortgagePages } from '../../src/config/seoPages'
 

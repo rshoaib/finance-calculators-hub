@@ -1,4 +1,4 @@
-import Calculator from '../../src/calculators/InvestmentReturnCalculator'
+import Calculator from './Calculator'
 
 export const metadata = {
   title: 'Investment Return Calculator — ROI, CAGR & Inflation-Adjusted Returns (2026)',

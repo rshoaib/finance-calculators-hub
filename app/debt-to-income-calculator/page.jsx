@@ -1,4 +1,4 @@
-import Calculator from '../../src/calculators/DebtToIncomeCalculator'
+import Calculator from './Calculator'
 
 export const metadata = {
   title: 'Debt-to-Income (DTI) Ratio Calculator — Check Your DTI for Mortgages (2026)',

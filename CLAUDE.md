@@ -8,7 +8,9 @@ This project follows the [standard web project structure](../../Users/Riz/.claud
 
 ```
 app/                  Next.js App Router (public site)
-src/                  components, lib, data, utils, calculators
+  └── <route>/        each calculator route co-locates its component:
+                        page.jsx (route entry) + Calculator.jsx (UI)
+src/                  shared components, lib, config, utils
 content/blog/         MDX/markdown blog posts
 public/               static assets (incl. blog-images/)
 scripts/              keeper CLI scripts (external_probe.mjs, link_crawl.mjs)
