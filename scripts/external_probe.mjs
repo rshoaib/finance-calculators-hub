@@ -1,6 +1,10 @@
 import fs from 'node:fs';
+import path from 'node:path';
 
-const ext = JSON.parse(fs.readFileSync('/sessions/bold-trusting-keller/mnt/outputs/gsc-audit/external_links.json','utf8'));
+const LINKS_DIR = 'reports/links';
+fs.mkdirSync(LINKS_DIR, { recursive: true });
+
+const ext = JSON.parse(fs.readFileSync(path.join(LINKS_DIR, 'external_links.json'), 'utf8'));
 const out = [];
 const concurrency = 12;
 let idx = 0;
@@ -36,4 +40,4 @@ async function worker() {
 const start = Date.now();
 await Promise.all(Array.from({length:concurrency}, worker));
 console.log('\nelapsed:', ((Date.now()-start)/1000).toFixed(1), 's');
-fs.writeFileSync('/sessions/bold-trusting-keller/mnt/outputs/gsc-audit/external_results.json', JSON.stringify(out,null,2));
+fs.writeFileSync(path.join(LINKS_DIR, 'external_results.json'), JSON.stringify(out, null, 2));

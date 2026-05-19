@@ -84,5 +84,7 @@ internalIssues.slice(0, 50).forEach(i => console.log(` - [${i.post}] ${i.href}  
 console.log(`external links: ${externalLinks.length}`);
 
 // Save external for next step
-fs.writeFileSync('external_links.json', JSON.stringify(externalLinks, null, 2));
-fs.writeFileSync('internal_issues.json', JSON.stringify(internalIssues, null, 2));
+const LINKS_DIR = 'reports/links';
+fs.mkdirSync(LINKS_DIR, { recursive: true });
+fs.writeFileSync(`${LINKS_DIR}/external_links.json`, JSON.stringify(externalLinks, null, 2));
+fs.writeFileSync(`${LINKS_DIR}/internal_issues.json`, JSON.stringify(internalIssues, null, 2));
