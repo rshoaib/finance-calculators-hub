@@ -4,6 +4,13 @@ node_modules/
 # build output
 dist/
 .next/
+out/
+
+# scheduled-task lock files (live runtime state)
+.claude/*.lock
+
+# Expo cache (irrelevant — this is a Next.js project, but Expo CLI may drop these)
+.expo/
 
 # env files
 .env
