@@ -30,7 +30,7 @@ docs/                 longer-form project docs (claude/ skills, migrations)
 
 - **Report filenames are date-stamped:** `reports/gsc/2026-05-10.md`, never `latest.md`.
 - **Scripts are dumb, agents reason.** `scripts/*.mjs` makes one API call or runs one task. Anything multi-step + reasoning belongs under `agents/`.
-- **GSC service account** lives at `.gsc-service-account.json` (gitignored). Loader is `src/lib/gsc.js`.
+- **GSC service account** lives at `.secrets/gsc-service-account.json` (gitignored — the whole `.secrets/` folder is). Loader is `src/lib/gsc.js`.
 
 ## Verifying routine output (don't trust the report text)
 

@@ -18,7 +18,7 @@ Land **one** meaningful change per run that helps mycalcfinance.com. The dominan
 
 ### Lane A — Refresh stuck or stale content (highest priority)
 
-For every `content/blog/*.md`, determine state. **If `googleapis` is installed and `.gsc-service-account.json` (or `GSC_SERVICE_ACCOUNT_JSON` env var) is available**, use `src/lib/gsc.js` for ground truth via `inspectUrl`. Otherwise fall back to heuristics: a post is "likely stale" if its `updated_at` frontmatter is ≥60 days old, or it contains numeric claims older than 90 days (Fed rate, IRS limits, mortgage averages — finance facts decay fast).
+For every `content/blog/*.md`, determine state. **If `googleapis` is installed and `.secrets/gsc-service-account.json` (or `GSC_SERVICE_ACCOUNT_JSON` env var) is available**, use `src/lib/gsc.js` for ground truth via `inspectUrl`. Otherwise fall back to heuristics: a post is "likely stale" if its `updated_at` frontmatter is ≥60 days old, or it contains numeric claims older than 90 days (Fed rate, IRS limits, mortgage averages — finance facts decay fast).
 
 If any post qualifies:
 - Pick the oldest candidate by `updated_at` frontmatter.

@@ -28,9 +28,8 @@ build_output.txt
 .vercel
 .env*.local
 
-# scheduled-task secrets (API keys etc.)
+# scheduled-task secrets (API keys etc.) — now consolidated under .secrets/
 .secrets/
-.gsc-service-account.json
 
 # local scratch (one-off scripts, retired artifacts)
 .scratch/

@@ -6,7 +6,7 @@
 // Auth: service account JSON key. Path resolution order:
 //   1. process.env.GSC_SERVICE_ACCOUNT_JSON     (raw JSON blob)
 //   2. process.env.GOOGLE_APPLICATION_CREDENTIALS (path to JSON file)
-//   3. <repoRoot>/.gsc-service-account.json      (default)
+//   3. <repoRoot>/.secrets/gsc-service-account.json (default)
 //
 // The service account must be added to the GSC property as a "Full" user.
 // As of 2026-04-17, `gsc-audit-bot@my-project-15076orderviachat.iam.gserviceaccount.com`
@@ -26,7 +26,7 @@ const SCOPES = ['https://www.googleapis.com/auth/webmasters.readonly'];
 // Default key path: repo root. __dirname-equivalent for ESM.
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const DEFAULT_KEY_PATH = path.resolve(__dirname, '../../.gsc-service-account.json');
+const DEFAULT_KEY_PATH = path.resolve(__dirname, '../../.secrets/gsc-service-account.json');
 
 export const DEFAULT_PROPERTY = 'https://mycalcfinance.com/';
 
