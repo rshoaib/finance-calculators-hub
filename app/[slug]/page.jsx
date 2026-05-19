@@ -1,3 +1,19 @@
+// Programmatic SEO route. Serves the "$X a year is how much an hour" /
+// "X% mortgage on Y" style pages defined in src/config/seoPages.js
+// (salaryPages, hourlyPages, mortgagePages, savingsPages — ~hundreds of
+// generated slugs).
+//
+// This route does NOT conflict with the explicit calculator routes
+// (app/mortgage-calculator/, app/retirement-calculator/, etc.). Next.js
+// App Router prioritizes static segments over dynamic [slug], so the
+// explicit pages always win when their slug matches.
+//
+// generateStaticParams returns only the seoPages slugs, so /mortgage-
+// calculator never resolves here. Discovery: linked from
+// src/components/PopularCalculations.jsx (verified via GSC URL Inspection
+// on 2026-04-17 that without those internal links, Google never crawled
+// these pages).
+
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { salaryPages, hourlyPages, mortgagePages, savingsPages } from '../../src/config/seoPages'
