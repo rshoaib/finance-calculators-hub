@@ -36,6 +36,14 @@ docs/                 longer-form project docs (migrations, architecture notes)
 - **Scripts are dumb, agents reason.** `scripts/*.mjs` makes one API call or runs one task. Anything multi-step + reasoning belongs under `.agents/`.
 - **GSC service account** lives at `.secrets/gsc-service-account.json` (gitignored — the whole `.secrets/` folder is). Loader is `src/lib/gsc.js`.
 
+## Indexation
+
+- New posts get indexed in Google within **3-7 days** via passive sitemap discovery — no nudge needed. The site is healthy (200+ pages indexed, GSC verified, sitemap auto-updates on every deploy).
+- If a post stalls **14+ days** at "Discovered - currently not indexed", manually use GSC web UI → URL Inspection → "Request Indexing". Quota is ~10/day.
+- **IndexNow is not used.** Google doesn't accept it; Bing/Yandex referral share is too small to justify the script (<5% of traffic for a US finance site).
+- The weekly GSC audit (`reports/gsc/gsc-audit-YYYY-MM-DD.md`) is where stalled posts should be detected. If the audit doesn't already flag posts older than 7 days with coverageState in `["URL is unknown", "Discovered"]`, that's the gap to fix — not adding pre-emptive ping scripts.
+- Authoritative source for indexation state: GSC web UI (Coverage + URL Inspection). `data/gsc_pages.json` is a daily snapshot only.
+
 ## Routing notes
 
 - **Two parallel route conventions exist on purpose:**
@@ -52,7 +60,7 @@ Per the user's "trust observable state" rule, when a routine claims to have done
 |---|---|
 | Published a blog post | `ls content/blog/*.md` + `git log --oneline -10 content/blog/` |
 | Generated a GSC audit | `ls reports/gsc/` — file should be dated today |
-| Pinged sitemap / IndexNow | check Vercel logs or `data/gsc_pages.json` for indexed timestamp |
+| New post got indexed | GSC web UI → URL Inspection (truth) — or `data/gsc_pages.json` for daily snapshot |
 | Fixed broken links | re-run `node scripts/link_crawl.mjs` and diff output |
 
 ## Branch
