@@ -12,18 +12,19 @@ src/                  components, lib, data, utils, calculators
 content/blog/         MDX/markdown blog posts
 public/               static assets (incl. blog-images/)
 scripts/              keeper CLI scripts (external_probe.mjs, link_crawl.mjs)
+data/                 persistent datasets (gsc_daily.csv)
 reports/              date-stamped audit outputs
-  ├── gsc/            Google Search Console snapshots (gsc-audit-YYYY-MM-DD.md)
+  ├── gsc/            Google Search Console snapshots + page-level JSON
   ├── seo/            SEO audits (seo-audit-YYYY-MM-DD.md)
-  └── content/        content-refresh notes
-docs/                 longer-form project docs
+  ├── content/        content-refresh notes
+  └── links/          external_links.json + external_results.json
+.agents/              routines, agents, and shared context (hidden — infra, not site code)
+  ├── routines/       daily-content.md, etc.
+  └── context/        site-context.md, target-keywords.md, gsc-snapshot.md
+docs/                 longer-form project docs (claude/ skills, migrations)
 .claude/              project-scoped Claude Code config
 .github/workflows/    cron via GitHub Actions
 ```
-
-**Still loose at root (move when convenient):** `external_links.json`, `external_results.json`, `gsc_pages.json`, `gsc_daily.csv` — these belong in `data/` (inputs) or `reports/` (outputs) depending on whether they're regenerated.
-
-**Not yet present:** `routines/`, `agents/`, `data/`. Add when those capabilities land.
 
 ## Conventions
 
