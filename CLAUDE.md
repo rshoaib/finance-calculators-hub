@@ -12,9 +12,9 @@ src/                  components, lib, data, utils, calculators
 content/blog/         MDX/markdown blog posts
 public/               static assets (incl. blog-images/)
 scripts/              keeper CLI scripts (external_probe.mjs, link_crawl.mjs)
-data/                 persistent datasets (gsc_daily.csv)
+data/                 persistent datasets (gsc_daily.csv, gsc_pages.json)
 reports/              date-stamped audit outputs
-  ├── gsc/            Google Search Console snapshots + page-level JSON
+  ├── gsc/            Google Search Console audit snapshots (markdown)
   ├── seo/            SEO audits (seo-audit-YYYY-MM-DD.md)
   ├── content/        content-refresh notes
   └── links/          external_links.json + external_results.json
@@ -40,7 +40,7 @@ Per the user's "trust observable state" rule, when a routine claims to have done
 |---|---|
 | Published a blog post | `ls content/blog/*.md` + `git log --oneline -10 content/blog/` |
 | Generated a GSC audit | `ls reports/gsc/` — file should be dated today |
-| Pinged sitemap / IndexNow | check Vercel logs or `gsc_pages.json` for indexed timestamp |
+| Pinged sitemap / IndexNow | check Vercel logs or `data/gsc_pages.json` for indexed timestamp |
 | Fixed broken links | re-run `node scripts/link_crawl.mjs` and diff output |
 
 ## Branch
