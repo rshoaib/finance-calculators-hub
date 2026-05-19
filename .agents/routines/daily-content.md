@@ -13,6 +13,7 @@ Land **one** meaningful change per run that helps mycalcfinance.com. The dominan
 1. Read `.agents/context/site-context.md` for brand voice + calculator URL map.
 2. Read `.agents/context/target-keywords.md` for the content pillars and gaps.
 3. Today's date in `YYYY-MM-DD`. Branch: `master`. Posts dir: `content/blog/`.
+4. **Check for orphaned local commits from prior runs.** Run `git log --oneline origin/master..HEAD`. If output is non-empty, the previous run committed something but never pushed (verified incident: 2026-05-05 through 2026-05-08, three blog posts sat locally for 12+ days). Before doing any new work, `git push origin master` and verify (see step "Verify push landed" below). Only proceed if local and remote are in sync.
 
 ## Priority lanes — pick the FIRST lane with work to do
 
@@ -62,7 +63,9 @@ Only run if Lanes A and B have nothing to do AND no new post has been published 
    - Internal link: `seo: cross-links to <target-slug>`
    - New post: `blog: add <slug>`
 4. Push to `origin/master`. If push fails on auth, exit cleanly and report — do not retry with embedded credentials.
-5. Output a one-paragraph report: lane that ran, files changed, commit SHA, one-sentence justification.
+5. **Verify push landed.** Run `git rev-parse HEAD` and `git rev-parse origin/master`. The two SHAs MUST match. If they don't, the push silently failed — the commit is local-only and the site will not reflect the change. Treat this as a hard failure: do NOT report success. Output the divergence in the run report and stop.
+6. **Verify remote reflects the change.** For new posts, the report must include the commit SHA from step 5 AND confirm `git ls-remote origin master` returns that same SHA. Reporting "published" without remote-confirmed parity is the exact failure mode that left 3 May posts uncommitted-then-stale on disk for 12+ days. Don't repeat it.
+7. Output a one-paragraph report: lane that ran, files changed, commit SHA, **remote-parity confirmation**, one-sentence justification. If steps 5 or 6 failed, the report leads with "PUSH FAILED — local commit <SHA> not on remote" instead of any success claim.
 
 ## When to skip
 
