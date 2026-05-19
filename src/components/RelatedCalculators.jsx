@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { calculators } from '../data/calculators'
+import { calculators } from '../config/calculators'
 
 export default function RelatedCalculators({ currentSlug, category }) {
   const related = calculators

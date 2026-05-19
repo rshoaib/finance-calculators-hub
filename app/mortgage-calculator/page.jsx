@@ -1,6 +1,6 @@
 import Calculator from '../../src/calculators/MortgageCalculator'
 import PopularCalculations from '../../src/components/PopularCalculations'
-import { mortgagePages } from '../../src/data/seoPages'
+import { mortgagePages } from '../../src/config/seoPages'
 
 export const metadata = {
   title: 'Free Mortgage Calculator 2026 — Monthly Payment, Interest & Amortization',

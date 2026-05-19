@@ -1,5 +1,5 @@
-import { calculators } from '../src/data/calculators'
-import { salaryPages, hourlyPages, mortgagePages, savingsPages } from '../src/data/seoPages'
+import { calculators } from '../src/config/calculators'
+import { salaryPages, hourlyPages, mortgagePages, savingsPages } from '../src/config/seoPages'
 import { getAllPostsMeta } from '../src/lib/posts'
 
 // Required by `output: 'export'` — forces the sitemap to be generated once at

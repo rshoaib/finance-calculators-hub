@@ -1,6 +1,6 @@
 import Calculator from '../../src/calculators/SavingsGoalCalculator'
 import PopularCalculations from '../../src/components/PopularCalculations'
-import { savingsPages } from '../../src/data/seoPages'
+import { savingsPages } from '../../src/config/seoPages'
 
 export const metadata = {
   title: 'Savings Goal Calculator — How Long to Reach Your Target? (2026)',

@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { salaryPages, hourlyPages, mortgagePages, savingsPages } from '../../src/data/seoPages'
+import { salaryPages, hourlyPages, mortgagePages, savingsPages } from '../../src/config/seoPages'
 import FAQ from '../ClientFAQ'
 
 // Combine all SEO programmatic pages into a single flat array

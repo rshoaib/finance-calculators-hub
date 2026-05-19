@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
 /**
- * A hub-page link block for the programmatic SEO pages in `src/data/seoPages.js`.
+ * A hub-page link block for the programmatic SEO pages in `src/config/seoPages.js`.
  * Without this component, those pages have no inbound internal links and Google
  * never discovers them (verified via GSC URL Inspection on 2026-04-17 — every
  * programmatic page came back "URL is unknown to Google").

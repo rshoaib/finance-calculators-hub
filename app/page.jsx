@@ -2,7 +2,7 @@ import Link from 'next/link'
 import dynamic from 'next/dynamic'
 import { ArrowRight, Calculator, TrendingUp, Shield } from 'lucide-react'
 import AdSlot from '../src/components/AdSlot'
-import { calculators, categories } from '../src/data/calculators'
+import { calculators, categories } from '../src/config/calculators'
 
 // Both components render below the fold. Dynamically importing them keeps the
 // server-rendered HTML (ssr: true) so SEO is untouched, but pushes their JS
