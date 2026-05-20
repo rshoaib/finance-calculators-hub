@@ -180,7 +180,7 @@ image_url: "/storage/v1/object/public/blog-images/hero-backdoor-roth-ira-2026-hi
 
 <p>Here is where backdoor Roths go wrong. The IRS does <em>not</em> let you cherry-pick which IRA dollars you convert. For the pro-rata rule, all your Traditional, SEP, and SIMPLE IRAs are treated as one giant account, and every conversion pulls pre-tax and after-tax dollars out in the same proportion as the combined balance.</p>
 
-<p>Roth IRAs, 401(k)s, and 403(b)s don't count — only IRAs. But if you have a rollover IRA from an old 401(k), or a SEP IRA from a side business, those balances drag into the math.</p>
+<p>Roth IRAs, 401(k)s, and 403(b)s don't count — only IRAs. But if you have a rollover IRA from an old 401(k), or a SEP IRA from a side business, those balances drag into the math. If you're picking a retirement plan for self-employment income, our <a href="/blog/solo-401k-vs-sep-ira-self-employed-2026">Solo 401(k) vs SEP IRA guide</a> walks through why a Solo 401(k) sidesteps this trap — its balances don't aggregate into the pro-rata calculation.</p>
 
 <h3>How Pro-Rata Is Calculated</h3>
 
