@@ -54,7 +54,7 @@ image_url: "/images/blog/hero-debt-payoff-strategies-2026.svg"
 </svg>
 
 <h2>Why Paying Off Debt Feels So Hard (And How to Fix It)</h2>
-<p>Americans carry over <strong>$1.14 trillion</strong> in credit card debt as of 2026, with the average household managing multiple debt accounts across credit cards, car loans, student loans, and personal loans. Minimum payments are designed to keep you in debt for decades — a $5,000 credit card balance at 22% APR takes <strong>over 24 years</strong> to pay off with minimums alone.</p>
+<p>Americans carry over <strong>$1.14 trillion</strong> in credit card debt as of 2026, with the average household managing multiple debt accounts across credit cards, car loans, student loans, and personal loans. Minimum payments are designed to keep you in debt for decades — a $5,000 credit card balance at 22% APR takes <strong>over 24 years</strong> to pay off with minimums alone. If credit cards are your biggest balance, our <a href="/credit-card-payoff-calculator">credit card payoff calculator</a> shows the exact payoff month and total interest at any payment amount.</p>
 
 <p>The good news? Two proven strategies — the <strong>debt avalanche</strong> and <strong>debt snowball</strong> — can cut your payoff time dramatically. This guide breaks down both methods with real numbers, helps you choose the right one, and gives you a free tool to model your exact payoff plan.</p>
 
